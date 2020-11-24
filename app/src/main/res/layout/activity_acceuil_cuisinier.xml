@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cuisinier.acceuilCuisinier"
+    android:background="@drawable/background"
+    >
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_bandeau_haut" />
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/creer_ma_table"
+            android:textColor="@color/black"
+            android:onClick="onClickCreerMaTableButton"
+            />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/gerer_mes_tables"
+            android:textColor="@color/black"
+            android:onClick="onClickGererMesTablesButton"
+            />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/creer_mon_menu"
+            android:textColor="@color/black"
+            android:onClick="onClickCreerMonMenuButton"
+            />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/gerer_mes_menus"
+            android:textColor="@color/black"
+            android:onClick="onClickGererMesMenusButton"
+            />
+    </LinearLayout>
+</RelativeLayout>

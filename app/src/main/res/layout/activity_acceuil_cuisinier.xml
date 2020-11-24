@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     tools:context=".cuisinier.acceuilCuisinier"
     android:background="@drawable/background"
     >
@@ -16,37 +15,54 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:layout="@layout/fragment_bandeau_haut" />
-
-    <Button
-        android:id="@+id/button"
+        <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logo acceuil"
-        android:background="@color/white"
-        />
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="settings"
-        android:background="@color/white"
-        />
+        <Button
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/creer_ma_table"
+            android:textColor="@color/black"
+            android:onClick="onClickCreerMaTableButton"
+            />
 
-    <Button
-        android:id="@+id/button3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="logout"
-        android:background="@color/white"
-        />
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/gerer_mes_tables"
+            android:textColor="@color/black"
+            android:onClick="onClickGererMesTablesButton"
+            />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="profil"
-        android:background="@color/white"
-        />
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/creer_mon_menu"
+            android:textColor="@color/black"
+            android:onClick="onClickCreerMonMenuButton"
+            />
 
-</LinearLayout>
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/gerer_mes_menus"
+            android:textColor="@color/black"
+            android:onClick="onClickGererMesMenusButton"
+            />
+    </LinearLayout>
+</RelativeLayout>

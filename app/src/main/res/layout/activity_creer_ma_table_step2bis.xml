@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cuisinier.creerMaTable.creerMaTableStep2bis"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_bandeau_haut" />
+        <TextView
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/creer_ma_table"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:gravity="center_horizontal"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:layout_margin="5dp"
+            android:text="@string/importMenu"
+            ></Button>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/nextStepButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:textColor="@color/black"
+            android:textSize="@dimen/mediumSize"
+            android:layout_margin="5dp"
+            android:text="@string/nextStep"
+            android:onClick="onClickNextStepButton"
+            ></Button>
+        <fragment
+            android:id="@+id/fragmentBas"
+            android:name="com.example.latabledesgourmands.fragments.bandeauBasCreationTDG"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_bandeau_haut" />
+    </LinearLayout>
+</RelativeLayout>

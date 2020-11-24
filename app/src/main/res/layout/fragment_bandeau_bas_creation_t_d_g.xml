@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".fragments.bandeauBasCreationTDG">
+
+   <LinearLayout
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:orientation="horizontal">
+
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:background="@color/white"
+           android:fontFamily="@font/indie_flower"
+           android:textColor="@color/black"
+           android:textSize="@dimen/mediumSize"
+           android:layout_margin="5dp"
+           android:text="1Step"></Button>
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:background="@color/white"
+           android:fontFamily="@font/indie_flower"
+           android:textColor="@color/black"
+           android:textSize="@dimen/mediumSize"
+           android:layout_margin="5dp"
+           android:text="2Step"></Button>
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:background="@color/white"
+           android:fontFamily="@font/indie_flower"
+           android:textColor="@color/black"
+           android:textSize="@dimen/mediumSize"
+           android:layout_margin="5dp"
+           android:text="3step"></Button>
+       <Button
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_weight="1"
+           android:background="@color/white"
+           android:fontFamily="@font/indie_flower"
+           android:textColor="@color/black"
+           android:textSize="@dimen/mediumSize"
+           android:layout_margin="5dp"
+           android:text="4Step"></Button>
+
+   </LinearLayout>
+</FrameLayout>

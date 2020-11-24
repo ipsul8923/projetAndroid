@@ -18,8 +18,9 @@
         android:layout_weight="1"
         android:background="@color/white"
         android:fontFamily="@font/indie_flower"
-        android:text="logo"
         android:textColor="@color/black"
+        android:text="logo"
+
         android:textSize="@dimen/mediumSize" />
 
     <Button

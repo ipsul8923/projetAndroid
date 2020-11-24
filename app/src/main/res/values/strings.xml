@@ -2,4 +2,13 @@
     <string name="app_name">LaTableDesGourmands</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="gerer_mes_tables">Gérer mes tables</string>
+    <string name="creer_mon_menu">Créer mon Menu</string>
+    <string name="creer_ma_table">Créer ma table</string>
+    <string name="gerer_mes_menus">Gérer mes Menus</string>
+    <string name="nombreDeCuisinier">Nombre de cuisiniers :</string>
+    <string name="nextStep">Passer à l\'étape suivante</string>
+    <string name="importMenu">Importer mon menu</string>
+    <string name="createMenu">Créer mon menu</string>
+    <string name="MaTable">Ma table des gourmands</string>
 </resources>

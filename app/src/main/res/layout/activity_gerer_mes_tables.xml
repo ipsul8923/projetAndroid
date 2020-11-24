@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cuisinier.gérerMesTables.gererMesTables">
+<TextView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/white"
+    android:fontFamily="@font/indie_flower"
+    android:text="@string/gerer_mes_tables"
+    android:textColor="@color/black"
+    android:textSize="@dimen/bigSize"
+    android:gravity="center_horizontal"
+    tools:ignore="MissingConstraints" />"
+    android:layout_height=""
+</androidx.constraintlayout.widget.ConstraintLayout>

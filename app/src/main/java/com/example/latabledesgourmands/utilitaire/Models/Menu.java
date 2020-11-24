@@ -32,4 +32,29 @@ public class Menu {
         this.monPlat=monPlat;
         this.monEntree=monEntree;
     }
+
+
+    public Entree getMonEntree() {
+        return monEntree;
+    }
+
+    public void setMonEntree(Entree monEntree) {
+        this.monEntree = monEntree;
+    }
+
+    public Plat getMonPlat() {
+        return monPlat;
+    }
+
+    public void setMonPlat(Plat monPlat) {
+        this.monPlat = monPlat;
+    }
+
+    public Dessert getMonDessert() {
+        return monDessert;
+    }
+
+    public void setMonDessert(Dessert monDessert) {
+        this.monDessert = monDessert;
+    }
 }

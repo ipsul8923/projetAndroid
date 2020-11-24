@@ -1,19 +1,41 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cuisinier.creerMaTable.importMenu">
+    tools:context=".cuisinier.creerMaTable.importMenu"
+    android:orientation="vertical">
+
 <TextView
-    android:layout_width="wrap_content"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:text="listeMenuImporte"
-    tools:ignore="MissingConstraints"></TextView>
+    android:text="@string/ListeDesMenu"
+    android:fontFamily="@font/indie_flower"
+    android:textColor="@color/black"
+    android:textSize="@dimen/bigSize"
+    android:gravity="center_horizontal"
+    >
+
+</TextView>
+    <fragment
+        android:id="@+id/menuRecyclerViewFragment"
+        android:name="com.example.latabledesgourmands.fragments.recyclerViewMenu.recyclerViewMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_recycler_view_menu" />
+
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
         android:text="@string/importMenu"
         android:onClick="onClickImportButton"
-        tools:ignore="MissingConstraints"></Button>
-</androidx.constraintlayout.widget.ConstraintLayout>
+        ></Button>
+
+
+</LinearLayout>

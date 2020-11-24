@@ -11,4 +11,5 @@
     <string name="importMenu">Importer mon menu</string>
     <string name="createMenu">Créer mon menu</string>
     <string name="MaTable">Ma table des gourmands</string>
+    <string name="ListeDesMenu">Liste des menus</string>
 </resources>

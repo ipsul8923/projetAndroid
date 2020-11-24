@@ -47,7 +47,7 @@
             android:textSize="@dimen/bigSize"
             android:layout_margin="5dp"
             android:gravity="center_horizontal"
-            android:text="FORMULAIRE PLACEHORLDER"></TextView>
+            android:text="FORMULAIRE DE LEVENEMENT PLACEHORLDER"></TextView>
 
         <Button
             android:id="@+id/nextStepButton"

@@ -25,10 +25,10 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:fontFamily="@font/indie_flower"
-            android:text="@string/creer_ma_table"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
+            android:text="@string/creer_ma_table"
             />
         <Button
             android:layout_width="match_parent"

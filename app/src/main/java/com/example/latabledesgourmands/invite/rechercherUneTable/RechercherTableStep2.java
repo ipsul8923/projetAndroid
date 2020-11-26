@@ -14,7 +14,7 @@ import com.example.latabledesgourmands.fragments.recyclerViewTable.tableAdapter;
 import com.example.latabledesgourmands.utilitaire.ItemClickSupport;
 import com.example.latabledesgourmands.utilitaire.Models.Dessert;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
-import com.example.latabledesgourmands.utilitaire.Models.Informations;
+import com.example.latabledesgourmands.utilitaire.Models.Evenement;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
 import com.example.latabledesgourmands.utilitaire.Models.Prix;
@@ -42,21 +42,20 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Entree entree1 = new Entree("entrée1");
         Plat plat1 = new Plat("plat1");
         Dessert dessert1 = new Dessert("dessert1");
-        Prix prix1 = new Prix(3.5f);
-        Informations informations1 = new Informations("Chez Michel");
-        Theme theme1 = new Theme("Pirate");
+        Menu menu1 = new Menu(entree1, plat1, dessert1);
+        //Prix prix1 = new Prix(3.5f);
+        Evenement evenement1 = new Evenement("Chez Michel");
 
-        Table table1 = new Table(entree1, plat1, dessert1, prix1, informations1, theme1);
+        Table table1 = new Table(menu1, evenement1);
         tableList.add(table1);
 
         Entree entree2 = new Entree("entrée2");
         Plat plat2 = new Plat("plat2");
         Dessert dessert2 = new Dessert("dessert2");
-        Prix prix2 = new Prix(4.5f);
-        Informations informations2 = new Informations("Chez Pierre, à Nancy");
-        Theme theme2 = new Theme("Pas de thème");
-
-        Table table2 = new Table(entree2, plat2, dessert2, prix2, informations2, theme2);
+        Menu menu2 = new Menu(entree2, plat2, dessert2);
+        //Prix prix2 = new Prix(3.5f);
+        Evenement evenement2 = new Evenement("Chez adrien à Lyon");
+        Table table2 = new Table(menu2, evenement2);
 
         tableList.add(table2);
     }

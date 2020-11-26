@@ -23,26 +23,26 @@ public class Menu implements Parcelable {
         this.monDessert = monDessert;
         this.isEntreePicked = true;
         this.isDessertPicked = true;
-        this.prixDuMenuParPersonne.setValeur(
-                  monEntree.getPrixParPersonne().getValeur()
-                + monPlat.getPrixParPersonne().getValeur()
-                + monDessert.getPrixParPersonne().getValeur());
-        this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre l'entree plat et dessert
-        if(monEntree.isVegetarien() && monPlat.isVegetarien() && monDessert.isVegetarien()){
-        this.vegetarien = true;}
-        else {
-            this.vegetarien=false;
-        }
-        if(monEntree.isVegan() && monPlat.isVegan() && monDessert.isVegan()){
-            this.vegan = true;}
-        else{
-            this.vegan=false;
-        }
-        if(monEntree.isSansGluten() && monPlat.isSansGluten() && monDessert.isSansGluten()){
-            this.sansGluten = true;}
-        else {
-            this.sansGluten=false;
-        }
+        //this.prixDuMenuParPersonne.setValeur(
+         //         monEntree.getPrixParPersonne().getValeur()
+         //       + monPlat.getPrixParPersonne().getValeur()
+         //       + monDessert.getPrixParPersonne().getValeur());
+        //this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre l'entree plat et dessert
+       // if(monEntree.isVegetarien() && monPlat.isVegetarien() && monDessert.isVegetarien()){
+        //this.vegetarien = true;}
+        //else {
+       //     this.vegetarien=false;
+       // }
+        //if(monEntree.isVegan() && monPlat.isVegan() && monDessert.isVegan()){
+        //    this.vegan = true;}
+       // else{
+         //   this.vegan=false;
+        //}
+        //if(monEntree.isSansGluten() && monPlat.isSansGluten() && monDessert.isSansGluten()){
+        //    this.sansGluten = true;}
+       // else {
+       //     this.sansGluten=false;
+        //}
     }
     public Menu(Plat monPlat, Dessert monDessert) {
         this.monPlat = monPlat;

@@ -13,6 +13,10 @@ public class Entree implements Parcelable {
     private boolean vegan;
     private boolean sansGluten;
 
+    public Entree(String nom) {
+        this.nom = nom;
+    }
+
     public Entree(String nom, String[] listeIngredients, String recette, Prix prixParPersonne, String difficulte, boolean vegetarien, boolean vegan, boolean sansGluten) {
         this.nom = nom;
         this.listeIngredients = listeIngredients;

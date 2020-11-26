@@ -13,6 +13,10 @@ public class Evenement implements Parcelable {
     boolean isAnimalOk;
     boolean isAlcoolOk;
 
+    public Evenement(String date) {
+        this.date = date;
+    }
+
     public Evenement(String date, String adresse, String heure, int nombreConvive, Theme theme, boolean isFumeurOk, boolean isAnimalOk, boolean isAlcoolOk) {
         this.date = date;
         this.adresse = adresse;

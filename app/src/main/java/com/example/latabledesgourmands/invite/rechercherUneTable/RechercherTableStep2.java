@@ -28,6 +28,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
     tableAdapter adapter;
     RecyclerView recyclerView;
     List<Table> tableList;
+    public Table tableSelected;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -77,6 +78,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         //Ici action au clic sur un item de la recycler VIEW
+                        tableSelected = tableList.get(position);
                     }
                 });
     }
@@ -87,6 +89,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
 
     private void startRechercherTableStep3Activity(){
         Intent intent = new Intent(this, RechercherTableStep3.class);
+        intent.putExtra("tableSelected", tableSelected);
         startActivity(intent);
     }
 

@@ -12,15 +12,21 @@ public class Table implements Parcelable {
     Theme monTheme;
 
     public Table(Entree monEntree, Plat monPlat, Dessert monDessert, Prix monPrix, Informations mesInformations, Theme monTheme){
-        this.monDessert=monDessert;
-        this.monPlat=monPlat;
-        this.monEntree=monEntree;
+        this.monDessert = monDessert;
+        this.monPlat = monPlat;
+        this.monEntree = monEntree;
         this.monPrix = monPrix;
         this.mesInformations = mesInformations;
         this.monTheme = monTheme;
     }
 
     protected Table(Parcel in) {
+        monEntree = in.readParcelable(Entree.class.getClassLoader());
+        monPlat = in.readParcelable(Plat.class.getClassLoader());
+        monDessert = in.readParcelable(Dessert.class.getClassLoader());
+        monPrix = in.readParcelable(Prix.class.getClassLoader());
+        mesInformations = in.readParcelable(Informations.class.getClassLoader());
+        monTheme = in.readParcelable(Theme.class.getClassLoader());
     }
 
     public static final Creator<Table> CREATOR = new Creator<Table>() {

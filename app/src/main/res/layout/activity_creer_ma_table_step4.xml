@@ -10,9 +10,11 @@
     android:background="@drawable/background"
     >
     <LinearLayout
+        android:id="@+id/bandeauHaut"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
         <fragment
             android:id="@+id/fragment"
             android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
@@ -38,16 +40,198 @@
         android:orientation="vertical"
         android:layout_alignParentBottom="true"
         >
-        <TextView
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:textSize="@dimen/bigSize"
-            android:layout_margin="5dp"
-            android:gravity="center_horizontal"
-            android:text="FRAGMENT AFFICHER UNE TABLE"></TextView>
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:background="@color/white"
+                        android:fontFamily="@font/indie_flower"
+                        android:gravity="center_horizontal"
+                        android:text="Cuisinier :"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/bigSize"></TextView>
+
+                <ImageView
+                    android:id="@+id/imageView3"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="1"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:text="Menu :"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize"></TextView>
+
+
+                <fragment
+                    android:id="@+id/fragment2"
+                    android:name="com.example.latabledesgourmands.fragments.menuFragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    tools:layout="@layout/fragment_menu" />
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Adresse"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"
+                    android:layout_weight="1"
+                    ></TextView>
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Date"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"
+                    android:layout_weight="1"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Heure"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"
+                    android:layout_weight="1"
+                    ></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Nombre de convives"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"></TextView>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Thème"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"></TextView>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Alcool"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"
+                    android:layout_weight="1"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Animaux"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"
+                    android:layout_weight="1"
+                    ></TextView>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Fumeur"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"
+                    android:layout_weight="1"
+                    ></TextView>
+            </LinearLayout>
+
+        </LinearLayout>
+
+
 
         <Button
             android:id="@+id/nextStepButton"

@@ -28,11 +28,11 @@ public class tableViewHolder extends RecyclerView.ViewHolder {
     }
 
     public void updateWithTableList(Table table){
-        nomEntree.setText(table.getMonEntree().getNom());
-        nomPlat.setText(table.getMonPlat().getNom());
-        nomDessert.setText(table.getMonDessert().getNom());
-        valeurPrix.setText(Float.toString(table.getMonPrix().getValeur()) + "€");
-        donneesInformations.setText(table.getMesInformations().getDonnees());
-        nomTheme.setText(table.getMonTheme().getNom());
+        nomEntree.setText(table.getMonMenu().getMonEntree().getNom());
+        nomPlat.setText(table.getMonMenu().getMonPlat().getNom());
+        nomDessert.setText(table.getMonMenu().getMonDessert().getNom());
+        valeurPrix.setText(Float.toString(table.getMonMenu().getPrixDuMenuParPersonne().getValeur()) + "€");
+        donneesInformations.setText(table.getMonEvenement().getDate());
+        nomTheme.setText(table.getMonEvenement().getTheme().getNom());
     }
 }

@@ -42,6 +42,7 @@ public class creerMaTableStep2bis extends AppCompatActivity {
 
     private void startCreerMaTableStep3Activity(){
         Intent intent = new Intent(this, creerMaTableStep3.class);
+        intent.putExtra("selectedMenu",selectedMenu);
         startActivity(intent);
     }
 

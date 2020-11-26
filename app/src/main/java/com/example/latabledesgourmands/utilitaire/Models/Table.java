@@ -4,29 +4,31 @@ import android.os.Parcel;
 import android.os.Parcelable;
 
 public class Table implements Parcelable {
-    Entree monEntree;
-    Plat monPlat;
-    Dessert monDessert;
-    Prix monPrix;
-    Informations mesInformations;
-    Theme monTheme;
+    Menu monMenu;
+    //Prix compris dans menu
+    Evenement monEvenement;
+    //Theme compris dans evenement
 
-    public Table(Entree monEntree, Plat monPlat, Dessert monDessert, Prix monPrix, Informations mesInformations, Theme monTheme){
-        this.monDessert = monDessert;
-        this.monPlat = monPlat;
-        this.monEntree = monEntree;
-        this.monPrix = monPrix;
-        this.mesInformations = mesInformations;
-        this.monTheme = monTheme;
+
+    public Table(Menu monMenu, Evenement monEvenement) {
+        this.monMenu = monMenu;
+        this.monEvenement = monEvenement;
     }
 
     protected Table(Parcel in) {
-        monEntree = in.readParcelable(Entree.class.getClassLoader());
-        monPlat = in.readParcelable(Plat.class.getClassLoader());
-        monDessert = in.readParcelable(Dessert.class.getClassLoader());
-        monPrix = in.readParcelable(Prix.class.getClassLoader());
-        mesInformations = in.readParcelable(Informations.class.getClassLoader());
-        monTheme = in.readParcelable(Theme.class.getClassLoader());
+        monMenu = in.readParcelable(Menu.class.getClassLoader());
+        monEvenement = in.readParcelable(Evenement.class.getClassLoader());
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeParcelable(monMenu, flags);
+        dest.writeParcelable(monEvenement, flags);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Table> CREATOR = new Creator<Table>() {
@@ -41,66 +43,19 @@ public class Table implements Parcelable {
         }
     };
 
-    public Entree getMonEntree() {
-        return monEntree;
+    public Evenement getMonEvenement() {
+        return monEvenement;
     }
 
-    public void setMonEntree(Entree monEntree) {
-        this.monEntree = monEntree;
+    public void setMonEvenement(Evenement monEvenement) {
+        this.monEvenement = monEvenement;
     }
 
-    public Plat getMonPlat() {
-        return monPlat;
+    public Menu getMonMenu() {
+        return monMenu;
     }
 
-    public void setMonPlat(Plat monPlat) {
-        this.monPlat = monPlat;
-    }
-
-    public Dessert getMonDessert() {
-        return monDessert;
-    }
-
-    public void setMonDessert(Dessert monDessert) {
-        this.monDessert = monDessert;
-    }
-
-    public Prix getMonPrix() {
-        return monPrix;
-    }
-
-    public void setMonPrix(Prix monPrix) {
-        this.monPrix = monPrix;
-    }
-
-    public Informations getMesInformations() {
-        return mesInformations;
-    }
-
-    public void setMesInformations(Informations mesInformations) {
-        this.mesInformations = mesInformations;
-    }
-
-    public Theme getMonTheme() {
-        return monTheme;
-    }
-
-    public void setMonTheme(Theme monTheme) {
-        this.monTheme = monTheme;
-    }
-
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(String.valueOf(monEntree));
-        dest.writeString(String.valueOf(monPlat));
-        dest.writeString(String.valueOf(monDessert));
-        dest.writeString(String.valueOf(monPrix));
-        dest.writeString(String.valueOf(mesInformations));
-        dest.writeString(String.valueOf(monTheme));
+    public void setMonMenu(Menu monMenu) {
+        this.monMenu = monMenu;
     }
 }

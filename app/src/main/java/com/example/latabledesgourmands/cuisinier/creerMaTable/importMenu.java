@@ -89,8 +89,8 @@ public class importMenu extends AppCompatActivity {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         //Ici action au clic sur un item de la recycler VIEW
-
                         selectedMenu=menuList.get(position);
+                        startCreerMaTableStep2bisActivity();
                     }
                 });
     }

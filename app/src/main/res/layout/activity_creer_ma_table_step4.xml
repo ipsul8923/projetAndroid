@@ -47,7 +47,7 @@
             android:textSize="@dimen/bigSize"
             android:layout_margin="5dp"
             android:gravity="center_horizontal"
-            android:text="RECAPITULATIF DE MA TABLE PLACERHOLDER"></TextView>
+            android:text="FRAGMENT AFFICHER UNE TABLE"></TextView>
 
         <Button
             android:id="@+id/nextStepButton"

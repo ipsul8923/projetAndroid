@@ -8,7 +8,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Debug;
+import android.util.Log;
 import android.view.View;
+import android.widget.LinearLayout;
 
 import com.example.latabledesgourmands.R;
 import com.example.latabledesgourmands.fragments.recyclerViewMenu.menuAdapter;
@@ -25,15 +28,19 @@ public class importMenu extends AppCompatActivity {
     menuAdapter adapter;
     RecyclerView recyclerView;
     List<Menu> menuList;
+    public Menu selectedMenu;
+    LinearLayout backgroundRecyclerViewItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        menuList = new ArrayList<>();
         setContentView(R.layout.activity_import_menu);
-        setUpRecyclerViewFragment();
+        menuList = new ArrayList<>();
         manualMenuCreationDebugAim();
+        setUpRecyclerViewFragment();
+
 
     }
+
 
     private void manualMenuCreationDebugAim(){
         Entree entree1test = new Entree("apero1");
@@ -82,12 +89,15 @@ public class importMenu extends AppCompatActivity {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         //Ici action au clic sur un item de la recycler VIEW
+
+                        selectedMenu=menuList.get(position);
                     }
                 });
     }
 
     private void startCreerMaTableStep2bisActivity(){
         Intent intent = new Intent(this, creerMaTableStep2bis.class);
+        intent.putExtra("selectedMenu",selectedMenu);
         startActivity(intent);
     }
     public void onClickImportButton(View view) {

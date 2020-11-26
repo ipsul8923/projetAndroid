@@ -41,6 +41,16 @@
             android:layout_margin="5dp"
             android:text="@string/importMenu"
             ></Button>
+
+        <fragment
+            android:id="@+id/fragment2"
+            android:name="com.example.latabledesgourmands.fragments.menuFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_menu" />
+
+
+
     </LinearLayout>
 
     <LinearLayout
@@ -68,4 +78,6 @@
             android:layout_height="wrap_content"
             tools:layout="@layout/fragment_bandeau_haut" />
     </LinearLayout>
+
+
 </RelativeLayout>

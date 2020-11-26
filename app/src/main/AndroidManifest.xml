@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LaTableDesGourmands">
-        <activity android:name=".cuisinier.creerMaTable.creerMaTableStep4"></activity>
+        <activity android:name=".cuisinier.creerMaTable.creerMaTableStep4"/>
         <activity android:name=".cuisinier.creerMaTable.creerMaTableStep2bis" />
         <activity android:name=".cuisinier.creerMaTable.importMenu" />
         <activity android:name=".cuisinier.creerMaTable.creerMaTableStep3" />
@@ -19,7 +19,13 @@
         <activity android:name=".cuisinier.créerMonMenu.creerMonMenu" />
         <activity android:name=".cuisinier.creerMaTable.creerMaTable" />
         <activity android:name=".cuisinier.acceuilCuisinier" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".invite.rechercherUneTable.RechercherTableStep3"/>
+        <activity android:name=".invite.rechercherUneTable.RechercherTableStep2"/>
+        <activity android:name=".invite.rechercherUneTable.RechercherTableStep1"/>
+        <activity android:name=".invite.gererMesTables.GererMesTablesInvite"/>
+        <activity android:name=".invite.AccueilInvite"/>
+        <activity android:name=".demarrageapplication.ChoixCuisinierInvite"/>
+        <activity android:name=".demarrageapplication.AcceuilApplication">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

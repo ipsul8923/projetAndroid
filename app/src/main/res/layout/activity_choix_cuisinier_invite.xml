@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".demarrageapplication.ChoixCuisinierInvite"
+    android:background="@drawable/background">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="200dp">
+
+        <Button
+            android:id="@+id/cuisinierButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/choixCuisinier"
+            android:textColor="@color/black"
+            android:onClick="onClickCuisinierButton" />
+
+        <Button
+            android:id="@+id/inviteButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="@string/choixInvite"
+            android:textColor="@color/black"
+            android:onClick="onClickinviteButton" />
+
+    </LinearLayout>
+
+</RelativeLayout>

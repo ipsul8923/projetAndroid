@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".invite.rechercherUneTable.RechercherTableStep2"
+    android:orientation="vertical"
+    android:background="@drawable/background">
+
+    <fragment
+        android:id="@+id/fragment"
+        android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_bandeau_haut" />
+    <TextView
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:fontFamily="@font/indie_flower"
+        android:text="@string/MaTable"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        />
+</LinearLayout>

@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/nomEntree"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER ENTREE" />
+
+    <TextView
+        android:id="@+id/nomPlat"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER PLAT" />
+
+    <TextView
+        android:id="@+id/nomDessert"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER DESSERT" />
+
+    <TextView
+        android:id="@+id/valeurPrix"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER PRIX" />
+
+    <TextView
+        android:id="@+id/donneesInformations"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER INFORMATIONS" />
+
+    <TextView
+        android:id="@+id/nomTheme"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER THEME" />
+
+    <Button
+        android:id="@+id/choixTable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/choix"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:onClick="onClickChoisirTableButton"/>
+
+</LinearLayout>

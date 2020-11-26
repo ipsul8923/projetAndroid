@@ -12,4 +12,10 @@
     <string name="createMenu">Créer mon menu</string>
     <string name="MaTable">Ma table des gourmands</string>
     <string name="ListeDesMenu">Liste des menus</string>
+    <string name="rechercherTable">Rechercher une table</string>
+    <string name="connexionInscription">Se connecter / S\'inscrire</string>
+    <string name="tdg">La table des gourmands</string>
+    <string name="choixCuisinier">Je suis cuisinier</string>
+    <string name="choixInvite">Je suis invité</string>
+    <string name="choix">Choisir</string>
 </resources>

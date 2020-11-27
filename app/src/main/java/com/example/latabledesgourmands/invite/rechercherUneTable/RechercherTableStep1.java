@@ -37,7 +37,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
                         new Plat(null),
                         new Dessert(null)
                 ),
-                new Evenement("date", null, null, null, null, null, null, null, null)
+                new Evenement(null, null, null, 0, 0, null, null, null, null)
         );
     }
 
@@ -61,10 +61,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void dateFilter(View view) {
-        isDateInputVisible = !isDateInputVisible;
-        upddateVisibility();
-    }
+
 
     private void upddateVisibility(){
         if(isDateInputVisible){
@@ -73,5 +70,11 @@ public class RechercherTableStep1 extends AppCompatActivity {
         else{
             dateInput.setVisibility(View.INVISIBLE);
         }
+    }
+
+    public void onClickDataFilter(View view) {
+        isDateInputVisible = !isDateInputVisible;
+        view.setSelected(!view.isSelected());
+        upddateVisibility();
     }
 }

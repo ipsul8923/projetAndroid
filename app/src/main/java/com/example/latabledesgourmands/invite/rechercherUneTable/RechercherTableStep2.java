@@ -47,19 +47,6 @@ public class RechercherTableStep2 extends AppCompatActivity {
             }
         }
         manualTableCreationDebugAim();
-        //TEST
-        monFiltre= new Table(
-                        new Menu(
-                            new Entree(null),
-                            new Plat(null),
-                            new Dessert(null)
-                                ),
-                        new Evenement(
-                                "12-12-2020", null, null, 0,
-                                0, null, null, null,
-                                null
-                                    )
-                            );
         setUpRecyclerViewFragment();
     }
 
@@ -106,7 +93,9 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(filtre.getMonEvenement().getDate() != null){
                 Log.i("try",  " date : " + listeComplete.get(i).getMonEvenement().getDate()
                         + " VS filtre : " +  filtre.getMonEvenement().getDate());
-                if( listeComplete.get(i).getMonEvenement().getDate() == filtre.getMonEvenement().getDate() ){
+                Log.i("try", "bool == : " + (listeComplete.get(i).getMonEvenement().getDate() == filtre.getMonEvenement().getDate()));
+                Log.i("try", "bool equals : " + (listeComplete.get(i).getMonEvenement().getDate().equals(filtre.getMonEvenement().getDate())));
+                if( listeComplete.get(i).getMonEvenement().getDate().equals(filtre.getMonEvenement().getDate())){
                     sortedTableList.add(listeComplete.get(i));
                 }
             }

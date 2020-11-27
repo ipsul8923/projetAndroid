@@ -65,9 +65,6 @@ public class creerMaTable extends AppCompatActivity {
         view.setSelected(!view.isSelected());
         twoCooker.setSelected(false);
         threeCooker.setSelected(false);
-        Log.i("TEST", "state selected : " + view.isSelected());
-        Log.i("TEST", "state selected : " + twoCooker.isSelected());
-        Log.i("TEST", "state selected : " + threeCooker.isSelected());
     }
 
     public void onClickButtonTwoCooker(View view) {

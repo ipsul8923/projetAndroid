@@ -66,18 +66,9 @@ public class creerMaTableStep4 extends AppCompatActivity {
         adresse.setText(table.getMonEvenement().getAdresse());
         nombreConvives.setText(Integer.toString(table.getMonEvenement().getNombreConvive()) + " convives");
         nomTheme.setText(table.getMonEvenement().getTheme().getNom());
-        animaux.setEnabled(table.getMonEvenement().isAnimalOk());
-        Log.i("TESTT","setter " + table.getMonEvenement().isAnimalOk() );
-        Log.i("TESTT","state " + animaux.isEnabled() );
-        Log.i("TESTT","state " + animaux.getBackgroundTintList() );
-        fumeur.setEnabled(table.getMonEvenement().isFumeurOk());
-        Log.i("TESTT","" + table.getMonEvenement().isFumeurOk() );
-        Log.i("TESTT","state " + fumeur.isEnabled() );
-        alcool.setEnabled(table.getMonEvenement().isAlcoolOk());
-        Log.i("TESTT","" + table.getMonEvenement().isAlcoolOk() );
-        Log.i("TESTT","state " + alcool.isEnabled() );
-
-
+        animaux.setEnabled(table.getMonEvenement().getAnimalOk());
+        fumeur.setEnabled(table.getMonEvenement().getFumeurOk());
+        alcool.setEnabled(table.getMonEvenement().getAlcoolOk());
     }
 
 

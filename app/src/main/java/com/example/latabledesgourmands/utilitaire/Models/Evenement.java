@@ -10,15 +10,15 @@ public class Evenement implements Parcelable {
     int nombreConvive;
     int nombreCuisinier;
     Theme  theme;
-    boolean isFumeurOk;
-    boolean isAnimalOk;
-    boolean isAlcoolOk;
+    Boolean isFumeurOk;
+    Boolean isAnimalOk;
+    Boolean isAlcoolOk;
 
     public Evenement(String date) {
         this.date = date;
     }
 
-    public Evenement(String date, String adresse, String heure, int nombreConvive,int nombreCuisinier, Theme theme, boolean isFumeurOk, boolean isAnimalOk, boolean isAlcoolOk) {
+    public Evenement(String date, String adresse, String heure, int nombreConvive,int nombreCuisinier, Theme theme, Boolean isFumeurOk, Boolean isAnimalOk, Boolean isAlcoolOk) {
         this.date = date;
         this.adresse = adresse;
         this.heure = heure;
@@ -41,6 +41,24 @@ public class Evenement implements Parcelable {
         isFumeurOk = in.readByte() != 0;
         isAnimalOk = in.readByte() != 0;
         isAlcoolOk = in.readByte() != 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeString(date);
+        dest.writeString(adresse);
+        dest.writeString(heure);
+        dest.writeInt(nombreConvive);
+        dest.writeInt(nombreCuisinier);
+        dest.writeParcelable(theme, flags);
+        dest.writeByte((byte) (isFumeurOk == null ? 0 : isFumeurOk ? 1 : 2));
+        dest.writeByte((byte) (isAnimalOk == null ? 0 : isAnimalOk ? 1 : 2));
+        dest.writeByte((byte) (isAlcoolOk == null ? 0 : isAlcoolOk ? 1 : 2));
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
     }
 
     public static final Creator<Evenement> CREATOR = new Creator<Evenement>() {
@@ -103,46 +121,29 @@ public class Evenement implements Parcelable {
         this.theme = theme;
     }
 
-    public boolean isFumeurOk() {
+    public Boolean getFumeurOk() {
         return isFumeurOk;
     }
 
-    public void setFumeurOk(boolean fumeurOk) {
+    public void setFumeurOk(Boolean fumeurOk) {
         isFumeurOk = fumeurOk;
     }
 
-    public boolean isAnimalOk() {
+    public Boolean getAnimalOk() {
         return isAnimalOk;
     }
 
-    public void setAnimalOk(boolean animalOk) {
+    public void setAnimalOk(Boolean animalOk) {
         isAnimalOk = animalOk;
     }
 
-    public boolean isAlcoolOk() {
+    public Boolean getAlcoolOk() {
         return isAlcoolOk;
     }
 
-    public void setAlcoolOk(boolean alcoolOk) {
+    public void setAlcoolOk(Boolean alcoolOk) {
         isAlcoolOk = alcoolOk;
     }
 
 
-    @Override
-    public int describeContents() {
-        return 0;
-    }
-
-    @Override
-    public void writeToParcel(Parcel dest, int flags) {
-        dest.writeString(date);
-        dest.writeString(adresse);
-        dest.writeString(heure);
-        dest.writeInt(nombreConvive);
-        dest.writeInt(nombreCuisinier);
-        dest.writeParcelable(theme, flags);
-        dest.writeByte((byte) (isFumeurOk ? 1 : 0));
-        dest.writeByte((byte) (isAnimalOk ? 1 : 0));
-        dest.writeByte((byte) (isAlcoolOk ? 1 : 0));
-    }
 }

@@ -2,7 +2,9 @@ package com.example.latabledesgourmands.invite.rechercherUneTable;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -28,15 +30,37 @@ public class RechercherTableStep2 extends AppCompatActivity {
     tableAdapter adapter;
     RecyclerView recyclerView;
     List<Table> tableList;
+    List<Table> sortedTableList;
     public Table tableSelected;
+    Table monFiltre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         tableList = new ArrayList<>();
+        sortedTableList = new ArrayList<>();
         setContentView(R.layout.activity_recherche_table_step2);
-        setUpRecyclerViewFragment();
+        Intent intent = getIntent();
+        if (intent != null) {
+            if (intent.hasExtra("monFiltre")) {
+                monFiltre = intent.getParcelableExtra("monFiltre");
+            }
+        }
         manualTableCreationDebugAim();
+        //TEST
+        monFiltre= new Table(
+                        new Menu(
+                            new Entree(null),
+                            new Plat(null),
+                            new Dessert(null)
+                                ),
+                        new Evenement(
+                                "12-12-2020", null, null, 0,
+                                0, null, null, null,
+                                null
+                                    )
+                            );
+        setUpRecyclerViewFragment();
     }
 
     private void manualTableCreationDebugAim() {
@@ -45,31 +69,51 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat1 = new Plat("plat1");
         Dessert dessert1 = new Dessert("dessert1");
         Menu menu1 = new Menu(entree1, plat1, dessert1);
-        //Prix prix1 = new Prix(3.5f);
-        Evenement evenement1 = new Evenement("Chez Michel");
+        Evenement evenement1 = new Evenement("12-12-2020");
+        evenement1.setAdresse("Chez Michel");
         Table table1 = new Table(menu1, evenement1);
-        tableList.add(table1);
 
         // Table 2
         Entree entree2 = new Entree("entrée2");
         Plat plat2 = new Plat("plat2");
         Dessert dessert2 = new Dessert("dessert2");
         Menu menu2 = new Menu(entree2, plat2, dessert2);
-        //Prix prix2 = new Prix(3.5f);
-        Evenement evenement2 = new Evenement("Chez adrien à Lyon");
+        Evenement evenement2 = new Evenement("12-12-2020");
+        evenement2.setAdresse("Lyon");
         Table table2 = new Table(menu2, evenement2);
-        tableList.add(table2);
 
         // Table 3
         Entree entree3 = new Entree("entrée3");
         Plat plat3 = new Plat("plat3");
         Dessert dessert3 = new Dessert("dessert3");
         Menu menu3 = new Menu(entree3, plat3, dessert3);
-        //Prix prix3 = new Prix(6.5f);
-        Evenement evenement3 = new Evenement("Chez Pierre à Marseilles");
+        Evenement evenement3 = new Evenement("13-12-2020");
+        evenement1.setAdresse("Chez doume, à Marseille");
         Table table3 = new Table(menu3, evenement3);
+
+        //private void loadTableListe(){
+        tableList.add(table1);
+        tableList.add(table2);
         tableList.add(table3);
+        //}
     }
+
+    private List<Table> getSortedTableList (List<Table> listeComplete, Table filtre){
+        List <Table> sortedTableList = new ArrayList<>();
+
+        for(int i=0; i<listeComplete.size(); i++){
+            Log.i("try", " filtre : " + filtre.getMonEvenement().getDate() );
+            if(filtre.getMonEvenement().getDate() != null){
+                Log.i("try",  " date : " + listeComplete.get(i).getMonEvenement().getDate()
+                        + " VS filtre : " +  filtre.getMonEvenement().getDate());
+                if( listeComplete.get(i).getMonEvenement().getDate() == filtre.getMonEvenement().getDate() ){
+                    sortedTableList.add(listeComplete.get(i));
+                }
+            }
+        }
+    return sortedTableList;
+    }
+
     private void setUpRecyclerViewFragment(){
         configureRecyclerView();
         configureOnClickRecyclerView();
@@ -77,9 +121,15 @@ public class RechercherTableStep2 extends AppCompatActivity {
 
     private void configureRecyclerView() {
         recyclerView = findViewById(R.id.tableRecyclerView);
-        adapter = new tableAdapter(tableList);
+        sortedTableList=getSortedTableList(tableList, monFiltre);
+        if(sortedTableList.size() != 0){
+        adapter = new tableAdapter(sortedTableList);
+            Log.i("TEST", "liste des tables filtrées " + sortedTableList.size() + sortedTableList.get(0));
         recyclerView.setAdapter(adapter);
-        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));}
+        else{
+            Toast.makeText(getApplicationContext(), "Aucune table ne correspond à vos critères", Toast.LENGTH_LONG).show();
+        }
     }
     private void configureOnClickRecyclerView() {
 

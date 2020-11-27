@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".invite.rechercherUneTable.RechercherTableStep2"
+    tools:context=".invite.rechercherUneTable.RechercherTableStep3"
     android:orientation="vertical"
     android:background="@drawable/background">
 
@@ -25,4 +25,21 @@
         android:textSize="@dimen/bigSize"
         android:gravity="center_horizontal"
         />
+    <fragment
+        android:id="@+id/fragment2"
+        android:name="com.example.latabledesgourmands.fragments.tableFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_table"
+        android:layout_margin="@dimen/mediumSize"/>
+
+    <Button
+        android:id="@+id/validerTableButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/validerTable"
+        android:textColor="@color/black"
+        android:layout_gravity="center"
+        android:onClick="onClickValiderBoutton"/>
+
 </LinearLayout>

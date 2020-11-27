@@ -18,4 +18,5 @@
     <string name="choixCuisinier">Je suis cuisinier</string>
     <string name="choixInvite">Je suis invité</string>
     <string name="choix">Choisir</string>
+    <string name="validerTable">Valider la table</string>
 </resources>

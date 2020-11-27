@@ -4,8 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:background="@color/lightYellow"
-    android:layout_margin="@dimen/mediumSize">
+    android:layout_margin="@dimen/mediumSize"
+    android:background="@color/yellow">
     <TextView
         android:id="@+id/nomEntreeTable"
         android:layout_width="match_parent"
@@ -65,6 +65,5 @@
         android:textSize="@dimen/bigSize"
         android:gravity="center_horizontal"
         android:text="TABLE PLACEHOLDER THEME" />
-
 
 </LinearLayout>

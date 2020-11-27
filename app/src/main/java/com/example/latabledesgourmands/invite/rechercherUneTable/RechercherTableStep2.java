@@ -29,6 +29,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
     RecyclerView recyclerView;
     List<Table> tableList;
     public Table tableSelected;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,16 +40,17 @@ public class RechercherTableStep2 extends AppCompatActivity {
     }
 
     private void manualTableCreationDebugAim() {
+        // Table 1
         Entree entree1 = new Entree("entrée1");
         Plat plat1 = new Plat("plat1");
         Dessert dessert1 = new Dessert("dessert1");
         Menu menu1 = new Menu(entree1, plat1, dessert1);
         //Prix prix1 = new Prix(3.5f);
         Evenement evenement1 = new Evenement("Chez Michel");
-
         Table table1 = new Table(menu1, evenement1);
         tableList.add(table1);
 
+        // Table 2
         Entree entree2 = new Entree("entrée2");
         Plat plat2 = new Plat("plat2");
         Dessert dessert2 = new Dessert("dessert2");
@@ -56,8 +58,17 @@ public class RechercherTableStep2 extends AppCompatActivity {
         //Prix prix2 = new Prix(3.5f);
         Evenement evenement2 = new Evenement("Chez adrien à Lyon");
         Table table2 = new Table(menu2, evenement2);
-
         tableList.add(table2);
+
+        // Table 3
+        Entree entree3 = new Entree("entrée3");
+        Plat plat3 = new Plat("plat3");
+        Dessert dessert3 = new Dessert("dessert3");
+        Menu menu3 = new Menu(entree3, plat3, dessert3);
+        //Prix prix3 = new Prix(6.5f);
+        Evenement evenement3 = new Evenement("Chez Pierre à Marseilles");
+        Table table3 = new Table(menu3, evenement3);
+        tableList.add(table3);
     }
     private void setUpRecyclerViewFragment(){
         configureRecyclerView();
@@ -78,6 +89,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         //Ici action au clic sur un item de la recycler VIEW
                         tableSelected = tableList.get(position);
+                        startRechercherTableStep3Activity();
                     }
                 });
     }

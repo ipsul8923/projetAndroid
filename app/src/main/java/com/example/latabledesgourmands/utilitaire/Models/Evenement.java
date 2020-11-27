@@ -8,6 +8,7 @@ public class Evenement implements Parcelable {
     String adresse;
     String heure;
     int nombreConvive;
+    int nombreCuisinier;
     Theme  theme;
     boolean isFumeurOk;
     boolean isAnimalOk;
@@ -17,11 +18,12 @@ public class Evenement implements Parcelable {
         this.date = date;
     }
 
-    public Evenement(String date, String adresse, String heure, int nombreConvive, Theme theme, boolean isFumeurOk, boolean isAnimalOk, boolean isAlcoolOk) {
+    public Evenement(String date, String adresse, String heure, int nombreConvive,int nombreCuisinier, Theme theme, boolean isFumeurOk, boolean isAnimalOk, boolean isAlcoolOk) {
         this.date = date;
         this.adresse = adresse;
         this.heure = heure;
         this.nombreConvive = nombreConvive;
+        this.nombreCuisinier=nombreCuisinier;
         this.theme = theme;
         this.isFumeurOk = isFumeurOk;
         this.isAnimalOk = isAnimalOk;
@@ -34,6 +36,7 @@ public class Evenement implements Parcelable {
         adresse = in.readString();
         heure = in.readString();
         nombreConvive = in.readInt();
+        nombreCuisinier = in.readInt();
         theme = in.readParcelable(Theme.class.getClassLoader());
         isFumeurOk = in.readByte() != 0;
         isAnimalOk = in.readByte() != 0;
@@ -84,6 +87,14 @@ public class Evenement implements Parcelable {
         this.nombreConvive = nombreConvive;
     }
 
+    public int getNombreCuisinier() {
+        return nombreCuisinier;
+    }
+
+    public void setNombreCuisinier(int nombreCuisinier) {
+        this.nombreCuisinier = nombreCuisinier;
+    }
+
     public Theme getTheme() {
         return theme;
     }
@@ -128,6 +139,7 @@ public class Evenement implements Parcelable {
         dest.writeString(adresse);
         dest.writeString(heure);
         dest.writeInt(nombreConvive);
+        dest.writeInt(nombreCuisinier);
         dest.writeParcelable(theme, flags);
         dest.writeByte((byte) (isFumeurOk ? 1 : 0));
         dest.writeByte((byte) (isAnimalOk ? 1 : 0));

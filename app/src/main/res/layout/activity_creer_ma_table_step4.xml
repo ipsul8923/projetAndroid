@@ -62,12 +62,17 @@
                         android:textColor="@color/black"
                         android:textSize="@dimen/bigSize"></TextView>
 
-                <ImageView
-                    android:id="@+id/imageView3"
-                    android:layout_width="50dp"
-                    android:layout_height="50dp"
-                    android:layout_weight="1"
-                    tools:srcCompat="@tools:sample/avatars" />
+                <TextView
+                    android:id="@+id/cookNumerPrint"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="cook number"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"></TextView>
             </LinearLayout>
 
             <TextView
@@ -94,6 +99,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/adressePrint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -107,7 +113,7 @@
                     ></TextView>
 
                 <TextView
-                    android:id="@+id/textView2"
+                    android:id="@+id/datePrint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -121,6 +127,7 @@
                     ></TextView>
 
                 <TextView
+                    android:id="@+id/hourPrint"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
@@ -155,6 +162,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/nombreConvivePrint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
@@ -173,6 +181,7 @@
                 android:orientation="horizontal">
 
                 <TextView
+                    android:id="@+id/nomThemePrint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
@@ -189,44 +198,47 @@
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
 
-                <TextView
+                <Button
+                    android:id="@+id/alcoolPrint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
-                    android:background="@color/white"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Alcool"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"
+                    android:backgroundTint="@color/checkbox_color"
+                    android:textSize="@dimen/mediumSize"
                     android:layout_weight="1"
-                    ></TextView>
+                    ></Button>
 
-                <TextView
+                <Button
+                    android:id="@+id/animauxPrint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
-                    android:background="@color/white"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Animaux"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"
+                    android:backgroundTint="@color/checkbox_color"
+                    android:textSize="@dimen/mediumSize"
                     android:layout_weight="1"
-                    ></TextView>
+                    ></Button>
 
-                <TextView
+                <Button
+                    android:id="@+id/fumeurPrint"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="5dp"
-                    android:background="@color/white"
+                    android:backgroundTint="@color/checkbox_color"
+                    android:textColor="@color/black"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Fumeur"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"
+                    android:textSize="@dimen/mediumSize"
                     android:layout_weight="1"
-                    ></TextView>
+                    ></Button>
             </LinearLayout>
 
         </LinearLayout>

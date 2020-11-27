@@ -12,6 +12,7 @@
     <color name="orange">#F78B2D</color>
     <color name="green">#7AA802</color>
     <color name="lightYellow">#C7DB00</color>
+    <color name="lightWhite">#4DFFFFFF</color>
 
 
 </resources>

@@ -20,6 +20,7 @@ import com.example.latabledesgourmands.utilitaire.Models.Dessert;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
+import com.example.latabledesgourmands.utilitaire.Models.Table;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,8 +29,8 @@ public class importMenu extends AppCompatActivity {
     menuAdapter adapter;
     RecyclerView recyclerView;
     List<Menu> menuList;
+    Table maTable;
     public Menu selectedMenu;
-    LinearLayout backgroundRecyclerViewItem;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +38,12 @@ public class importMenu extends AppCompatActivity {
         menuList = new ArrayList<>();
         manualMenuCreationDebugAim();
         setUpRecyclerViewFragment();
-
+        Intent intent = getIntent();
+        if (intent != null) {
+            if (intent.hasExtra("maTable")) {
+                maTable = intent.getParcelableExtra("maTable");
+            }
+        }
 
     }
 
@@ -90,6 +96,7 @@ public class importMenu extends AppCompatActivity {
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
                         //Ici action au clic sur un item de la recycler VIEW
                         selectedMenu=menuList.get(position);
+                        maTable.setMonMenu(selectedMenu);
                         startCreerMaTableStep2bisActivity();
                     }
                 });
@@ -97,7 +104,7 @@ public class importMenu extends AppCompatActivity {
 
     private void startCreerMaTableStep2bisActivity(){
         Intent intent = new Intent(this, creerMaTableStep2bis.class);
-        intent.putExtra("selectedMenu",selectedMenu);
+        intent.putExtra("maTable",maTable);
         startActivity(intent);
     }
     public void onClickImportButton(View view) {

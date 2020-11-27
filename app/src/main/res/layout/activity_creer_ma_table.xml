@@ -54,45 +54,44 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal">
         <Button
+            android:id="@+id/buttonOneCookerTable"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
+            android:backgroundTint="@color/color_button"
             android:fontFamily="@font/indie_flower"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:layout_margin="5dp"
+            android:onClick="onClickButtonOneCooker"
             android:text="1"></Button>
             <Button
+                android:id="@+id/buttonTwoCookerTable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/white"
+                android:backgroundTint="@color/color_button"
                 android:fontFamily="@font/indie_flower"
                 android:textColor="@color/black"
                 android:textSize="@dimen/bigSize"
                 android:layout_margin="5dp"
-                android:text="2"></Button>
+                android:text="2"
+                android:onClick="onClickButtonTwoCooker"
+                ></Button>
             <Button
+                android:id="@+id/buttonThreeCookerTable"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
-                android:background="@color/white"
+                android:backgroundTint="@color/color_button"
                 android:fontFamily="@font/indie_flower"
                 android:textColor="@color/black"
                 android:textSize="@dimen/bigSize"
                 android:layout_margin="5dp"
-                android:text="2"></Button>
+                android:text="3"
+                android:onClick="onClickButtonThreeCooker"
+                ></Button>
         </LinearLayout>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:textSize="@dimen/bigSize"
-            android:layout_margin="5dp"
-            android:text="Autres :"></EditText>
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

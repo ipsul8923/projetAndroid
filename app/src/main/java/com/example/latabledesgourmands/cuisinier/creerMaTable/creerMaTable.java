@@ -45,7 +45,7 @@ public class creerMaTable extends AppCompatActivity {
                         new Plat("placeholder"),
                         new Dessert("placeholder")
                 ),
-                new Evenement("date", "adresse", "heure", 0, 0, new Theme("theme"),false, false, false)
+                new Evenement("date", "adresse", "heure", 6, 1, new Theme("theme"),false, false, false)
         );
     }
     private void startCreerMaTableStep2Activity(){

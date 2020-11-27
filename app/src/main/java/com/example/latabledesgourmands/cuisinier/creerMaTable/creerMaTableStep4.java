@@ -64,7 +64,7 @@ public class creerMaTableStep4 extends AppCompatActivity {
         date.setText(table.getMonEvenement().getDate());
         heure.setText(table.getMonEvenement().getHeure());
         adresse.setText(table.getMonEvenement().getAdresse());
-        nombreConvives.setText(Integer.toString(table.getMonEvenement().getNombreConvive()));
+        nombreConvives.setText(Integer.toString(table.getMonEvenement().getNombreConvive()) + " convives");
         nomTheme.setText(table.getMonEvenement().getTheme().getNom());
         animaux.setEnabled(table.getMonEvenement().isAnimalOk());
         Log.i("TESTT","setter " + table.getMonEvenement().isAnimalOk() );

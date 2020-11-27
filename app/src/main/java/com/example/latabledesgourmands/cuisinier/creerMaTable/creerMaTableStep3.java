@@ -56,7 +56,7 @@ public class creerMaTableStep3 extends AppCompatActivity {
         maTable.getMonEvenement().setDate((String) date.getText().toString());
         maTable.getMonEvenement().setHeure(heure.getText().toString());
         maTable.getMonEvenement().setAdresse(adresse.getText().toString());
-        maTable.getMonEvenement().setNombreConvive(Integer.valueOf(nombreConvives.getInputType()));
+        maTable.getMonEvenement().setNombreConvive(Integer.parseInt(nombreConvives.getText().toString()));
         maTable.getMonEvenement().getTheme().setNom(nomTheme.getText().toString());
         maTable.getMonEvenement().setAlcoolOk(alcool.isChecked());
         maTable.getMonEvenement().setFumeurOk(fumeur.isChecked());

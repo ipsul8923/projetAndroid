@@ -38,9 +38,12 @@ public class Evenement implements Parcelable {
         nombreConvive = in.readInt();
         nombreCuisinier = in.readInt();
         theme = in.readParcelable(Theme.class.getClassLoader());
-        isFumeurOk = in.readByte() != 0;
-        isAnimalOk = in.readByte() != 0;
-        isAlcoolOk = in.readByte() != 0;
+        byte tmpIsFumeurOk = in.readByte();
+        isFumeurOk = tmpIsFumeurOk == 0 ? null : tmpIsFumeurOk == 1;
+        byte tmpIsAnimalOk = in.readByte();
+        isAnimalOk = tmpIsAnimalOk == 0 ? null : tmpIsAnimalOk == 1;
+        byte tmpIsAlcoolOk = in.readByte();
+        isAlcoolOk = tmpIsAlcoolOk == 0 ? null : tmpIsAlcoolOk == 1;
     }
 
     @Override
@@ -125,7 +128,7 @@ public class Evenement implements Parcelable {
         return isFumeurOk;
     }
 
-    public void setFumeurOk(Boolean fumeurOk) {
+    public void setFumeurOk(boolean fumeurOk) {
         isFumeurOk = fumeurOk;
     }
 
@@ -133,7 +136,8 @@ public class Evenement implements Parcelable {
         return isAnimalOk;
     }
 
-    public void setAnimalOk(Boolean animalOk) {
+
+    public void setAnimalOk(boolean animalOk) {
         isAnimalOk = animalOk;
     }
 
@@ -141,7 +145,8 @@ public class Evenement implements Parcelable {
         return isAlcoolOk;
     }
 
-    public void setAlcoolOk(Boolean alcoolOk) {
+
+    public void setAlcoolOk(boolean alcoolOk) {
         isAlcoolOk = alcoolOk;
     }
 

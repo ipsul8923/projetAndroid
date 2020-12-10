@@ -1,17 +1,98 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".cuisinier.créerMonMenu.creerMonMenu">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
+    tools:context=".cuisinier.créerMonMenu.creerMonMenu"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/createMenu"
-        tools:layout_editor_absoluteX="173dp"
-        tools:layout_editor_absoluteY="306dp"
-        tools:ignore="MissingConstraints" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_bandeau_haut" />
+        <TextView
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="Création de mon menu"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_alignParentBottom="true"
+        >
+
+
+        <CheckBox
+            android:id="@+id/isEntreeChecked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:text="Entrée" />
+
+        <CheckBox
+            android:id="@+id/isPlatChecked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:text="Plat" />
+
+        <CheckBox
+            android:id="@+id/isDessertChecked"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:text="Dessert" />
+
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:layout_margin="5dp"
+            android:text="Débuter la création de mon Menu"
+            android:onClick="onClickBeginCreationMenu"
+            ></Button>
+
+
+
+    </LinearLayout>
+</RelativeLayout>

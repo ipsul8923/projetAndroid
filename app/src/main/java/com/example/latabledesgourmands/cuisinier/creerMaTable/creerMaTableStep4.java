@@ -30,7 +30,9 @@ public class creerMaTableStep4 extends AppCompatActivity {
     Button fumeur;
     Button alcool;
     Button animaux;
-
+    boolean isFumeur;
+    boolean isAlcool;
+    boolean isAnimaux;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -65,10 +67,18 @@ public class creerMaTableStep4 extends AppCompatActivity {
         heure.setText(table.getMonEvenement().getHeure());
         adresse.setText(table.getMonEvenement().getAdresse());
         nombreConvives.setText(Integer.toString(table.getMonEvenement().getNombreConvive()) + " convives");
-        nomTheme.setText(table.getMonEvenement().getTheme().getNom());
-        animaux.setEnabled(table.getMonEvenement().getAnimalOk());
-        fumeur.setEnabled(table.getMonEvenement().getFumeurOk());
-        alcool.setEnabled(table.getMonEvenement().getAlcoolOk());
+
+        String themeName = table.getMonEvenement().getTheme().getNom().equals("thème") ?
+                "pas de thème" : table.getMonEvenement().getTheme().getNom();
+        nomTheme.setText(themeName);
+        isAnimaux = table.getMonEvenement().getAnimalOk();
+        isFumeur = table.getMonEvenement().getFumeurOk();
+        isAlcool = table.getMonEvenement().getAlcoolOk();
+        animaux.setSelected(isAnimaux);
+        fumeur.setSelected(isFumeur);
+        alcool.setSelected(isAlcool);
+
+
     }
 
 

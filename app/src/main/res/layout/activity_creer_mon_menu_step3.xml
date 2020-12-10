@@ -1,0 +1,256 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cuisinier.créerMonMenu.creerMonMenuStep3"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    >
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_bandeau_haut" />
+        <TextView
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="Création de mon Dessert"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:gravity="center_horizontal"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/topLayout"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+            <TextView
+                android:id="@+id/dessertName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:text="Nom :"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize" />
+            <EditText
+                android:id="@+id/dessertNameInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:text=" "
+                android:textSize="@dimen/bigSize" />
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/listeDessertIngredient"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:text="Ingrédients :"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize" />
+
+            <EditText
+                android:id="@+id/ingredientDessertInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:text=" "
+                android:textSize="@dimen/bigSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/recetteDessert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:text="Recette :"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize" />
+
+            <EditText
+                android:id="@+id/recetteDessertInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:inputType="textPersonName"
+                android:textColor="@color/black"
+                android:text=" "
+                android:textSize="@dimen/bigSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/prixDessert"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:text="Prix par portion :"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize" />
+
+            <EditText
+                android:id="@+id/prixDessertInput"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:ems="10"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:text=" "
+                android:textSize="@dimen/bigSize" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/difficulteDessert"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:text="Difficulté :"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize" />
+
+            <RatingBar
+                android:id="@+id/difficulteDessertInput"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:layout_gravity="center_horizontal"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:numStars="5"
+                android:rating="3"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize" />
+        </LinearLayout>
+
+        <CheckBox
+            android:id="@+id/vegetarienDessertInput"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:text="Vegetarien" />
+
+        <CheckBox
+            android:id="@+id/veganDessertInput"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:text="Vegan" />
+
+        <CheckBox
+            android:id="@+id/sansGlutenDessertInput"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_margin="5dp"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:text="Sans gluten" />
+
+
+    </LinearLayout>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigMediumSize"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:text="@string/nextStep"
+        android:onClick="onClickCreateThirdStep"
+        android:layout_alignParentBottom="true"
+        ></Button>
+
+</RelativeLayout>

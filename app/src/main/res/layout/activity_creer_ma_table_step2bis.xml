@@ -76,7 +76,7 @@
             android:name="com.example.latabledesgourmands.fragments.bandeauBasCreationTDG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_bandeau_haut" />
+            tools:layout="@layout/fragment_bandeau_bas_creation_t_d_g" />
     </LinearLayout>
 
 

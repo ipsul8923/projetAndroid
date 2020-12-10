@@ -4,12 +4,25 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.CheckBox;
+import android.widget.Toast;
 
 import com.example.latabledesgourmands.R;
+import com.example.latabledesgourmands.cuisinier.creerMaTable.creerMaTableStep2bis;
+import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
 
 public class creerMonMenu extends AppCompatActivity {
     Table maTable;
+
+    CheckBox entree;
+    CheckBox plat;
+    CheckBox dessert;
+    boolean isEntree;
+    boolean isPlat;
+    boolean isDessert;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,5 +33,50 @@ public class creerMonMenu extends AppCompatActivity {
                 maTable = intent.getParcelableExtra("maTable");
             }
         }
+        linkActivityToLayout();
+    }
+
+
+    private void linkActivityToLayout(){
+       entree=findViewById(R.id.isEntreeChecked);
+       plat=findViewById(R.id.isPlatChecked);
+       dessert=findViewById(R.id.isDessertChecked);
+    }
+    private void getBoolFromCheckbox(){
+        isEntree=entree.isChecked();
+        isPlat=plat.isChecked();
+        isDessert=dessert.isChecked();
+        Log.i("nico", "onCreate Dessert: " + isDessert);
+
+    }
+    private void startCreerMonMenuStep1(){
+        Intent intent = new Intent(this, creerMonMenuStep1.class);
+        startActivity(intent);
+    }
+    private void startCreerMonMenuStep2(){
+        Intent intent = new Intent(this, creerMonMenuStep2.class);
+        startActivity(intent);
+    }
+
+    private void sendDatabyIntent(){
+        Intent intent = new Intent();
+        intent.putExtra("isDessert", isDessert);
+        if(maTable!=null){
+            intent.putExtra("maTable",maTable);}
+    }
+
+    public void onClickBeginCreationMenu(View view) {
+        getBoolFromCheckbox();
+        sendDatabyIntent();
+        if(isEntree && isPlat){
+            startCreerMonMenuStep1();
+        }
+        if(!isEntree && isPlat){
+            startCreerMonMenuStep2();
+        }
+        if(!isPlat){
+            Toast.makeText(getApplicationContext(), "Vous ne pouvez pas créer un menu sans plat", Toast.LENGTH_LONG).show();
+        }
+
     }
 }

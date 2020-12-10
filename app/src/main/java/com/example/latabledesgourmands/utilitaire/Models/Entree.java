@@ -5,10 +5,10 @@ import android.os.Parcelable;
 
 public class Entree implements Parcelable {
     private String nom;
-    private String[] listeIngredients;
+    private String listeIngredients;
     private String recette;
     private Prix prixParPersonne;
-    private String difficulte;
+    private float difficulte;
     private boolean vegetarien;
     private boolean vegan;
     private boolean sansGluten;
@@ -17,7 +17,7 @@ public class Entree implements Parcelable {
         this.nom = nom;
     }
 
-    public Entree(String nom, String[] listeIngredients, String recette, Prix prixParPersonne, String difficulte, boolean vegetarien, boolean vegan, boolean sansGluten) {
+    public Entree(String nom, String listeIngredients, String recette, Prix prixParPersonne, float difficulte, boolean vegetarien, boolean vegan, boolean sansGluten) {
         this.nom = nom;
         this.listeIngredients = listeIngredients;
         this.recette = recette;
@@ -30,9 +30,9 @@ public class Entree implements Parcelable {
 
     protected Entree(Parcel in) {
         nom = in.readString();
-        listeIngredients = in.createStringArray();
+        listeIngredients = in.readString();
         recette = in.readString();
-        difficulte = in.readString();
+        difficulte = in.readFloat();
         vegetarien = in.readByte() != 0;
         vegan = in.readByte() != 0;
         sansGluten = in.readByte() != 0;
@@ -41,9 +41,9 @@ public class Entree implements Parcelable {
     @Override
     public void writeToParcel(Parcel dest, int flags) {
         dest.writeString(nom);
-        dest.writeStringArray(listeIngredients);
+        dest.writeString(listeIngredients);
         dest.writeString(recette);
-        dest.writeString(difficulte);
+        dest.writeFloat(difficulte);
         dest.writeByte((byte) (vegetarien ? 1 : 0));
         dest.writeByte((byte) (vegan ? 1 : 0));
         dest.writeByte((byte) (sansGluten ? 1 : 0));
@@ -74,11 +74,11 @@ public class Entree implements Parcelable {
         this.nom = nom;
     }
 
-    public String[] getListeIngredients() {
+    public String getListeIngredients() {
         return listeIngredients;
     }
 
-    public void setListeIngredients(String[] listeIngredients) {
+    public void setListeIngredients(String listeIngredients) {
         this.listeIngredients = listeIngredients;
     }
 
@@ -98,11 +98,11 @@ public class Entree implements Parcelable {
         this.prixParPersonne = prixParPersonne;
     }
 
-    public String getDifficulte() {
+    public float getDifficulte() {
         return difficulte;
     }
 
-    public void setDifficulte(String difficulte) {
+    public void setDifficulte(float difficulte) {
         this.difficulte = difficulte;
     }
 

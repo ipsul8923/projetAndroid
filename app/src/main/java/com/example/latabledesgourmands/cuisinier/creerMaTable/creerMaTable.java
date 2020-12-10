@@ -15,6 +15,7 @@ import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Evenement;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
+import com.example.latabledesgourmands.utilitaire.Models.Prix;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
 import com.example.latabledesgourmands.utilitaire.Models.Theme;
 
@@ -41,9 +42,12 @@ public class creerMaTable extends AppCompatActivity {
     private void initCreationTableProcess(){
         maTable = new Table(
                 new Menu(
-                        new Entree("placeHolder"),
-                        new Plat("placeholder"),
-                        new Dessert("placeholder")
+                        new Entree("placeHolder","placeHolder","placeHolder",
+                                new Prix(0), 0f, false, false,false ),
+                        new Plat("placeHolder","placeHolder","placeHolder",
+                                new Prix(0), 0f, false, false,false,false ),
+                        new Dessert("placeHolder","placeHolder","placeHolder",
+                                new Prix(0), 0f, false, false,false )
                 ),
                 new Evenement("date", "adresse", "heure", 6, 1, new Theme("theme"),false, false, false)
         );
@@ -56,7 +60,12 @@ public class creerMaTable extends AppCompatActivity {
 
 
     public void onClickNextStepButton(View view) {
-        startCreerMaTableStep2Activity();
+        if(oneCooker.isSelected() || twoCooker.isSelected() || threeCooker.isSelected()){
+            startCreerMaTableStep2Activity();
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Veuillez choisir un nombre de cuisinier", Toast.LENGTH_LONG).show();
+        }
     }
 
     public void onClickButtonOneCooker(View view) {

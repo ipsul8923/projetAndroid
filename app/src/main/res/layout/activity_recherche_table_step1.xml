@@ -56,7 +56,7 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
                     android:text="Date :"
-                    android:onClick="onClickDataFilter"/>
+                    android:onClick="onClickDateFilter"/>
 
                 <EditText
                     android:id="@+id/editTextDate"
@@ -88,7 +88,8 @@
                     android:gravity="center_horizontal"
                     android:text="Heure :"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize" />
+                    android:textSize="@dimen/mediumSize"
+                    android:onClick="onClickHeureFilter"/>
 
                 <EditText
                     android:id="@+id/editTextTime"
@@ -121,10 +122,11 @@
                     android:gravity="center_horizontal"
                     android:text="adresse :"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize" />
+                    android:textSize="@dimen/mediumSize"
+                    android:onClick="onClickAdresseFilter"/>
 
                 <EditText
-                    android:id="@+id/editTextTextPostalAddress"
+                    android:id="@+id/editTextPostalAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -151,15 +153,16 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:background="@color/white"
+                    android:backgroundTint="@color/color_button"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Nombre de convives :"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize" />
+                    android:textSize="@dimen/mediumSize"
+                    android:onClick="onClickConvivesFilter"/>
 
                 <EditText
-                    android:id="@+id/editTextNumber"
+                    android:id="@+id/editTextNumberConvives"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -178,7 +181,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:visibility="invisible">
+                android:visibility="visible">
 
                 <Button
                     android:layout_width="wrap_content"
@@ -190,55 +193,66 @@
                     android:text="Menu :"
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:layout_weight="1"/>
+                    android:onClick="onClickMenuFilter"/>
+                <LinearLayout
+                    android:id="@+id/menuLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:visibility="invisible">
 
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:text="@string/tout"
-                    android:textColor="@color/black"
-                    android:textSize="10dp"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:text="@string/végé"
-                    android:textColor="@color/black"
-                    android:textSize="10dp"
-                    android:layout_weight="1"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:text="@string/vegan"
-                    android:textColor="@color/black"
-                    android:textSize="10dp"
-                    android:layout_weight="1"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:text="@string/sansGluten"
-                    android:textColor="@color/black"
-                    android:textSize="10dp"
-                    android:layout_weight="1"/>
-
+                    <Button
+                        android:id="@+id/buttonMenuTout"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:fontFamily="@font/indie_flower"
+                        android:gravity="center_horizontal"
+                        android:text="@string/tout"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"/>
+                    <Button
+                        android:id="@+id/buttonMenuVégé"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:fontFamily="@font/indie_flower"
+                        android:gravity="center_horizontal"
+                        android:text="@string/végé"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/buttonMenuVegan"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:fontFamily="@font/indie_flower"
+                        android:gravity="center_horizontal"
+                        android:text="@string/vegan"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:layout_weight="1"/>
+                    <Button
+                        android:id="@+id/buttonMenuSansGluten"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:background="@color/white"
+                        android:fontFamily="@font/indie_flower"
+                        android:gravity="center_horizontal"
+                        android:text="@string/sansGluten"
+                        android:textColor="@color/black"
+                        android:textSize="10dp"
+                        android:layout_weight="1"/>
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:visibility="invisible">
+                android:visibility="visible">
 
                 <Button
                     android:layout_width="wrap_content"
@@ -247,54 +261,35 @@
                     android:backgroundTint="@color/color_button"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
-                    android:text="Prix : "
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize" />
-
-                <EditText
-                    android:id="@+id/editPrixText1"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
+                    android:text="Prix max : "
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:inputType="numberDecimal"
-                    android:text="0"/>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:text="à"
-                    android:textColor="@color/white"
-                    android:textSize="@dimen/mediumSize"/>
+                    android:onClick="onClickPrixFilter"/>
 
 
-                <EditText
-                    android:id="@+id/editPrixText2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:layout_weight="1"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize"
-                    android:inputType="numberDecimal"
-                    android:text="30"/>
+                    <EditText
+                        android:id="@+id/editTextPrixMax"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:background="@color/white"
+                        android:fontFamily="@font/indie_flower"
+                        android:gravity="center_horizontal"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@color/black"
+                        android:textSize="@dimen/bigSize"
+                        android:inputType="numberDecimal"
+                        android:text=" 0 "
+                        android:visibility="invisible"/>
+
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:visibility="invisible">
+                android:visibility="visible">
 
                 <Button
                     android:layout_width="wrap_content"
@@ -305,9 +300,20 @@
                     android:gravity="center_horizontal"
                     android:text="Thème : "
                     android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize"/>
+                    android:textSize="@dimen/mediumSize"
+                    android:onClick="onClickThemeFilter"/>
+
+                <LinearLayout
+                    android:id="@+id/themeLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_margin="5dp"
+                    android:layout_weight="80"
+                    android:visibility="invisible">
 
                 <Button
+                    android:id="@+id/buttonThemeTout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -318,6 +324,7 @@
                     android:textSize="10dp"
                     android:layout_weight="1"/>
                 <Button
+                    android:id="@+id/buttonThemeAucun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -328,6 +335,7 @@
                     android:textSize="10dp"
                     android:layout_weight="1"/>
                 <Button
+                    android:id="@+id/buttonThemePirates"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -338,6 +346,7 @@
                     android:textSize="10dp"
                     android:layout_weight="1"/>
                 <Button
+                    android:id="@+id/buttonThemeHaloween"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:background="@color/white"
@@ -347,7 +356,7 @@
                     android:textColor="@color/black"
                     android:textSize="10dp"
                     android:layout_weight="1"/>
-
+                </LinearLayout>
             </LinearLayout>
 
             <LinearLayout
@@ -356,7 +365,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox"
+                    android:id="@+id/checkBoxFumeur"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -376,7 +385,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox2"
+                    android:id="@+id/checkBoxAnimaux"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -395,7 +404,7 @@
                 android:orientation="horizontal">
 
                 <CheckBox
-                    android:id="@+id/checkBox3"
+                    android:id="@+id/checkBoxAlcool"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"

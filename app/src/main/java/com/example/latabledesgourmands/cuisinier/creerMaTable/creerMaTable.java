@@ -70,7 +70,6 @@ public class creerMaTable extends AppCompatActivity {
 
     public void onClickButtonOneCooker(View view) {
         maTable.getMonEvenement().setNombreCuisinier(1);
-
         view.setSelected(!view.isSelected());
         twoCooker.setSelected(false);
         threeCooker.setSelected(false);

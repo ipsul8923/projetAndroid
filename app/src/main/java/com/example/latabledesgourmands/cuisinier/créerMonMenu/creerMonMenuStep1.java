@@ -41,9 +41,7 @@ public class creerMonMenuStep1 extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null) {
             maTable = intent.hasExtra("maTable") ? intent.getParcelableExtra("maTable"): null;
-            if (intent.hasExtra("isDessert")) {
-                isDessert = intent.getBooleanExtra("isDessert", isDessert);
-            }
+            isDessert = intent.getBooleanExtra("isDessert", false);
         }
         Log.i("nico", "onCreate: " + maTable);
         Log.i("nico", "onCreate Dessert: " + isDessert);
@@ -74,24 +72,21 @@ public class creerMonMenuStep1 extends AppCompatActivity {
         }
     private void startCreerMonMenuStep2(){
         Intent intent = new Intent(this, creerMonMenuStep2.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
 
-    private void sendDatabyIntent(){
-        Intent intent = new Intent();
-        intent.putExtra("isDessert", isDessert);
+    private void sendDatabyIntent(Intent intent){
         intent.putExtra(("monEntree"), monEntree);
         if(maTable!=null){
             intent.putExtra("maTable",maTable);}
+        intent.putExtra("isDessert", isDessert);
     }
 
     public void onClickCreateFirstStep(View view) {
         getDataFromInput();
-        sendDatabyIntent();
         if(monEntree!= null) {
-            if (!isDessert) {
                 startCreerMonMenuStep2();
-            }
         }
         else {
             Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs pour créer votre entrée", Toast.LENGTH_LONG).show();

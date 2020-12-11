@@ -51,23 +51,24 @@ public class creerMonMenu extends AppCompatActivity {
     }
     private void startCreerMonMenuStep1(){
         Intent intent = new Intent(this, creerMonMenuStep1.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
     private void startCreerMonMenuStep2(){
         Intent intent = new Intent(this, creerMonMenuStep2.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
 
-    private void sendDatabyIntent(){
-        Intent intent = new Intent();
-        intent.putExtra("isDessert", isDessert);
+    private void sendDatabyIntent(Intent intent){
         if(maTable!=null){
             intent.putExtra("maTable",maTable);}
+        intent.putExtra("isDessert", isDessert);
+
     }
 
     public void onClickBeginCreationMenu(View view) {
         getBoolFromCheckbox();
-        sendDatabyIntent();
         if(isEntree && isPlat){
             startCreerMonMenuStep1();
         }

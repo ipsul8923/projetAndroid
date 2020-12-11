@@ -79,8 +79,7 @@ public class creerMonMenuStep3 extends AppCompatActivity {
         }
     }
 
-    private void sendDatabyIntent(){
-        Intent intent = new Intent();
+    private void sendDatabyIntent(Intent intent){
         if(maTable!=null){ //On a besoin d'envoyer la table avec le bon menu
             maTable.setMonMenu(monMenu);
             intent.putExtra("maTable",maTable);
@@ -91,15 +90,17 @@ public class creerMonMenuStep3 extends AppCompatActivity {
     }
     private void startCreerMaTableStep2bisActivity(){
         Intent intent = new Intent(this, creerMaTableStep2bis.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
     private void startAcceuilCuisinierActivity(){
         Intent intent = new Intent(this, acceuilCuisinier.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
     public void onClickCreateThirdStep(View view){
         getDataFromInput();
-        sendDatabyIntent(); // à terme seulement dans on créer une table, autrement on enregistre le menu dans le cloud à ce moment là
+        . // à terme seulement dans on créer une table, autrement on enregistre le menu dans le cloud à ce moment là
         if(monDessert!=null) {
             if (maTable != null) {
                 Toast.makeText(getApplicationContext(), "Menu créer et importer dans votre table", Toast.LENGTH_LONG).show();

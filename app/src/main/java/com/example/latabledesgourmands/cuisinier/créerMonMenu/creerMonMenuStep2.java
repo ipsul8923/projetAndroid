@@ -44,15 +44,11 @@ public class creerMonMenuStep2 extends AppCompatActivity {
         Intent intent = getIntent();
         if (intent != null) {
             maTable = intent.hasExtra("maTable") ? intent.getParcelableExtra("maTable"): null;
-            if (intent.hasExtra("isDessert")) {
-                isDessert = intent.getBooleanExtra("isDessert", true);
-            }
+            isDessert = intent.getBooleanExtra("isDessert", false);
             monEntree = intent.hasExtra("monEntree")? intent.getParcelableExtra("monEntree") : null;
-
         }
         Log.i("nico", "onCreate: " + maTable);
         Log.i("nico", "onCreate Dessert: " + isDessert);
-
         linkActivityToLayout();
     }
 
@@ -60,14 +56,17 @@ public class creerMonMenuStep2 extends AppCompatActivity {
 
     private void startCreerMaTableStep2bisActivity(){
         Intent intent = new Intent(this, creerMaTableStep2bis.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
     private void startAcceuilCuisinierActivity(){
         Intent intent = new Intent(this, acceuilCuisinier.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
     private void startCreerMonMenuStep3Activity(){
         Intent intent = new Intent(this, creerMonMenuStep3.class);
+        sendDatabyIntent(intent);
         startActivity(intent);
     }
     private void getDataFromInput() {
@@ -95,8 +94,7 @@ public class creerMonMenuStep2 extends AppCompatActivity {
     }
 
 
-    private void sendDatabyIntent(){
-        Intent intent = new Intent();
+    private void sendDatabyIntent(Intent intent){
         if(isDessert){ //On a choisi avec Dessert
             if(monEntree!= null){ //on a choisi avec Entree
                 intent.putExtra(("monEntree"), monEntree);
@@ -121,13 +119,12 @@ public class creerMonMenuStep2 extends AppCompatActivity {
     public void onClickCreateSecondStep(View view) {
         getDataFromInput();
         if(monPlat!=null) {
-            sendDatabyIntent();
             if (!isDessert && maTable != null) {
-                Toast.makeText(getApplicationContext(), "Menu créer et importer dans votre table", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Menu créer, veuillez reprendre le processus de création de votre table", Toast.LENGTH_LONG).show();
                 startCreerMaTableStep2bisActivity();
             }
             if (!isDessert && maTable == null) {
-                Toast.makeText(getApplicationContext(), "Menu créer et importer dans votre base de donnée", Toast.LENGTH_LONG).show();
+                Toast.makeText(getApplicationContext(), "Menu créer et ajouter votre liste, voir gérer mes menus", Toast.LENGTH_LONG).show();
                 startAcceuilCuisinierActivity();
             }
             if (isDessert) {

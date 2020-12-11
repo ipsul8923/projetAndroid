@@ -1,7 +1,6 @@
 package com.example.latabledesgourmands.fragments.recyclerViewMenu;
 
 import android.content.Context;
-import android.icu.util.Measure;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -22,8 +21,7 @@ public class menuAdapter extends RecyclerView.Adapter<menuViewHolder> {
     public menuViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         Context context = parent.getContext();
         LayoutInflater inflater=LayoutInflater.from(context);
-        View view = inflater.inflate(R.layout.fragment_recycler_view_menu_item, parent,false);
-
+        View view = inflater.inflate(R.layout.recycler_view_menu_item, parent,false);
         return new menuViewHolder((view));
     }
 

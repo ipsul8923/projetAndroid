@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:orientation="vertical">
         <fragment
-            android:id="@+id/fragment"
+            android:id="@+id/creerMaTableStep2bisMenuFragment"
             android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

@@ -94,26 +94,47 @@ public class creerMaTableStep4 extends AppCompatActivity {
         Button veggieIndicator;
         Button veganIndicator;
         Button glutenIndicator;
-        nomEntree=findViewById(R.id.nomEntreeFragment);
-        nomPlat=findViewById(R.id.nomPlatFragment);
-        nomDessert=findViewById(R.id.nomDessertFragment);
-        priceMenu=findViewById(R.id.prixMenuFragment);
-        diffEntree=findViewById(R.id.difficulteEntreeFragment);
-        diffPlat=findViewById(R.id.difficultePlatFragment);
-        diffDessert=findViewById(R.id.difficulteDessertFragment);
-        veggieIndicator=findViewById(R.id.VegetarienMenuIndicatorFragment);
-        veganIndicator=findViewById(R.id.VeganMenuIndicatorFragment);
-        glutenIndicator=findViewById(R.id.GlutenMenuIndicatorFragment);
-        nomEntree.setText(menu.getMonEntree().getNom());
-        nomPlat.setText(menu.getMonPlat().getNom());
-        nomDessert.setText(menu.getMonDessert().getNom());
-        priceMenu.setText((int) menu.getPrixDuMenuParPersonne().getValeur());
-        diffEntree.setRating(menu.getMonEntree().getDifficulte());
-        diffPlat.setRating(menu.getMonPlat().getDifficulte());
-        diffDessert.setRating(menu.getMonDessert().getDifficulte());
-        veggieIndicator.setSelected(menu.isVegetarien());
-        veganIndicator.setSelected(menu.isVegan());
-        glutenIndicator.setSelected(menu.isSansGluten());
+        Button wineIndicator;
+        if(menu!=null) {
+            nomEntree = findViewById(R.id.nomEntreeFragment);
+            diffEntree = findViewById(R.id.difficulteEntreeFragment);
+            nomDessert = findViewById(R.id.nomDessertFragment);
+            diffDessert = findViewById(R.id.difficulteDessertFragment);
+            if(menu.getMonEntree()!=null){
+                nomEntree.setText(menu.getMonEntree().getNom());
+                diffEntree.setRating(menu.getMonEntree().getDifficulte());
+            }
+            else{
+                nomEntree.setVisibility(View.GONE);
+                diffEntree.setVisibility(View.GONE);
+            }
+            if(menu.getMonDessert()!=null){
+
+                nomDessert.setText(menu.getMonDessert().getNom());
+                diffDessert.setRating(menu.getMonDessert().getDifficulte());
+            }
+            else{
+                nomDessert.setVisibility(View.GONE);
+                diffDessert.setVisibility(View.GONE);
+            }
+            nomPlat = findViewById(R.id.nomPlatFragment);
+            priceMenu = findViewById(R.id.prixMenuFragment);
+            diffPlat = findViewById(R.id.difficultePlatFragment);
+            veggieIndicator = findViewById(R.id.VegetarienMenuIndicatorFragment);
+            veganIndicator = findViewById(R.id.VeganMenuIndicatorFragment);
+            glutenIndicator = findViewById(R.id.GlutenMenuIndicatorFragment);
+            wineIndicator = findViewById(R.id.wineIndicatorFragment);
+            nomPlat.setText(menu.getMonPlat().getNom());
+            priceMenu.setText(String.valueOf(menu.getPrixDuMenuParPersonne()) + " $");
+            diffPlat.setRating(menu.getMonPlat().getDifficulte());
+            veggieIndicator.setSelected(menu.getVegetarien());
+            veganIndicator.setSelected(menu.getVegan());
+            glutenIndicator.setSelected(menu.getSansGluten());
+            wineIndicator.setSelected(menu.getMonPlat().getWineWanted());
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "Pas de menu à afficher, une erreur a du se glisser", Toast.LENGTH_LONG).show();
+        }
     }
 
 

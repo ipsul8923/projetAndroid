@@ -19,23 +19,9 @@
     >
 
 </TextView>
-    <fragment
-        android:id="@+id/menuRecyclerViewFragment"
-        android:name="com.example.latabledesgourmands.fragments.recyclerViewMenu.recyclerViewMenu"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menuRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_recycler_view_menu" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
-        android:textSize="@dimen/bigSize"
-        android:gravity="center_horizontal"
-        android:text="@string/importMenu"
-        android:onClick="onClickImportButton"
-        ></Button>
-
+        android:layout_height="match_parent" />
 
 </LinearLayout>

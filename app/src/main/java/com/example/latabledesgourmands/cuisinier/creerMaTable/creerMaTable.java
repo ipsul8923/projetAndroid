@@ -43,11 +43,11 @@ public class creerMaTable extends AppCompatActivity {
         maTable = new Table(
                 new Menu(
                         new Entree("placeHolder","placeHolder","placeHolder",
-                                new Prix(0), 0f, false, false,false ),
+                                0, 0f, false, false,false ),
                         new Plat("placeHolder","placeHolder","placeHolder",
-                                new Prix(0), 0f, false, false,false,false ),
+                                0, 0f, false, false,false,false ),
                         new Dessert("placeHolder","placeHolder","placeHolder",
-                                new Prix(0), 0f, false, false,false )
+                                0, 0f, false, false,false )
                 ),
                 new Evenement("date", "adresse", "heure", 6, 1, new Theme("theme"),false, false, false)
         );

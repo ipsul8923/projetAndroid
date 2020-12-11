@@ -67,7 +67,7 @@ public class creerMonMenuStep3 extends AppCompatActivity {
         }
         else{
             monDessert = new Dessert(nom.getText().toString(), ingrédients.getText().toString(),
-                    recette.getText().toString(), new Prix(Float.parseFloat(prix.getText().toString())),
+                    recette.getText().toString(), Float.parseFloat(prix.getText().toString()),
                     difficulte.getRating(), vegetarien.isChecked(), vegan.isChecked(), sansGluten.isChecked());
 
             //On recupère le dessert, et ensuite on créer le menu

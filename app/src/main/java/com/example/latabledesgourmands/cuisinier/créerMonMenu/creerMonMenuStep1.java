@@ -66,7 +66,7 @@ public class creerMonMenuStep1 extends AppCompatActivity {
         }
         else{
             monEntree = new Entree(nom.getText().toString(), ingrédients.getText().toString(),
-                    recette.getText().toString(), new Prix(Float.parseFloat(prix.getText().toString())),
+                    recette.getText().toString(), Float.parseFloat(prix.getText().toString()),
                     difficulte.getRating(), vegetarien.isChecked(), vegan.isChecked(), sansGluten.isChecked());
             }
         }

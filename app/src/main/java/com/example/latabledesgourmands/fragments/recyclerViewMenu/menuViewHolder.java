@@ -1,10 +1,13 @@
 package com.example.latabledesgourmands.fragments.recyclerViewMenu;
 
 
+import android.app.Application;
+import android.content.Context;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -24,6 +27,9 @@ public class menuViewHolder extends RecyclerView.ViewHolder {
     Button veggieIndicator;
     Button veganIndicator;
     Button glutenIndicator;
+    Button wineIndicator;
+
+    Context context;
 
     public menuViewHolder(@NonNull View itemView) {
         super(itemView);
@@ -38,21 +44,44 @@ public class menuViewHolder extends RecyclerView.ViewHolder {
     veggieIndicator=itemView.findViewById(R.id.VegetarienMenuIndicatorFragment);
     veganIndicator=itemView.findViewById(R.id.VeganMenuIndicatorFragment);
     glutenIndicator=itemView.findViewById(R.id.GlutenMenuIndicatorFragment);
-
+    wineIndicator = itemView.findViewById(R.id.wineIndicatorFragment);
+    context=itemView.getContext();
     }
+
+
 
 
     public void updateWithMenuList(Menu menu){
         //date.setText('date : ' + schedule.getDate());
-        nomEntree.setText(menu.getMonEntree().getNom());
-        nomPlat.setText(menu.getMonPlat().getNom());
-        nomDessert.setText(menu.getMonDessert().getNom());
-        priceMenu.setText(String.valueOf(menu.getPrixDuMenuParPersonne().getValeur()));
-        diffEntree.setRating(menu.getMonEntree().getDifficulte());
-        diffPlat.setRating(menu.getMonPlat().getDifficulte());
-        diffDessert.setRating(menu.getMonDessert().getDifficulte());
-        veggieIndicator.setSelected(menu.isVegetarien());
-        veganIndicator.setSelected(menu.isVegan());
-        glutenIndicator.setSelected(menu.isSansGluten());
+        if(menu!=null) {
+            if(menu.getMonEntree()!=null){
+                nomEntree.setText(menu.getMonEntree().getNom());
+                diffEntree.setRating(menu.getMonEntree().getDifficulte());
+            }
+            else{
+                nomEntree.setVisibility(View.GONE);
+                diffEntree.setVisibility(View.GONE);
+            }
+            if(menu.getMonDessert()!=null){
+
+                nomDessert.setText(menu.getMonDessert().getNom());
+                diffDessert.setRating(menu.getMonDessert().getDifficulte());
+            }
+            else{
+                nomDessert.setVisibility(View.GONE);
+                diffDessert.setVisibility(View.GONE);
+            }
+
+            nomPlat.setText(menu.getMonPlat().getNom());
+            priceMenu.setText(String.valueOf(menu.getPrixDuMenuParPersonne()) + " $");
+            diffPlat.setRating(menu.getMonPlat().getDifficulte());
+            veggieIndicator.setSelected(menu.getVegetarien());
+            veganIndicator.setSelected(menu.getVegan());
+            glutenIndicator.setSelected(menu.getSansGluten());
+            wineIndicator.setSelected(menu.getMonPlat().getWineWanted());
+        }
+        else{
+            Toast.makeText(context, "Pas de menu à afficher, une erreur a du se glisser", Toast.LENGTH_LONG).show();
+        }
     }
 }

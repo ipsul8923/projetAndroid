@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -9,59 +9,60 @@
     android:orientation="vertical"
     android:background="@drawable/background"
     >
-    <LinearLayout
-        android:id="@+id/bandeauHaut"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        >
-        <fragment
-            android:id="@+id/fragment"
-            android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_bandeau_haut" />
-        <TextView
-            android:id="@+id/button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:text="@string/MaTable"
-            android:textColor="@color/black"
-            android:textSize="@dimen/bigSize"
-            android:gravity="center_horizontal"
-            />
-    </LinearLayout>
+        android:layout_height="match_parent">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_alignParentBottom="true"
-        >
         <LinearLayout
+            android:id="@+id/bandeauHaut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             >
+            <fragment
+                android:id="@+id/creerMaTableStep4MenuFragment"
+                android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_bandeau_haut" />
+            <TextView
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:text="@string/MaTable"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize"
+                android:gravity="center_horizontal"
+                />
+        </LinearLayout>
 
+        <LinearLayout
+            android:id="@+id/recapContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/bandeauHaut"
+            >
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
                 <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_margin="5dp"
-                        android:background="@color/white"
-                        android:fontFamily="@font/indie_flower"
-                        android:gravity="center_horizontal"
-                        android:text="Cuisinier :"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="5dp"
+                    android:background="@color/white"
+                    android:fontFamily="@font/indie_flower"
+                    android:gravity="center_horizontal"
+                    android:text="Cuisinier :"
                     android:layout_weight="1"
-                        android:textColor="@color/black"
-                        android:textSize="@dimen/bigSize"></TextView>
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/bigSize"></TextView>
 
                 <TextView
                     android:id="@+id/cookNumerPrint"
@@ -88,28 +89,26 @@
                 android:text="Menu :"
                 android:textColor="@color/black"
                 android:textSize="@dimen/bigSize"></TextView>
+            <fragment
+                android:id="@+id/fragment2"
+                android:name="com.example.latabledesgourmands.fragments.menuFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                tools:layout="@layout/fragment_menu" />
 
-
-                <fragment
-                    android:id="@+id/fragment2"
-                    android:name="com.example.latabledesgourmands.fragments.menuFragment"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    tools:layout="@layout/fragment_menu" />
-
-                <TextView
-                    android:id="@+id/adressePrint"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:text="Adresse"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"
-                    android:layout_weight="1"
-                    ></TextView>
+            <TextView
+                android:id="@+id/adressePrint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:gravity="center_horizontal"
+                android:text="Adresse"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize"
+                android:layout_weight="1"
+                ></TextView>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -142,13 +141,6 @@
                     android:textSize="@dimen/bigSize"
                     android:layout_weight="1"
                     ></TextView>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
             </LinearLayout>
 
             <LinearLayout
@@ -228,7 +220,6 @@
                     android:layout_weight="1"
                     ></Button>
             </LinearLayout>
-
         </LinearLayout>
 
 
@@ -244,12 +235,17 @@
             android:layout_margin="5dp"
             android:text="@string/creer_ma_table"
             android:onClick="onClickCreateATable"
+            android:layout_below="@id/recapContainer"
             ></Button>
         <fragment
             android:id="@+id/fragmentBas"
             android:name="com.example.latabledesgourmands.fragments.bandeauBasCreationTDG"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            tools:layout="@layout/fragment_bandeau_bas_creation_t_d_g" />
-    </LinearLayout>
-</RelativeLayout>
+            tools:layout="@layout/fragment_bandeau_bas_creation_t_d_g"
+            android:layout_below="@id/nextStepButton"
+            />
+    </RelativeLayout>
+
+
+</ScrollView>

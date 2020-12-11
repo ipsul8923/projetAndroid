@@ -72,7 +72,7 @@ public class creerMonMenuStep2 extends AppCompatActivity {
         }
         else{
             monPlat = new Plat(nom.getText().toString(), ingrédients.getText().toString(),
-                    recette.getText().toString(), new Prix(Float.parseFloat(prix.getText().toString())),
+                    recette.getText().toString(), Float.parseFloat(prix.getText().toString()),
                     difficulte.getRating(), vegetarien.isChecked(), vegan.isChecked(), sansGluten.isChecked(), isWine.isChecked());
         }
     }
@@ -104,6 +104,7 @@ public class creerMonMenuStep2 extends AppCompatActivity {
             else { //Menu sans entrée
                 monMenu=new Menu(monPlat);
             }
+            intent.putExtra("monMenu", monMenu);
         }
         if(maTable!=null){ //Si jamais on est dans le processus de création d'une table, on envoi la table
             if(monMenu!=null){ //Si jamais on a fini le créer le menu, on ajoute le menu à la table, sinon on envoi que la table sans menu

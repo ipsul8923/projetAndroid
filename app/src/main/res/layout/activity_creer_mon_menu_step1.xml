@@ -163,7 +163,7 @@
                 android:ems="10"
                 android:fontFamily="@font/indie_flower"
                 android:gravity="center_horizontal"
-                android:inputType="number"
+                android:inputType="numberDecimal"
                 android:textColor="@color/black"
                 android:text=" "
                 android:textSize="@dimen/bigSize" />

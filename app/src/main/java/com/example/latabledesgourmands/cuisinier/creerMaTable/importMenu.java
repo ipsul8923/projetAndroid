@@ -51,17 +51,17 @@ public class importMenu extends AppCompatActivity {
 
     private void manualMenuCreationDebugAim(){
         Entree entree1test = new Entree("salade", "feuille de chêne, sauce", "bien laver la salade",
-                new Prix(1.5f), 1f, true, true, true);
+               1.5f, 1f, true, true, true);
         Entree entree2test = new Entree("boulette", "fêta, pesto", "laisser au frai 40 min",
-                new Prix(2f), 1.5f, true, false, true);
+                2f, 1.5f, true, false, true);
 
         Plat plat1test = new Plat("ribs de porc", "ribs, marinade", "cuire à 100 deg pendant 1h30, accompagné de riz",
-                new Prix(5f), 2f, false, false, false, true);
+                5f, 2f, false, false, false, true);
         Plat plat2test = new Plat("poulet à la creme", "poulet, crème fraiche", "cuire poulet dans la crème et ses oignons",
-                new Prix(5.5f), 2.5f, false, false, false, true);
+               5.5f, 2.5f, false, false, false, true);
 
         Dessert dessert1test = new Dessert("mugCake", "Chocolat, lait, farine", "préparer la pate, cuire en 1min30 au micron-onde",
-                new Prix(2f), 2f, true, false, false);
+                2f, 2f, true, false, false);
 
 
         Menu menu1test = new Menu(entree1test, plat1test, dessert1test);
@@ -85,7 +85,7 @@ public class importMenu extends AppCompatActivity {
     }
     private void configureOnClickRecyclerView() {
 
-        ItemClickSupport.addTo(recyclerView, R.layout.fragment_recycler_view_menu)
+        ItemClickSupport.addTo(recyclerView, R.layout.activity_import_menu)
                 .setOnItemClickListener(new ItemClickSupport.OnItemClickListener() {
                     @Override
                     public void onItemClicked(RecyclerView recyclerView, int position, View v) {
@@ -101,8 +101,5 @@ public class importMenu extends AppCompatActivity {
         Intent intent = new Intent(this, creerMaTableStep2bis.class);
         intent.putExtra("maTable",maTable);
         startActivity(intent);
-    }
-    public void onClickImportButton(View view) {
-        startCreerMaTableStep2bisActivity();
     }
 }

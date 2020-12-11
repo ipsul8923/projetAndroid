@@ -54,13 +54,9 @@ public class creerMonMenuStep2 extends AppCompatActivity {
 
 
 
-    private void startCreerMaTableStep2bisActivity(){
-        Intent intent = new Intent(this, creerMaTableStep2bis.class);
-        sendDatabyIntent(intent);
-        startActivity(intent);
-    }
-    private void startAcceuilCuisinierActivity(){
-        Intent intent = new Intent(this, acceuilCuisinier.class);
+
+    private void startCreerMonMenuFinalStepActivity(){
+        Intent intent = new Intent(this, creerMonMenuFinalStep.class);
         sendDatabyIntent(intent);
         startActivity(intent);
     }
@@ -119,13 +115,8 @@ public class creerMonMenuStep2 extends AppCompatActivity {
     public void onClickCreateSecondStep(View view) {
         getDataFromInput();
         if(monPlat!=null) {
-            if (!isDessert && maTable != null) {
-                Toast.makeText(getApplicationContext(), "Menu créer, veuillez reprendre le processus de création de votre table", Toast.LENGTH_LONG).show();
-                startCreerMaTableStep2bisActivity();
-            }
-            if (!isDessert && maTable == null) {
-                Toast.makeText(getApplicationContext(), "Menu créer et ajouter votre liste, voir gérer mes menus", Toast.LENGTH_LONG).show();
-                startAcceuilCuisinierActivity();
+            if (!isDessert) {
+                startCreerMonMenuFinalStepActivity();
             }
             if (isDessert) {
                 startCreerMonMenuStep3Activity();

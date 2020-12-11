@@ -6,39 +6,151 @@
     android:orientation="vertical"
     android:layout_margin="@dimen/mediumSize"
     >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nomEntreeFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Mon Entree"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"></TextView>
+        <RatingBar
+            android:id="@+id/difficulteEntreeFragment"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:isIndicator="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:numStars="5"
+            android:rating="3"
+            />
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/nomPlatFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Mon Plat"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"></TextView>
+        <RatingBar
+            android:id="@+id/difficultePlatFragment"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:isIndicator="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:numStars="5"
+            android:rating="3"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
     <TextView
-        android:id="@+id/nomEntree"
+        android:id="@+id/nomDessertFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
         android:background="@color/white"
-        android:textSize="@dimen/bigSize"
+        android:fontFamily="@font/indie_flower"
         android:gravity="center_horizontal"
-        android:text="MENU PLACEHOLDER ENTREE">
-    </TextView>
+        android:text="Mon Dessert"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"></TextView>
+    <RatingBar
+        android:id="@+id/difficulteDessertFragment"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        style="@style/Widget.AppCompat.RatingBar.Indicator"
+        android:isIndicator="true"
+        android:layout_gravity="center_horizontal"
+        android:layout_margin="5dp"
+        android:numStars="5"
+        android:rating="3"
+        />
+    </LinearLayout>
     <TextView
-        android:id="@+id/nomPlat"
+        android:id="@+id/prixMenuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
         android:background="@color/white"
-        android:textSize="@dimen/bigSize"
+        android:fontFamily="@font/indie_flower"
         android:gravity="center_horizontal"
-        android:text="MENU PLACEHOLDER PLAT">
+        android:text="Price"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize">
 
     </TextView>
-    <TextView
-        android:id="@+id/nomDessert"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
-        android:background="@color/white"
-        android:textSize="@dimen/bigSize"
-        android:gravity="center_horizontal"
-        android:text="MENU PLACEHOLDER DESSERT">
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
 
-    </TextView>
+        <Button
+            android:id="@+id/VegetarienMenuIndicatorFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Vegetarien"
+            android:backgroundTint="@color/checkbox_color"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1"
+            ></Button>
+
+        <Button
+            android:id="@+id/VeganMenuIndicatorFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Vegan"
+            android:backgroundTint="@color/checkbox_color"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1"
+            ></Button>
+
+        <Button
+            android:id="@+id/GlutenMenuIndicatorFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="5dp"
+            android:backgroundTint="@color/checkbox_color"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Gluten"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1"
+            ></Button>
+    </LinearLayout>
 </LinearLayout>

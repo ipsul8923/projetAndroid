@@ -84,31 +84,18 @@ public class creerMonMenuStep3 extends AppCompatActivity {
             maTable.setMonMenu(monMenu);
             intent.putExtra("maTable",maTable);
         }
-        else{
-            //Creer le menu dans le cloud
-        }
+        intent.putExtra("monMenu", monMenu);
     }
-    private void startCreerMaTableStep2bisActivity(){
-        Intent intent = new Intent(this, creerMaTableStep2bis.class);
-        sendDatabyIntent(intent);
-        startActivity(intent);
-    }
-    private void startAcceuilCuisinierActivity(){
-        Intent intent = new Intent(this, acceuilCuisinier.class);
+    private void startCreerMonMenuFinalStepActivity(){
+        Intent intent = new Intent(this, creerMonMenuFinalStep.class);
         sendDatabyIntent(intent);
         startActivity(intent);
     }
     public void onClickCreateThirdStep(View view){
         getDataFromInput();
-        . // à terme seulement dans on créer une table, autrement on enregistre le menu dans le cloud à ce moment là
+        // à terme seulement dans on créer une table, autrement on enregistre le menu dans le cloud à ce moment là
         if(monDessert!=null) {
-            if (maTable != null) {
-                Toast.makeText(getApplicationContext(), "Menu créer et importer dans votre table", Toast.LENGTH_LONG).show();
-                startCreerMaTableStep2bisActivity();
-            } else {
-                Toast.makeText(getApplicationContext(), "Menu créer et importer dans votre base de donnée", Toast.LENGTH_LONG).show();
-                startAcceuilCuisinierActivity();
-            }
+            startCreerMonMenuFinalStepActivity();
         }
         else{
             Toast.makeText(getApplicationContext(), "Veuillez remplir tous les champs pour créer votre Dessert", Toast.LENGTH_LONG).show();

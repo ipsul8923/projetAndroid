@@ -20,6 +20,7 @@ import com.example.latabledesgourmands.utilitaire.Models.Dessert;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
+import com.example.latabledesgourmands.utilitaire.Models.Prix;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
 
 import java.util.ArrayList;
@@ -49,32 +50,26 @@ public class importMenu extends AppCompatActivity {
 
 
     private void manualMenuCreationDebugAim(){
-        Entree entree1test = new Entree("apero1");
-        Entree entree2test = new Entree("apero2");
-        Entree entree3test = new Entree("apero3");
-        Entree entree4test = new Entree("apero4");
-        Entree entree5test = new Entree("apero5");
-        Plat plat1test = new Plat("plat1");
-        Plat plat2test = new Plat("plat2");
-        Plat plat3test = new Plat("plat3");
-        Plat plat4test = new Plat("plat4");
-        Plat plat5test = new Plat("plat5");
-        Dessert dessert1test = new Dessert("dessert1");
-        Dessert dessert2test = new Dessert("dessert2");
-        Dessert dessert3test = new Dessert("dessert3");
-        Dessert dessert4test = new Dessert("dessert4");
-        Dessert dessert5test = new Dessert("dessert5");
+        Entree entree1test = new Entree("salade", "feuille de chêne, sauce", "bien laver la salade",
+                new Prix(1.5f), 1f, true, true, true);
+        Entree entree2test = new Entree("boulette", "fêta, pesto", "laisser au frai 40 min",
+                new Prix(2f), 1.5f, true, false, true);
+
+        Plat plat1test = new Plat("ribs de porc", "ribs, marinade", "cuire à 100 deg pendant 1h30, accompagné de riz",
+                new Prix(5f), 2f, false, false, false, true);
+        Plat plat2test = new Plat("poulet à la creme", "poulet, crème fraiche", "cuire poulet dans la crème et ses oignons",
+                new Prix(5.5f), 2.5f, false, false, false, true);
+
+        Dessert dessert1test = new Dessert("mugCake", "Chocolat, lait, farine", "préparer la pate, cuire en 1min30 au micron-onde",
+                new Prix(2f), 2f, true, false, false);
+
 
         Menu menu1test = new Menu(entree1test, plat1test, dessert1test);
-        Menu menu2test = new Menu(entree2test, plat2test, dessert2test);
-        Menu menu3test = new Menu(entree3test, plat3test, dessert3test);
-        Menu menu4test = new Menu(entree4test, plat4test, dessert4test);
-        Menu menu5test = new Menu(entree5test, plat5test, dessert5test);
+        Menu menu2test = new Menu(entree2test, plat2test, dessert1test);
+
         menuList.add(menu1test);
         menuList.add(menu2test);
-        menuList.add(menu3test);
-        menuList.add(menu4test);
-        menuList.add(menu5test);
+
     }
 
     private void setUpRecyclerViewFragment(){

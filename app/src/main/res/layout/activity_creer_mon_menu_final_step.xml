@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".cuisinier.créerMonMenu.creerMonMenuFinalStep"
+    android:orientation="vertical"
+    android:background="@drawable/background"
+    >
+    <LinearLayout
+        android:id="@+id/topLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <fragment
+            android:id="@+id/fragment"
+            android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:layout="@layout/fragment_bandeau_haut" />
+        <TextView
+            android:id="@+id/button"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="Finalisation de mon menu"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:gravity="center_horizontal"
+            />
+        <fragment
+            android:id="@+id/fragment3"
+            android:name="com.example.latabledesgourmands.fragments.menuFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            tools:layout="@layout/fragment_menu"
+            
+            />
+    </LinearLayout>
+
+<Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:background="@color/white"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigMediumSize"
+        android:layout_margin="5dp"
+        android:gravity="center_horizontal"
+        android:text="@string/creer_mon_menu"
+        android:onClick="onClickCreateMenuButton"
+        android:layout_alignParentBottom="true"
+        ></Button>
+
+
+
+</RelativeLayout>

@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/menuRecyclerViewViewHolderBackground"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
@@ -8,36 +9,11 @@
     android:background="@color/yellow"
     android:layout_margin="@dimen/mediumSize"
     >
-    <TextView
-        android:id="@+id/nomEntree"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
-        android:textSize="@dimen/bigSize"
-        android:gravity="center_horizontal"
-        android:text="MENU PLACEHOLDER ENTREE">
-    </TextView>
-    <TextView
-        android:id="@+id/nomPlat"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
-        android:textSize="@dimen/bigSize"
-        android:gravity="center_horizontal"
-        android:text="MENU PLACEHOLDER PLAT">
 
-    </TextView>
-    <TextView
-        android:id="@+id/nomDessert"
+    <fragment
+        android:id="@+id/fragment4"
+        android:name="com.example.latabledesgourmands.fragments.menuFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
-        android:textSize="@dimen/bigSize"
-        android:gravity="center_horizontal"
-        android:text="MENU PLACEHOLDER DESSERT">
-
-    </TextView>
+        tools:layout="@layout/fragment_menu" />
 </LinearLayout>

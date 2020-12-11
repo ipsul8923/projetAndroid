@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -86,12 +87,33 @@ public class creerMaTableStep4 extends AppCompatActivity {
         TextView nomEntree;
         TextView nomPlat;
         TextView nomDessert;
-        nomEntree=findViewById(R.id.nomEntree);
-        nomPlat=findViewById(R.id.nomPlat);
-        nomDessert=findViewById(R.id.nomDessert);
+        TextView priceMenu;
+        RatingBar diffEntree;
+        RatingBar diffPlat;
+        RatingBar diffDessert;
+        Button veggieIndicator;
+        Button veganIndicator;
+        Button glutenIndicator;
+        nomEntree=findViewById(R.id.nomEntreeFragment);
+        nomPlat=findViewById(R.id.nomPlatFragment);
+        nomDessert=findViewById(R.id.nomDessertFragment);
+        priceMenu=findViewById(R.id.prixMenuFragment);
+        diffEntree=findViewById(R.id.difficulteEntreeFragment);
+        diffPlat=findViewById(R.id.difficultePlatFragment);
+        diffDessert=findViewById(R.id.difficulteDessertFragment);
+        veggieIndicator=findViewById(R.id.VegetarienMenuIndicatorFragment);
+        veganIndicator=findViewById(R.id.VeganMenuIndicatorFragment);
+        glutenIndicator=findViewById(R.id.GlutenMenuIndicatorFragment);
         nomEntree.setText(menu.getMonEntree().getNom());
         nomPlat.setText(menu.getMonPlat().getNom());
         nomDessert.setText(menu.getMonDessert().getNom());
+        priceMenu.setText((int) menu.getPrixDuMenuParPersonne().getValeur());
+        diffEntree.setRating(menu.getMonEntree().getDifficulte());
+        diffPlat.setRating(menu.getMonPlat().getDifficulte());
+        diffDessert.setRating(menu.getMonDessert().getDifficulte());
+        veggieIndicator.setSelected(menu.isVegetarien());
+        veganIndicator.setSelected(menu.isVegan());
+        glutenIndicator.setSelected(menu.isSansGluten());
     }
 
 

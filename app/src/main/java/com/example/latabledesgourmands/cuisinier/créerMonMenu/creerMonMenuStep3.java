@@ -100,7 +100,7 @@ public class creerMonMenuStep3 extends AppCompatActivity {
     }
     public void onClickCreateThirdStep(View view){
         getDataFromInput();
-        . // à terme seulement dans on créer une table, autrement on enregistre le menu dans le cloud à ce moment là
+        // à terme seulement dans on créer une table, autrement on enregistre le menu dans le cloud à ce moment là
         if(monDessert!=null) {
             if (maTable != null) {
                 Toast.makeText(getApplicationContext(), "Menu créer et importer dans votre table", Toast.LENGTH_LONG).show();

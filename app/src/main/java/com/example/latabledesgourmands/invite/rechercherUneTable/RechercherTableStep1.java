@@ -33,9 +33,9 @@ public class RechercherTableStep1 extends AppCompatActivity {
     private void initFiltreTableProcess(){
         monFiltre = new Table(
                 new Menu(
-                        new Entree(null),
-                        new Plat(null),
-                        new Dessert(null)
+                        new Entree(null, null, null, 0f, 0f, null, null, null),
+                        new Plat(null, null, null, null, 0f, null, null, null, null),
+                        new Dessert(null, null, null, null, 0f, null, null, null)
                 ),
                 new Evenement(null, null, null, 0, 0, null, null, null, null)
         );

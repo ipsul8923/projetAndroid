@@ -11,9 +11,9 @@ public class Menu implements Parcelable {
     private boolean isDessertPicked;
     private Prix prixDuMenuParPersonne;
     private float difficulte;
-    private boolean vegetarien;
-    private boolean vegan;
-    private boolean sansGluten;
+    private Boolean vegetarien;
+    private Boolean vegan;
+    private Boolean sansGluten;
     //Constructeurs
 
 
@@ -28,17 +28,17 @@ public class Menu implements Parcelable {
                 + monPlat.getPrixParPersonne().getValeur()
                + monDessert.getPrixParPersonne().getValeur());
         this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre l'entree plat et dessert
-        if(monEntree.isVegetarien() && monPlat.isVegetarien() && monDessert.isVegetarien()){
+        if(monEntree.getVegetarien() && monPlat.getVegetarien() && monDessert.getVegetarien()){
         this.vegetarien = true;}
         else {
             this.vegetarien=false;
         }
-       if(monEntree.isVegan() && monPlat.isVegan() && monDessert.isVegan()){
+       if(monEntree.getVegan() && monPlat.getVegan() && monDessert.getVegan()){
            this.vegan = true;}
         else{
           this.vegan=false;
        }
-       if(monEntree.isSansGluten() && monPlat.isSansGluten() && monDessert.isSansGluten()){
+       if(monEntree.getSansGluten() && monPlat.getSansGluten() && monDessert.getSansGluten()){
            this.sansGluten = true;}
         else {
             this.sansGluten=false;
@@ -53,17 +53,17 @@ public class Menu implements Parcelable {
                           monPlat.getPrixParPersonne().getValeur()
                         + monDessert.getPrixParPersonne().getValeur());
         this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre  plat et dessert
-        if(monPlat.isVegetarien() && monDessert.isVegetarien()){
+        if(monPlat.getVegetarien() && monDessert.getVegetarien()){
             this.vegetarien = true;}
         else {
             this.vegetarien=false;
         }
-        if(monPlat.isVegan() && monDessert.isVegan()){
+        if(monPlat.getVegan() && monDessert.getVegan()){
             this.vegan = true;}
         else{
             this.vegan=false;
         }
-        if(monPlat.isSansGluten() && monDessert.isSansGluten()){
+        if(monPlat.getSansGluten() && monDessert.getSansGluten()){
             this.sansGluten = true;}
         else {
             this.sansGluten=false;
@@ -80,17 +80,17 @@ public class Menu implements Parcelable {
                 monEntree.getPrixParPersonne().getValeur()
                         + monPlat.getPrixParPersonne().getValeur());
         this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre l'entree plat
-        if(monEntree.isVegetarien() && monPlat.isVegetarien()){
+        if(monEntree.getVegetarien() && monPlat.getVegetarien()){
             this.vegetarien = true;}
         else {
             this.vegetarien=false;
         }
-        if(monEntree.isVegan() && monPlat.isVegan()){
+        if(monEntree.getVegan() && monPlat.getVegan()){
             this.vegan = true;}
         else{
             this.vegan=false;
         }
-        if(monEntree.isSansGluten() && monPlat.isSansGluten()){
+        if(monEntree.getSansGluten() && monPlat.getSansGluten()){
             this.sansGluten = true;}
         else {
             this.sansGluten=false;
@@ -103,17 +103,17 @@ public class Menu implements Parcelable {
         this.isDessertPicked = false;
         this.prixDuMenuParPersonne= new Prix( monPlat.getPrixParPersonne().getValeur());
         this.difficulte= monPlat.getDifficulte();
-        if(monPlat.isVegetarien()){
+        if(monPlat.getVegetarien()){
             this.vegetarien = true;}
         else {
             this.vegetarien=false;
         }
-        if(monPlat.isVegan()){
+        if(monPlat.getVegan()){
             this.vegan = true;}
         else{
             this.vegan=false;
         }
-        if(monPlat.isSansGluten()){
+        if(monPlat.getSansGluten()){
             this.sansGluten = true;}
         else {
             this.sansGluten=false;
@@ -127,9 +127,12 @@ public class Menu implements Parcelable {
         isEntreePicked = in.readByte() != 0;
         isDessertPicked = in.readByte() != 0;
         difficulte = in.readFloat();
-        vegetarien = in.readByte() != 0;
-        vegan = in.readByte() != 0;
-        sansGluten = in.readByte() != 0;
+        byte tmpVegetarien = in.readByte();
+        vegetarien = tmpVegetarien == 0 ? null : tmpVegetarien == 1;
+        byte tmpVegan = in.readByte();
+        vegan = tmpVegan == 0 ? null : tmpVegan == 1;
+        byte tmpSansGluten = in.readByte();
+        sansGluten = tmpSansGluten == 0 ? null : tmpSansGluten == 1;
     }
 
     @Override
@@ -140,9 +143,9 @@ public class Menu implements Parcelable {
         dest.writeByte((byte) (isEntreePicked ? 1 : 0));
         dest.writeByte((byte) (isDessertPicked ? 1 : 0));
         dest.writeFloat(difficulte);
-        dest.writeByte((byte) (vegetarien ? 1 : 0));
-        dest.writeByte((byte) (vegan ? 1 : 0));
-        dest.writeByte((byte) (sansGluten ? 1 : 0));
+        dest.writeByte((byte) (vegetarien == null ? 0 : vegetarien ? 1 : 2));
+        dest.writeByte((byte) (vegan == null ? 0 : vegan ? 1 : 2));
+        dest.writeByte((byte) (sansGluten == null ? 0 : sansGluten ? 1 : 2));
     }
 
     @Override
@@ -170,7 +173,7 @@ public class Menu implements Parcelable {
         this.difficulte = difficulte;
     }
 
-    public boolean isVegetarien() {
+    public boolean getVegetarien() {
         return vegetarien;
     }
 
@@ -178,7 +181,7 @@ public class Menu implements Parcelable {
         this.vegetarien = vegetarien;
     }
 
-    public boolean isVegan() {
+    public boolean getVegan() {
         return vegan;
     }
 
@@ -186,7 +189,7 @@ public class Menu implements Parcelable {
         this.vegan = vegan;
     }
 
-    public boolean isSansGluten() {
+    public boolean getSansGluten() {
         return sansGluten;
     }
 

@@ -9,7 +9,7 @@ public class Menu implements Parcelable {
     private Dessert monDessert;
     private boolean isEntreePicked;
     private boolean isDessertPicked;
-    private Prix prixDuMenuParPersonne;
+    private float prixDuMenuParPersonne;
     private float difficulte;
     private Boolean vegetarien;
     private Boolean vegan;
@@ -23,10 +23,10 @@ public class Menu implements Parcelable {
         this.monDessert = monDessert;
         this.isEntreePicked = true;
         this.isDessertPicked = true;
-        this.prixDuMenuParPersonne= new Prix(
-                monEntree.getPrixParPersonne().getValeur()
-                + monPlat.getPrixParPersonne().getValeur()
-               + monDessert.getPrixParPersonne().getValeur());
+        this.prixDuMenuParPersonne =
+                monEntree.getPrixParPersonne()
+                + monPlat.getPrixParPersonne()
+               + monDessert.getPrixParPersonne();
         this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre l'entree plat et dessert
         if(monEntree.getVegetarien() && monPlat.getVegetarien() && monDessert.getVegetarien()){
         this.vegetarien = true;}
@@ -49,9 +49,9 @@ public class Menu implements Parcelable {
         this.monDessert = monDessert;
         this.isEntreePicked = false;
         this.isDessertPicked = true;
-        this.prixDuMenuParPersonne = new Prix(
-                          monPlat.getPrixParPersonne().getValeur()
-                        + monDessert.getPrixParPersonne().getValeur());
+        this.prixDuMenuParPersonne =
+                          monPlat.getPrixParPersonne()
+                        + monDessert.getPrixParPersonne();
         this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre  plat et dessert
         if(monPlat.getVegetarien() && monDessert.getVegetarien()){
             this.vegetarien = true;}
@@ -76,9 +76,9 @@ public class Menu implements Parcelable {
         this.monPlat = monPlat;
         this.isEntreePicked = true;
         this.isDessertPicked = false;
-        this.prixDuMenuParPersonne=  new Prix(
-                monEntree.getPrixParPersonne().getValeur()
-                        + monPlat.getPrixParPersonne().getValeur());
+        this.prixDuMenuParPersonne =
+                        monEntree.getPrixParPersonne()
+                        + monPlat.getPrixParPersonne();
         this.difficulte= monPlat.getDifficulte(); //Set difficulte au plus entre l'entree plat
         if(monEntree.getVegetarien() && monPlat.getVegetarien()){
             this.vegetarien = true;}
@@ -101,7 +101,7 @@ public class Menu implements Parcelable {
         this.monPlat = monPlat;
         this.isEntreePicked = false;
         this.isDessertPicked = false;
-        this.prixDuMenuParPersonne= new Prix( monPlat.getPrixParPersonne().getValeur());
+        this.prixDuMenuParPersonne= monPlat.getPrixParPersonne();
         this.difficulte= monPlat.getDifficulte();
         if(monPlat.getVegetarien()){
             this.vegetarien = true;}
@@ -126,6 +126,7 @@ public class Menu implements Parcelable {
         monDessert = in.readParcelable(Dessert.class.getClassLoader());
         isEntreePicked = in.readByte() != 0;
         isDessertPicked = in.readByte() != 0;
+        prixDuMenuParPersonne = in.readFloat();
         difficulte = in.readFloat();
         byte tmpVegetarien = in.readByte();
         vegetarien = tmpVegetarien == 0 ? null : tmpVegetarien == 1;
@@ -142,6 +143,7 @@ public class Menu implements Parcelable {
         dest.writeParcelable(monDessert, flags);
         dest.writeByte((byte) (isEntreePicked ? 1 : 0));
         dest.writeByte((byte) (isDessertPicked ? 1 : 0));
+        dest.writeFloat(prixDuMenuParPersonne);
         dest.writeFloat(difficulte);
         dest.writeByte((byte) (vegetarien == null ? 0 : vegetarien ? 1 : 2));
         dest.writeByte((byte) (vegan == null ? 0 : vegan ? 1 : 2));
@@ -237,11 +239,11 @@ public class Menu implements Parcelable {
         isDessertPicked = dessertPicked;
     }
 
-    public Prix getPrixDuMenuParPersonne() {
+    public float getPrixDuMenuParPersonne() {
         return prixDuMenuParPersonne;
     }
 
-    public void setPrixDuMenuParPersonne(Prix prixDuMenuParPersonne) {
+    public void setPrixDuMenuParPersonne(float prixDuMenuParPersonne) {
         this.prixDuMenuParPersonne = prixDuMenuParPersonne;
     }
 

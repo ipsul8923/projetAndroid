@@ -7,7 +7,7 @@ public class Plat implements Parcelable {
     private String nom;
     private String listeIngredients;
     private String recette;
-    private Prix prixParPersonne;
+    private float prixParPersonne;
     private float difficulte;
     private Boolean vegetarien;
     private Boolean vegan;
@@ -18,7 +18,7 @@ public class Plat implements Parcelable {
         this.nom = nom;
     }
 
-    public Plat(String nom, String listeIngredients, String recette, Prix prixParPersonne, float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted) {
+    public Plat(String nom, String listeIngredients, String recette, float prixParPersonne, float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted) {
         this.nom = nom;
         this.listeIngredients = listeIngredients;
         this.recette = recette;
@@ -34,6 +34,7 @@ public class Plat implements Parcelable {
         nom = in.readString();
         listeIngredients = in.readString();
         recette = in.readString();
+        prixParPersonne = in.readFloat();
         difficulte = in.readFloat();
         byte tmpVegetarien = in.readByte();
         vegetarien = tmpVegetarien == 0 ? null : tmpVegetarien == 1;
@@ -50,6 +51,7 @@ public class Plat implements Parcelable {
         dest.writeString(nom);
         dest.writeString(listeIngredients);
         dest.writeString(recette);
+        dest.writeFloat(prixParPersonne);
         dest.writeFloat(difficulte);
         dest.writeByte((byte) (vegetarien == null ? 0 : vegetarien ? 1 : 2));
         dest.writeByte((byte) (vegan == null ? 0 : vegan ? 1 : 2));
@@ -98,11 +100,11 @@ public class Plat implements Parcelable {
         this.recette = recette;
     }
 
-    public Prix getPrixParPersonne() {
+    public float getPrixParPersonne() {
         return prixParPersonne;
     }
 
-    public void setPrixParPersonne(Prix prixParPersonne) {
+    public void setPrixParPersonne(float prixParPersonne) {
         this.prixParPersonne = prixParPersonne;
     }
 

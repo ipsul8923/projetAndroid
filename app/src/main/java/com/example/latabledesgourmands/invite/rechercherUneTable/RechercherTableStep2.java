@@ -33,6 +33,10 @@ public class RechercherTableStep2 extends AppCompatActivity {
     List<Table> sortedTableList;
     public Table tableSelected;
     Table monFiltre;
+    Theme pirates;
+    Theme haloween;
+    Theme aucun;
+    Theme tout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,30 +56,27 @@ public class RechercherTableStep2 extends AppCompatActivity {
 
     private void manualTableCreationDebugAim() {
         // Table 1
-        Entree entree1 = new Entree("entrée1");
-        Plat plat1 = new Plat("plat1");
-        Dessert dessert1 = new Dessert("dessert1");
+        Entree entree1 = new Entree("entrée1", "listeIngredientsEntrée1", "recetteEntrée1", 1.5f, 2f, true, false, false);
+        Plat plat1 = new Plat("plat1", "listeIngredientsPlat1", "recettePlat1", 2f, 3f, true, false, false, false);
+        Dessert dessert1 = new Dessert("dessert1", "listeIngredientsDessert1", "recetteDessert1", 1f, 1f, true, false, false);
         Menu menu1 = new Menu(entree1, plat1, dessert1);
-        Evenement evenement1 = new Evenement("12-12-2020");
-        evenement1.setAdresse("Chez Michel");
+        Evenement evenement1 = new Evenement("12-12-2020", "Chez Michel", "19:30", 5, 1,  pirates, true, false, true);
         Table table1 = new Table(menu1, evenement1);
 
         // Table 2
-        Entree entree2 = new Entree("entrée2");
-        Plat plat2 = new Plat("plat2");
-        Dessert dessert2 = new Dessert("dessert2");
+        Entree entree2 = new Entree("entrée2", "listeIngredientsEntrée2", "recetteEntrée2", 1.6f, 2.5f, false, false, false);
+        Plat plat2 = new Plat("plat2", "listeIngredientsPlat2", "recettePlat2", 3f, 3f, false, false, false, false);
+        Dessert dessert2 = new Dessert("dessert2", "listeIngredientsDessert2", "recetteDessert2", .5f, 1f, false, false, false);
         Menu menu2 = new Menu(entree2, plat2, dessert2);
-        Evenement evenement2 = new Evenement("12-12-2020");
-        evenement2.setAdresse("Lyon");
+        Evenement evenement2 = new Evenement("12-12-2020", "Chez Jacques", "19:30", 5, 1,  haloween, true, true, true);
         Table table2 = new Table(menu2, evenement2);
 
         // Table 3
-        Entree entree3 = new Entree("entrée3");
-        Plat plat3 = new Plat("plat3");
-        Dessert dessert3 = new Dessert("dessert3");
+        Entree entree3 = new Entree("entrée3", "listeIngredientsEntrée3", "recetteEntrée3", 3f, 4f, false, false, true);
+        Plat plat3 = new Plat("plat3", "listeIngredientsPlat3", "recettePlat3", 2f, 5f, false, false, false, false);
+        Dessert dessert3 = new Dessert("dessert3", "listeIngredientsDessert3", "recetteDessert3", 2f, 1f, false, false, false);
         Menu menu3 = new Menu(entree3, plat3, dessert3);
-        Evenement evenement3 = new Evenement("13-12-2020");
-        evenement1.setAdresse("Chez doume, à Marseille");
+        Evenement evenement3 = new Evenement("15-12-2020", "Chez Pierre", "20:30", 4, 2,  aucun, false, true, true);
         Table table3 = new Table(menu3, evenement3);
 
         //private void loadTableListe(){
@@ -89,18 +90,144 @@ public class RechercherTableStep2 extends AppCompatActivity {
         List <Table> sortedTableList = new ArrayList<>();
 
         for(int i=0; i<listeComplete.size(); i++){
-            Log.i("try", " filtre : " + filtre.getMonEvenement().getDate() );
-            if(filtre.getMonEvenement().getDate() != null){
-                Log.i("try",  " date : " + listeComplete.get(i).getMonEvenement().getDate()
-                        + " VS filtre : " +  filtre.getMonEvenement().getDate());
-                Log.i("try", "bool == : " + (listeComplete.get(i).getMonEvenement().getDate() == filtre.getMonEvenement().getDate()));
-                Log.i("try", "bool equals : " + (listeComplete.get(i).getMonEvenement().getDate().equals(filtre.getMonEvenement().getDate())));
-                if( listeComplete.get(i).getMonEvenement().getDate().equals(filtre.getMonEvenement().getDate())){
-                    sortedTableList.add(listeComplete.get(i));
-                }
-            }
+            if(testDateFiltre(listeComplete.get(i), filtre))
+                if(testHeureFiltre(listeComplete.get(i), filtre))
+                    if(testAdresseFiltre(listeComplete.get(i), filtre))
+                        if(testConvivesFiltre(listeComplete.get(i), filtre))
+                            if(testPrixFiltre(listeComplete.get(i), filtre))
+                                if(testThemeFiltre(listeComplete.get(i), filtre))
+                                    if(testFumeurFiltre(listeComplete.get(i), filtre))
+                                        if(testAnimauxFiltre(listeComplete.get(i), filtre))
+                                            if(testAlcoolFiltre(listeComplete.get(i), filtre))
+                                                if(testMenuToutFiltre(listeComplete.get(i), filtre))
+                                                    sortedTableList.add(listeComplete.get(i));
+                                                else if(testMenuVegeFiltre(listeComplete.get(i), filtre))
+                                                    sortedTableList.add(listeComplete.get(i));
+                                                else if(testMenuVeganFiltre(listeComplete.get(i), filtre))
+                                                    sortedTableList.add(listeComplete.get(i));
+                                                else if(testMenuSansGlutenFiltre(listeComplete.get(i), filtre))
+                                                    sortedTableList.add(listeComplete.get(i));
         }
     return sortedTableList;
+    }
+
+    private Boolean testDateFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getDate() != null){
+            if(tableTestee.getMonEvenement().getDate().equals(filtre.getMonEvenement().getDate())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testHeureFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getHeure() != null){
+            if(tableTestee.getMonEvenement().getHeure().equals(filtre.getMonEvenement().getHeure())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testAdresseFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getAdresse() != null){
+            if(tableTestee.getMonEvenement().getAdresse().equals(filtre.getMonEvenement().getAdresse())){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testConvivesFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getNombreConvive() != 0f){
+            if(tableTestee.getMonEvenement().getNombreConvive() == filtre.getMonEvenement().getNombreConvive()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testMenuToutFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonMenu().getVegetarien() != null && filtre.getMonMenu().getVegan() != null && filtre.getMonMenu().getSansGluten() != null){
+            if(tableTestee.getMonMenu().getVegetarien() == filtre.getMonMenu().getVegetarien()
+                    && tableTestee.getMonMenu().getVegan() == filtre.getMonMenu().getVegan()
+                    && tableTestee.getMonMenu().getSansGluten() == filtre.getMonMenu().getSansGluten()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testMenuVegeFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonMenu().getVegetarien() != null){
+            if(tableTestee.getMonMenu().getVegetarien() == filtre.getMonMenu().getVegetarien()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testMenuVeganFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonMenu().getVegan() != null){
+            if(tableTestee.getMonMenu().getVegan() == filtre.getMonMenu().getVegan()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testMenuSansGlutenFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonMenu().getSansGluten() != null){
+            if(tableTestee.getMonMenu().getSansGluten() == filtre.getMonMenu().getSansGluten()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testPrixFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonMenu().getPrixDuMenuParPersonne() != 0f){
+            if(tableTestee.getMonMenu().getPrixDuMenuParPersonne() <= filtre.getMonMenu().getPrixDuMenuParPersonne()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testThemeFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getTheme() != null){
+            if(tableTestee.getMonEvenement().getTheme() == filtre.getMonEvenement().getTheme()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testFumeurFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getFumeurOk() != null){
+            if(tableTestee.getMonEvenement().getFumeurOk() == filtre.getMonEvenement().getFumeurOk()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testAnimauxFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getAnimalOk() != null){
+            if(tableTestee.getMonEvenement().getAnimalOk() == filtre.getMonEvenement().getAnimalOk()){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private Boolean testAlcoolFiltre(Table tableTestee, Table filtre){
+        if(filtre.getMonEvenement().getAlcoolOk() != null){
+            if(tableTestee.getMonEvenement().getAlcoolOk() == filtre.getMonEvenement().getAlcoolOk()){
+                return true;
+            }
+        }
+        return false;
     }
 
     private void setUpRecyclerViewFragment(){
@@ -110,7 +237,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
 
     private void configureRecyclerView() {
         recyclerView = findViewById(R.id.tableRecyclerView);
-        sortedTableList=getSortedTableList(tableList, monFiltre);
+        sortedTableList = getSortedTableList(tableList, monFiltre);
         if(sortedTableList.size() != 0){
         adapter = new tableAdapter(sortedTableList);
             Log.i("TEST", "liste des tables filtrées " + sortedTableList.size() + sortedTableList.get(0));

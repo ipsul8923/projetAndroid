@@ -9,15 +9,15 @@ public class Entree implements Parcelable {
     private String recette;
     private Prix prixParPersonne;
     private float difficulte;
-    private boolean vegetarien;
-    private boolean vegan;
-    private boolean sansGluten;
+    private Boolean vegetarien;
+    private Boolean vegan;
+    private Boolean sansGluten;
 
     public Entree(String nom) {
         this.nom = nom;
     }
 
-    public Entree(String nom, String listeIngredients, String recette, Prix prixParPersonne, float difficulte, boolean vegetarien, boolean vegan, boolean sansGluten) {
+    public Entree(String nom, String listeIngredients, String recette, Prix prixParPersonne, float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten) {
         this.nom = nom;
         this.listeIngredients = listeIngredients;
         this.recette = recette;
@@ -33,9 +33,12 @@ public class Entree implements Parcelable {
         listeIngredients = in.readString();
         recette = in.readString();
         difficulte = in.readFloat();
-        vegetarien = in.readByte() != 0;
-        vegan = in.readByte() != 0;
-        sansGluten = in.readByte() != 0;
+        byte tmpVegetarien = in.readByte();
+        vegetarien = tmpVegetarien == 0 ? null : tmpVegetarien == 1;
+        byte tmpVegan = in.readByte();
+        vegan = tmpVegan == 0 ? null : tmpVegan == 1;
+        byte tmpSansGluten = in.readByte();
+        sansGluten = tmpSansGluten == 0 ? null : tmpSansGluten == 1;
     }
 
     @Override
@@ -44,9 +47,9 @@ public class Entree implements Parcelable {
         dest.writeString(listeIngredients);
         dest.writeString(recette);
         dest.writeFloat(difficulte);
-        dest.writeByte((byte) (vegetarien ? 1 : 0));
-        dest.writeByte((byte) (vegan ? 1 : 0));
-        dest.writeByte((byte) (sansGluten ? 1 : 0));
+        dest.writeByte((byte) (vegetarien == null ? 0 : vegetarien ? 1 : 2));
+        dest.writeByte((byte) (vegan == null ? 0 : vegan ? 1 : 2));
+        dest.writeByte((byte) (sansGluten == null ? 0 : sansGluten ? 1 : 2));
     }
 
     @Override
@@ -106,7 +109,7 @@ public class Entree implements Parcelable {
         this.difficulte = difficulte;
     }
 
-    public boolean isVegetarien() {
+    public boolean getVegetarien() {
         return vegetarien;
     }
 
@@ -114,7 +117,7 @@ public class Entree implements Parcelable {
         this.vegetarien = vegetarien;
     }
 
-    public boolean isVegan() {
+    public boolean getVegan() {
         return vegan;
     }
 
@@ -122,7 +125,7 @@ public class Entree implements Parcelable {
         this.vegan = vegan;
     }
 
-    public boolean isSansGluten() {
+    public boolean getSansGluten() {
         return sansGluten;
     }
 

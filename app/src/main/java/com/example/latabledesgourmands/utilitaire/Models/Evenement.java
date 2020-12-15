@@ -17,6 +17,8 @@ public class Evenement implements Parcelable {
     public Evenement(String date) {
         this.date = date;
     }
+public Evenement (){}
+
 
     public Evenement(String date, String adresse, String heure, int nombreConvive,
                      int nombreCuisinier, String theme, Boolean isFumeurOk, Boolean isAnimalOk, Boolean isAlcoolOk) {

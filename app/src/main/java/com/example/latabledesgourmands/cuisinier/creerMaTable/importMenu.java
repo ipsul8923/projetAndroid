@@ -1,5 +1,6 @@
 package com.example.latabledesgourmands.cuisinier.creerMaTable;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -12,15 +13,21 @@ import android.os.Debug;
 import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example.latabledesgourmands.R;
 import com.example.latabledesgourmands.fragments.recyclerViewMenu.menuAdapter;
+import com.example.latabledesgourmands.utilitaire.API.menuHelper;
 import com.example.latabledesgourmands.utilitaire.ItemClickSupport;
 import com.example.latabledesgourmands.utilitaire.Models.Dessert;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,6 +38,12 @@ public class importMenu extends AppCompatActivity {
     List<Menu> menuList;
     Table maTable;
     public Menu selectedMenu;
+
+
+    public interface MyCallback {
+        void onCallback(List<Menu> menuListLink);
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -68,8 +81,43 @@ public class importMenu extends AppCompatActivity {
 
         menuList.add(menu1test);
         menuList.add(menu2test);
+        getDataFromFirebase(new MyCallback() {
+            @Override
+            public void onCallback(List<Menu> menuListLink) {
+                for(int i=0; i<menuListLink.size(); i++){
+                    menuList.add(menuListLink.get(i));
+                }
+            }
+        });
+    }
+    private void getDataFromFirebase (MyCallback myCallback) {
+        //GetDataFromFirestore
+        Task<QuerySnapshot> query = menuHelper.getMenuCollection()
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<Menu> menuListWithinOnComplete = new ArrayList<>();
+                            for (DocumentSnapshot document : task.getResult()) {
+                                Menu menu = document.toObject(Menu.class);
+                                menuListWithinOnComplete.add(menu);
+                            }
+                            configureRecyclerView();
+                            myCallback.onCallback(menuListWithinOnComplete);
+                            if (task.getResult().size()==0){
+                                Toast.makeText(getApplicationContext(), "Aucun menus présent dans la base de donnée", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Error, check logs", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
 
     }
+
+
+
 
     private void setUpRecyclerViewFragment(){
         configureRecyclerView();

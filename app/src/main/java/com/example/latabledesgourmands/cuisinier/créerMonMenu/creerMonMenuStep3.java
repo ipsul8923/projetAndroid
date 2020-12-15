@@ -17,7 +17,6 @@ import com.example.latabledesgourmands.utilitaire.Models.Dessert;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
-import com.example.latabledesgourmands.utilitaire.Models.Prix;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
 
 public class creerMonMenuStep3 extends AppCompatActivity {

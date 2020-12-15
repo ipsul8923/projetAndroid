@@ -18,7 +18,8 @@ public class Plat implements Parcelable {
         this.nom = nom;
     }
 
-    public Plat(String nom, String listeIngredients, String recette, float prixParPersonne, float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted) {
+    public Plat(String nom, String listeIngredients, String recette, float prixParPersonne,
+                float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted) {
         this.nom = nom;
         this.listeIngredients = listeIngredients;
         this.recette = recette;

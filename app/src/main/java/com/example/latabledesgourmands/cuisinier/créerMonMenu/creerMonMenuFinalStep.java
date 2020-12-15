@@ -13,8 +13,11 @@ import android.widget.Toast;
 import com.example.latabledesgourmands.R;
 import com.example.latabledesgourmands.cuisinier.acceuilCuisinier;
 import com.example.latabledesgourmands.cuisinier.creerMaTable.creerMaTableStep2bis;
+import com.example.latabledesgourmands.utilitaire.API.menuHelper;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class creerMonMenuFinalStep extends AppCompatActivity {
     Table maTable;
@@ -83,14 +86,30 @@ public class creerMonMenuFinalStep extends AppCompatActivity {
             Toast.makeText(getApplicationContext(), "Pas de menu à afficher, une erreur a du se glisser", Toast.LENGTH_LONG).show();
         }
     }
-
+    protected FirebaseUser getCurrentUser(){ return FirebaseAuth.getInstance().getCurrentUser(); }
+    protected Boolean isCurrentUserLogged(){ return (this.getCurrentUser() != null); }
     private void sendDatabyIntent(Intent intent){
         if(maTable!=null){ //On a besoin d'envoyer la table avec le bon menu
             maTable.setMonMenu(monMenu);
             intent.putExtra("maTable",maTable);
         }
         else{
-            //on créer le menu dans le cloud
+            if(monMenu.getMonEntree()!=null){
+                if(monMenu.getMonDessert()!=null){
+                    menuHelper.createMenu(monMenu.getMonEntree(), monMenu.getMonPlat(), monMenu.getMonDessert(), getCurrentUser().getUid());
+                }
+                menuHelper.createMenuEntreePlat(monMenu.getMonEntree(), monMenu.getMonPlat(), getCurrentUser().getUid());
+            }
+            else {
+
+
+                if (monMenu.getMonDessert() != null) {
+                    menuHelper.createMenuPlatDessert(monMenu.getMonPlat(), monMenu.getMonDessert(), getCurrentUser().getUid());
+                }
+                else{
+                    menuHelper.createMenuPlat(monMenu.getMonPlat(), getCurrentUser().getUid());
+                }
+            }
         }
     }
     private void startCreerMaTableStep2bisActivity(){

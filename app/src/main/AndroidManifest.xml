@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LaTableDesGourmands">
-        <activity android:name=".cuisinier.créerMonMenu.creerMonMenuFinalStep"></activity>
+        <activity android:name=".demarrageapplication.profileActivity"></activity>
+        <activity android:name=".cuisinier.créerMonMenu.creerMonMenuFinalStep" />
         <activity android:name=".cuisinier.créerMonMenu.creerMonMenuStep1" />
         <activity android:name=".cuisinier.créerMonMenu.creerMonMenuStep3" />
         <activity android:name=".cuisinier.créerMonMenu.creerMonMenuStep2" />

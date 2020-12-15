@@ -9,7 +9,7 @@ public class Evenement implements Parcelable {
     String heure;
     int nombreConvive;
     int nombreCuisinier;
-    Theme  theme;
+    String  theme;
     Boolean isFumeurOk;
     Boolean isAnimalOk;
     Boolean isAlcoolOk;
@@ -18,7 +18,8 @@ public class Evenement implements Parcelable {
         this.date = date;
     }
 
-    public Evenement(String date, String adresse, String heure, int nombreConvive,int nombreCuisinier, Theme theme, Boolean isFumeurOk, Boolean isAnimalOk, Boolean isAlcoolOk) {
+    public Evenement(String date, String adresse, String heure, int nombreConvive,
+                     int nombreCuisinier, String theme, Boolean isFumeurOk, Boolean isAnimalOk, Boolean isAlcoolOk) {
         this.date = date;
         this.adresse = adresse;
         this.heure = heure;
@@ -37,7 +38,7 @@ public class Evenement implements Parcelable {
         heure = in.readString();
         nombreConvive = in.readInt();
         nombreCuisinier = in.readInt();
-        theme = in.readParcelable(Theme.class.getClassLoader());
+        theme = in.readString();
         byte tmpIsFumeurOk = in.readByte();
         isFumeurOk = tmpIsFumeurOk == 0 ? null : tmpIsFumeurOk == 1;
         byte tmpIsAnimalOk = in.readByte();
@@ -53,7 +54,7 @@ public class Evenement implements Parcelable {
         dest.writeString(heure);
         dest.writeInt(nombreConvive);
         dest.writeInt(nombreCuisinier);
-        dest.writeParcelable(theme, flags);
+        dest.writeString(theme);
         dest.writeByte((byte) (isFumeurOk == null ? 0 : isFumeurOk ? 1 : 2));
         dest.writeByte((byte) (isAnimalOk == null ? 0 : isAnimalOk ? 1 : 2));
         dest.writeByte((byte) (isAlcoolOk == null ? 0 : isAlcoolOk ? 1 : 2));
@@ -116,11 +117,11 @@ public class Evenement implements Parcelable {
         this.nombreCuisinier = nombreCuisinier;
     }
 
-    public Theme getTheme() {
+    public String getTheme() {
         return theme;
     }
 
-    public void setTheme(Theme theme) {
+    public void setTheme(String theme) {
         this.theme = theme;
     }
 

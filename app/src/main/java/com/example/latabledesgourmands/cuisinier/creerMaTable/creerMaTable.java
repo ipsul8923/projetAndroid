@@ -15,9 +15,7 @@ import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Evenement;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
-import com.example.latabledesgourmands.utilitaire.Models.Prix;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
-import com.example.latabledesgourmands.utilitaire.Models.Theme;
 
 public class creerMaTable extends AppCompatActivity {
     Table maTable;
@@ -49,7 +47,7 @@ public class creerMaTable extends AppCompatActivity {
                         new Dessert("placeHolder","placeHolder","placeHolder",
                                 0f, 0f, false, false,false )
                 ),
-                new Evenement("date", "adresse", "heure", 6, 1, new Theme("theme"),false, false, false)
+                new Evenement("date", "adresse", "heure", 6, 1, "theme",false, false, false)
         );
     }
     private void startCreerMaTableStep2Activity(){

@@ -25,13 +25,21 @@ public class ChoixCuisinierInvite extends AppCompatActivity {
         startModeInviteActivity();
     }
 
+    public void onClickProfilButton(View view) {
+        startProfilActivity();
+    }
+
     protected void startModeCuisinierActivity(){
         Intent intent = new Intent(this, acceuilCuisinier.class);
         startActivity(intent);
     }
-
+    protected void startProfilActivity(){
+        Intent intent = new Intent(this, profileActivity.class);
+        startActivity(intent);
+    }
     protected void startModeInviteActivity(){
         Intent intent = new Intent(this, AccueilInvite.class);
         startActivity(intent);
     }
+
 }

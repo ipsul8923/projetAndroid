@@ -17,7 +17,7 @@ import com.example.latabledesgourmands.cuisinier.creerMaTable.creerMaTableStep2b
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
-import com.example.latabledesgourmands.utilitaire.Models.Prix;
+
 import com.example.latabledesgourmands.utilitaire.Models.Table;
 
 public class creerMonMenuStep2 extends AppCompatActivity {

@@ -7,7 +7,7 @@
     tools:context="com.example.latabledesgourmands.demarrageapplication.profileActivity"
     android:orientation="vertical"
     android:gravity="center_horizontal"
-    android:background="@android:color/white"
+    android:background="@drawable/background"
     >
 
     <!-- USER DATA CONTAINER -->
@@ -27,8 +27,9 @@
             <!-- PROFILE IMAGE -->
             <ImageView
                 android:id="@+id/profile_activity_imageview_profile"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/defaut_user"
                 />
 
         </LinearLayout>
@@ -39,8 +40,11 @@
             android:id="@+id/profile_activity_edit_text_username"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textColor="@android:color/black"
-            android:textSize="@dimen/mediumSize"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:gravity="center_horizontal"
             android:text="username"
             android:layout_margin="5dp"/>
 
@@ -55,15 +59,24 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="email"
-                android:textSize="5dp"
-                android:textStyle="bold"/>
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize"
+                android:gravity="center_horizontal"
+                />
 
             <!-- PROFILE EMAIL -->
             <TextView
                 android:id="@+id/profile_activity_text_view_email"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:textSize="@dimen/mediumSize"
+                android:background="@color/white"
+                android:fontFamily="@font/indie_flower"
+                android:textColor="@color/black"
+                android:textSize="@dimen/bigSize"
+                android:text="exemple@gmail.com"
+                android:gravity="center_horizontal"
                 android:paddingLeft="5dp"/>
 
         </LinearLayout>
@@ -84,12 +97,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="update account"
+            android:fontFamily="@font/indie_flower"
             android:textColor="@color/black"
-            android:textSize="@dimen/mediumSize"
-            android:onClick="onClickUpdateButton"
-            style="?android:attr/borderlessButtonStyle"
+            android:background="@color/white"
+            android:textSize="@dimen/bigSize"
             android:layout_margin="5dp"
-            android:padding="5dp"/>
+            android:onClick="onClickUpdateButton"
+            />
 
         <!-- BUTTON SIGN OUT -->
         <Button
@@ -97,25 +111,24 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="deconnexion"
-            android:textColor="@color/black"
             android:onClick="onClickSignOutButton"
-            android:textSize="@dimen/mediumSize"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_margin="5dp"
-            android:padding="5dp"/>
+            android:fontFamily="@font/indie_flower"
+            android:textColor="@color/black"
+            android:background="@color/white"
+            android:textSize="@dimen/bigSize"
+            android:layout_margin="5dp"/>
 
         <!-- BUTTON DELETE ACCOUNT -->
         <Button
             android:id="@+id/profile_activity_button_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Supprimer le compte"
-            android:textColor="@color/black"
+            android:text="Supprimer le compte"            android:background="@color/white"
             android:onClick="onClickDeleteButton"
-            android:textSize="@dimen/mediumSize"
-            style="?android:attr/borderlessButtonStyle"
-            android:layout_margin="5dp"
-            android:padding="5dp"/>
+            android:fontFamily="@font/indie_flower"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            android:layout_margin="5dp"/>
 
     </LinearLayout>
 

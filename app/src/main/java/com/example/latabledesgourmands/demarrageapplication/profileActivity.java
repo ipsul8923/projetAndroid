@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.AlertDialog;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -16,6 +17,7 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.request.RequestOptions;
 import com.example.latabledesgourmands.R;
+import com.example.latabledesgourmands.cuisinier.acceuilCuisinier;
 import com.example.latabledesgourmands.utilitaire.API.userHelper;
 import com.example.latabledesgourmands.utilitaire.Models.User;
 import com.firebase.ui.auth.AuthUI;
@@ -42,7 +44,6 @@ public class profileActivity extends AppCompatActivity {
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.activity_profile);
-//      this.configureToolbar();
             updateBtn= findViewById(R.id.profile_activity_button_update);
             SignOutBtn=findViewById(R.id.profile_activity_button_sign_out);
             deleteBtn= findViewById(R.id.profile_activity_button_delete);
@@ -80,6 +81,7 @@ public class profileActivity extends AppCompatActivity {
             AuthUI.getInstance()
                     .signOut(this)
                     .addOnSuccessListener(this, this.updateUIAfterRESTRequestsCompleted(SIGN_OUT_TASK));
+            startAcceuilApplicationActivity();
         }
 
         protected FirebaseUser getCurrentUser(){ return FirebaseAuth.getInstance().getCurrentUser(); }
@@ -155,6 +157,9 @@ public class profileActivity extends AppCompatActivity {
             }
         }
 
-
+    protected void startAcceuilApplicationActivity(){
+        Intent intent = new Intent(this, AcceuilApplication.class);
+        startActivity(intent);
+    }
 
     }

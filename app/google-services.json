@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "321094495956",
+    "project_id": "la-table-des-gourmands",
+    "storage_bucket": "la-table-des-gourmands.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:321094495956:android:db28185be1bea4ac679541",
+        "android_client_info": {
+          "package_name": "com.example.latabledesgourmands"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "321094495956-odrstpo19o0kioib91boqjsk3fbhn9ac.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.latabledesgourmands",
+            "certificate_hash": "d48524ccade86422b754b66a83c92e19ca97a6a1"
+          }
+        },
+        {
+          "client_id": "321094495956-lioijgfovn0ff7d4pjp42vsislfpbu7q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDe-1fUHZlzqLzqviYSAHO5qBJb6mSlXwU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "321094495956-lioijgfovn0ff7d4pjp42vsislfpbu7q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

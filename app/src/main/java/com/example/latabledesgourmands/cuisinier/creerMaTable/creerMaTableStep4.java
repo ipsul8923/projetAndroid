@@ -16,8 +16,12 @@ import android.widget.Toast;
 
 import com.example.latabledesgourmands.R;
 import com.example.latabledesgourmands.cuisinier.acceuilCuisinier;
+import com.example.latabledesgourmands.utilitaire.API.tableHelper;
+import com.example.latabledesgourmands.utilitaire.API.userHelper;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class creerMaTableStep4 extends AppCompatActivity {
     Table maTable;
@@ -60,7 +64,8 @@ public class creerMaTableStep4 extends AppCompatActivity {
         animaux=findViewById(R.id.animauxPrint);
         alcool=findViewById(R.id.alcoolPrint);
     }
-
+    protected FirebaseUser getCurrentUser(){ return FirebaseAuth.getInstance().getCurrentUser(); }
+    protected Boolean isCurrentUserLogged(){ return (this.getCurrentUser() != null); }
     private void printDataFromTable(Table table){
         nombreCuisinier.setText(Integer.toString(table.getMonEvenement().getNombreCuisinier()));
         setUpMenuFragment(table.getMonMenu());
@@ -69,8 +74,8 @@ public class creerMaTableStep4 extends AppCompatActivity {
         adresse.setText(table.getMonEvenement().getAdresse());
         nombreConvives.setText(Integer.toString(table.getMonEvenement().getNombreConvive()) + " convives");
 
-        String themeName = table.getMonEvenement().getTheme().getNom().equals("thème") ?
-                "pas de thème" : table.getMonEvenement().getTheme().getNom();
+        String themeName = table.getMonEvenement().getTheme().equals("thème") ?
+                "pas de thème" : table.getMonEvenement().getTheme();
         nomTheme.setText(themeName);
         isAnimaux = table.getMonEvenement().getAnimalOk();
         isFumeur = table.getMonEvenement().getFumeurOk();
@@ -145,6 +150,7 @@ public class creerMaTableStep4 extends AppCompatActivity {
 
     public void onClickCreateATable(View view) {
         Toast.makeText(getApplicationContext(), "la table est créée", Toast.LENGTH_LONG).show();
+        tableHelper.createTable(maTable.getMonEvenement(), maTable.getMonMenu(), getCurrentUser().getUid());
         startAcceuilCuisinierActivity();
     }
 }

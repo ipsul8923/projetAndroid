@@ -19,9 +19,7 @@ import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Evenement;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
-import com.example.latabledesgourmands.utilitaire.Models.Prix;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
-import com.example.latabledesgourmands.utilitaire.Models.Theme;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -33,10 +31,11 @@ public class RechercherTableStep2 extends AppCompatActivity {
     List<Table> sortedTableList;
     public Table tableSelected;
     Table monFiltre;
-//    Theme pirates;
-//    Theme haloween;
-//    Theme aucun;
-//    Theme tout;
+
+    String pirates;
+    String haloween;
+    String aucun;
+    String tout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

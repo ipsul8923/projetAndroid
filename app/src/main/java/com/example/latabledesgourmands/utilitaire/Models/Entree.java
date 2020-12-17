@@ -13,6 +13,8 @@ public class Entree implements Parcelable {
     private Boolean vegan;
     private Boolean sansGluten;
 
+    public Entree (){}
+
     public Entree(String nom) {
         this.nom = nom;
     }

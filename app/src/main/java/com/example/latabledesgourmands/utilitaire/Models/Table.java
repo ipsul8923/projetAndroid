@@ -9,7 +9,7 @@ public class Table implements Parcelable {
     Evenement monEvenement;
     //Theme compris dans evenement
 
-
+    public Table (){}
     public Table(Menu monMenu, Evenement monEvenement) {
         this.monMenu = monMenu;
         this.monEvenement = monEvenement;

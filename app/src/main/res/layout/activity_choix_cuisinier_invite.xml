@@ -33,6 +33,15 @@
             android:text="@string/choixInvite"
             android:textColor="@color/black"
             android:onClick="onClickinviteButton" />
+        <Button
+            android:id="@+id/profilButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:text="Mon Profil"
+            android:textColor="@color/black"
+            android:onClick="onClickProfilButton" />
 
     </LinearLayout>
 

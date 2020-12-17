@@ -16,7 +16,7 @@ public class Menu implements Parcelable {
     private Boolean sansGluten;
     //Constructeurs
 
-
+    public Menu(){    } //Pour la méthode toObject
     public Menu(Entree monEntree, Plat monPlat, Dessert monDessert) {
         this.monEntree = monEntree;
         this.monPlat = monPlat;

@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context="com.example.latabledesgourmands.demarrageapplication.profileActivity"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@android:color/white"
+    >
+
+    <!-- USER DATA CONTAINER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="5dp">
+
+            <!-- PROFILE IMAGE -->
+            <ImageView
+                android:id="@+id/profile_activity_imageview_profile"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+
+        </LinearLayout>
+
+
+        <!-- PROFILE USERNAME -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/profile_activity_edit_text_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/mediumSize"
+            android:text="username"
+            android:layout_margin="5dp"/>
+
+        <!-- PROFILE EMAIL CONTAINER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_margin="5dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="email"
+                android:textSize="5dp"
+                android:textStyle="bold"/>
+
+            <!-- PROFILE EMAIL -->
+            <TextView
+                android:id="@+id/profile_activity_text_view_email"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="@dimen/mediumSize"
+                android:paddingLeft="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <!-- BUTTONS CONTAINER -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="bottom"
+        android:orientation="vertical"
+        android:layout_weight="1">
+
+        <!-- BUTTON UPDATE USERNAME -->
+        <Button
+            android:id="@+id/profile_activity_button_update"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="update account"
+            android:textColor="@color/black"
+            android:textSize="@dimen/mediumSize"
+            android:onClick="onClickUpdateButton"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_margin="5dp"
+            android:padding="5dp"/>
+
+        <!-- BUTTON SIGN OUT -->
+        <Button
+            android:id="@+id/profile_activity_button_sign_out"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="deconnexion"
+            android:textColor="@color/black"
+            android:onClick="onClickSignOutButton"
+            android:textSize="@dimen/mediumSize"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_margin="5dp"
+            android:padding="5dp"/>
+
+        <!-- BUTTON DELETE ACCOUNT -->
+        <Button
+            android:id="@+id/profile_activity_button_delete"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Supprimer le compte"
+            android:textColor="@color/black"
+            android:onClick="onClickDeleteButton"
+            android:textSize="@dimen/mediumSize"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_margin="5dp"
+            android:padding="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>

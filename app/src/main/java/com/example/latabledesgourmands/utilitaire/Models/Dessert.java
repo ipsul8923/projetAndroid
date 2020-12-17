@@ -16,7 +16,9 @@ public class Dessert implements Parcelable {
     public Dessert(String nom) {
         this.nom = nom;
     }
+    public Dessert(){
 
+    }
     public Dessert(String nom, String listeIngredients, String recette, float prixParPersonne, float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten) {
         this.nom = nom;
         this.listeIngredients = listeIngredients;

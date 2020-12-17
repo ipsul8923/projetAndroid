@@ -18,7 +18,6 @@ import com.example.latabledesgourmands.utilitaire.Models.Evenement;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
-import com.example.latabledesgourmands.utilitaire.Models.Theme;
 
 public class RechercherTableStep1 extends AppCompatActivity {
     Table monFiltre;
@@ -54,11 +53,10 @@ public class RechercherTableStep1 extends AppCompatActivity {
     Boolean isPrixInputVisible = false;
     Boolean isThemeInputVisible = false;
 
-//    Theme aucun;
-//    Theme pirates;
-//    Theme haloween;
-//    Theme tout;
-
+    String aucun;
+    String pirates;
+    String haloween;
+	
     @Override
 
     protected void onCreate(Bundle savedInstanceState) {

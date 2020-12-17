@@ -14,11 +14,14 @@ public class Plat implements Parcelable {
     private Boolean sansGluten;
     private Boolean isWineWanted;
 
+
+    public Plat (){}
     public Plat(String nom) {
         this.nom = nom;
     }
 
-    public Plat(String nom, String listeIngredients, String recette, float prixParPersonne, float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted) {
+    public Plat(String nom, String listeIngredients, String recette, float prixParPersonne,
+                float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted) {
         this.nom = nom;
         this.listeIngredients = listeIngredients;
         this.recette = recette;

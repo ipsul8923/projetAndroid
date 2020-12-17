@@ -112,27 +112,27 @@ public class Dessert implements Parcelable {
         this.difficulte = difficulte;
     }
 
-    public boolean getVegetarien() {
+    public Boolean getVegetarien() {
         return vegetarien;
     }
 
-    public void setVegetarien(boolean vegetarien) {
+    public void setVegetarien(Boolean vegetarien) {
         this.vegetarien = vegetarien;
     }
 
-    public boolean getVegan() {
+    public Boolean getVegan() {
         return vegan;
     }
 
-    public void setVegan(boolean vegan) {
+    public void setVegan(Boolean vegan) {
         this.vegan = vegan;
     }
 
-    public boolean getSansGluten() {
+    public Boolean getSansGluten() {
         return sansGluten;
     }
 
-    public void setSansGluten(boolean sansGluten) {
+    public void setSansGluten(Boolean sansGluten) {
         this.sansGluten = sansGluten;
     }
 

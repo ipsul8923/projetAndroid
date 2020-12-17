@@ -206,45 +206,49 @@
                         android:id="@+id/buttonMenuTout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
+                        android:backgroundTint="@color/color_button"
                         android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/tout"
                         android:textColor="@color/black"
-                        android:textSize="10dp"/>
+                        android:textSize="10dp"
+                        android:onClick="onClickButtonMenuTout"/>
                     <Button
                         android:id="@+id/buttonMenuVégé"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
+                        android:backgroundTint="@color/color_button"
                         android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/végé"
                         android:textColor="@color/black"
                         android:textSize="10dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:onClick="onClickButtonMenuVege"/>
                     <Button
                         android:id="@+id/buttonMenuVegan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
+                        android:backgroundTint="@color/color_button"
                         android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/vegan"
                         android:textColor="@color/black"
                         android:textSize="10dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:onClick="onClickButtonMenuVegan"/>
                     <Button
                         android:id="@+id/buttonMenuSansGluten"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:background="@color/white"
+                        android:backgroundTint="@color/color_button"
                         android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/sansGluten"
                         android:textColor="@color/black"
                         android:textSize="10dp"
-                        android:layout_weight="1"/>
+                        android:layout_weight="1"
+                        android:onClick="onClickButtonMenuSansGluten"/>
                 </LinearLayout>
             </LinearLayout>
 
@@ -316,46 +320,50 @@
                     android:id="@+id/buttonThemeTout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:backgroundTint="@color/color_button"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/tout"
                     android:textColor="@color/black"
                     android:textSize="10dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="onClickButtonThemeTout"/>
                 <Button
                     android:id="@+id/buttonThemeAucun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:backgroundTint="@color/color_button"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/aucunTheme"
                     android:textColor="@color/black"
                     android:textSize="10dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="onClickButtonThemeAucun"/>
                 <Button
                     android:id="@+id/buttonThemePirates"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:backgroundTint="@color/color_button"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/pirateTheme"
                     android:textColor="@color/black"
                     android:textSize="10dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="onClickButtonThemePirates"/>
                 <Button
                     android:id="@+id/buttonThemeHaloween"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:background="@color/white"
+                    android:backgroundTint="@color/color_button"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/haloweenTheme"
                     android:textColor="@color/black"
                     android:textSize="10dp"
-                    android:layout_weight="1"/>
+                    android:layout_weight="1"
+                    android:onClick="onClickButtonThemeHaloween"/>
                 </LinearLayout>
             </LinearLayout>
 

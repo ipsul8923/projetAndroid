@@ -54,9 +54,10 @@ public class RechercherTableStep1 extends AppCompatActivity {
     Boolean isPrixInputVisible = false;
     Boolean isThemeInputVisible = false;
 
-    Theme aucun;
-    Theme pirates;
-    Theme haloween;
+//    Theme aucun;
+//    Theme pirates;
+//    Theme haloween;
+//    Theme tout;
 
     @Override
 
@@ -87,11 +88,11 @@ public class RechercherTableStep1 extends AppCompatActivity {
     private void initFiltreTableProcess(){
         monFiltre = new Table(
                 new Menu(
-                        new Entree(null, null, null, 0f, 0f, null, null, null),
-                        new Plat(null, null, null, 0f, 0f, null, null, null, null),
-                        new Dessert(null, null, null, 0f, 0f, null, null, null)
+                        new Entree(null, null, null, 0f, 0f, false, false, false),
+                        new Plat(null, null, null, 0f, 0f, false, false, false, null),
+                        new Dessert(null, null, null, 0f, 0f, false, false, false)
                 ),
-                new Evenement(null, null, null, 0, 0, null, null, null, null)
+                new Evenement(null, null, null, 0, 0, new Theme(null), null, null, null)
         );
     }
 
@@ -134,14 +135,17 @@ public class RechercherTableStep1 extends AppCompatActivity {
             monFiltre.getMonMenu().setPrixDuMenuParPersonne(Float.parseFloat(prixMaxInput.getText().toString()));
         }
         if(isThemeInputVisible){
+            if(themeToutSelected.isSelected()){
+                monFiltre.getMonEvenement().getTheme().setNom("tout");
+            }
             if(themeAucunSelected.isSelected()){
-                monFiltre.getMonEvenement().setTheme(aucun);
+                monFiltre.getMonEvenement().getTheme().setNom("aucun");
             }
             if(themePiratesSelected.isSelected()){
-                monFiltre.getMonEvenement().setTheme(pirates);
+                monFiltre.getMonEvenement().getTheme().setNom("pirates");
             }
             if(themeHaloweenSelected.isSelected()){
-                monFiltre.getMonEvenement().setTheme(haloween);
+                monFiltre.getMonEvenement().getTheme().setNom("haloween");
             }
         }
         if(fumeur.isChecked()){
@@ -267,5 +271,71 @@ public class RechercherTableStep1 extends AppCompatActivity {
         isThemeInputVisible = !isThemeInputVisible;
         view.setSelected(!view.isSelected());
         updateThemeVisibility();
+    }
+
+    public void onClickButtonMenuTout(View view) {
+        monFiltre.getMonMenu().setVegetarien(false);
+        monFiltre.getMonMenu().setVegan(false);
+        monFiltre.getMonMenu().setSansGluten(false);
+        view.setSelected(!view.isSelected());
+        menuVegeSelected.setSelected(false);
+        menuVeganSelected.setSelected(false);
+        menuSansGlutenSelected.setSelected(false);
+    }
+
+    public void onClickButtonMenuVege(View view) {
+        monFiltre.getMonMenu().setVegetarien(true);
+        view.setSelected(!view.isSelected());
+        menuToutSelected.setSelected(false);
+        menuVeganSelected.setSelected(false);
+        menuSansGlutenSelected.setSelected(false);
+    }
+
+    public void onClickButtonMenuVegan(View view) {
+        monFiltre.getMonMenu().setVegan(true);
+        view.setSelected(!view.isSelected());
+        menuVegeSelected.setSelected(false);
+        menuToutSelected.setSelected(false);
+        menuSansGlutenSelected.setSelected(false);
+    }
+
+    public void onClickButtonMenuSansGluten(View view) {
+        monFiltre.getMonMenu().setSansGluten(true);
+        view.setSelected(!view.isSelected());
+        menuVegeSelected.setSelected(false);
+        menuVeganSelected.setSelected(false);
+        menuToutSelected.setSelected(false);
+    }
+
+    public void onClickButtonThemeTout(View view) {
+        monFiltre.getMonEvenement().getTheme().setNom("tout");
+        view.setSelected(!view.isSelected());
+        themePiratesSelected.setSelected(false);
+        themeHaloweenSelected.setSelected(false);
+        themeAucunSelected.setSelected(false);
+    }
+
+    public void onClickButtonThemeAucun(View view) {
+        monFiltre.getMonEvenement().getTheme().setNom("aucun");
+        view.setSelected(!view.isSelected());
+        themePiratesSelected.setSelected(false);
+        themeHaloweenSelected.setSelected(false);
+        themeToutSelected.setSelected(false);
+    }
+
+    public void onClickButtonThemePirates(View view) {
+        monFiltre.getMonEvenement().getTheme().setNom("pirates");
+        view.setSelected(!view.isSelected());
+        themeToutSelected.setSelected(false);
+        themeHaloweenSelected.setSelected(false);
+        themeAucunSelected.setSelected(false);
+    }
+
+    public void onClickButtonThemeHaloween(View view) {
+        monFiltre.getMonEvenement().getTheme().setNom("haloween");
+        view.setSelected(!view.isSelected());
+        themePiratesSelected.setSelected(false);
+        themeToutSelected.setSelected(false);
+        themeAucunSelected.setSelected(false);
     }
 }

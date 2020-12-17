@@ -33,10 +33,10 @@ public class RechercherTableStep2 extends AppCompatActivity {
     List<Table> sortedTableList;
     public Table tableSelected;
     Table monFiltre;
-    Theme pirates;
-    Theme haloween;
-    Theme aucun;
-    Theme tout;
+//    Theme pirates;
+//    Theme haloween;
+//    Theme aucun;
+//    Theme tout;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,7 +60,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat1 = new Plat("plat1", "listeIngredientsPlat1", "recettePlat1", 2f, 3f, true, false, false, false);
         Dessert dessert1 = new Dessert("dessert1", "listeIngredientsDessert1", "recetteDessert1", 1f, 1f, true, false, false);
         Menu menu1 = new Menu(entree1, plat1, dessert1);
-        Evenement evenement1 = new Evenement("12-12-2020", "Chez Michel", "19:30", 5, 1,  pirates, true, false, true);
+        Evenement evenement1 = new Evenement("12-12-2020", "Chez Michel", "19:30", 5, 1,  new Theme("pirates"), true, false, true);
         Table table1 = new Table(menu1, evenement1);
 
         // Table 2
@@ -68,7 +68,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat2 = new Plat("plat2", "listeIngredientsPlat2", "recettePlat2", 3f, 3f, false, false, false, false);
         Dessert dessert2 = new Dessert("dessert2", "listeIngredientsDessert2", "recetteDessert2", .5f, 1f, false, false, false);
         Menu menu2 = new Menu(entree2, plat2, dessert2);
-        Evenement evenement2 = new Evenement("12-12-2020", "Chez Jacques", "19:30", 5, 1,  haloween, true, true, true);
+        Evenement evenement2 = new Evenement("12-12-2020", "Chez Jacques", "19:30", 5, 1,  new Theme("haloween"), true, true, true);
         Table table2 = new Table(menu2, evenement2);
 
         // Table 3
@@ -76,7 +76,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat3 = new Plat("plat3", "listeIngredientsPlat3", "recettePlat3", 2f, 5f, false, false, false, false);
         Dessert dessert3 = new Dessert("dessert3", "listeIngredientsDessert3", "recetteDessert3", 2f, 1f, false, false, false);
         Menu menu3 = new Menu(entree3, plat3, dessert3);
-        Evenement evenement3 = new Evenement("15-12-2020", "Chez Pierre", "20:30", 4, 2,  aucun, false, true, true);
+        Evenement evenement3 = new Evenement("15-12-2020", "Chez Pierre", "20:30", 4, 2,  new Theme("aucun"), false, true, true);
         Table table3 = new Table(menu3, evenement3);
 
         //private void loadTableListe(){
@@ -116,8 +116,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getDate().equals(filtre.getMonEvenement().getDate())){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testHeureFiltre(Table tableTestee, Table filtre){
@@ -125,8 +130,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getHeure().equals(filtre.getMonEvenement().getHeure())){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testAdresseFiltre(Table tableTestee, Table filtre){
@@ -134,8 +144,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getAdresse().equals(filtre.getMonEvenement().getAdresse())){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testConvivesFiltre(Table tableTestee, Table filtre){
@@ -143,8 +158,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getNombreConvive() == filtre.getMonEvenement().getNombreConvive()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testMenuToutFiltre(Table tableTestee, Table filtre){
@@ -154,8 +174,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
                     && tableTestee.getMonMenu().getSansGluten() == filtre.getMonMenu().getSansGluten()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testMenuVegeFiltre(Table tableTestee, Table filtre){
@@ -163,8 +188,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonMenu().getVegetarien() == filtre.getMonMenu().getVegetarien()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testMenuVeganFiltre(Table tableTestee, Table filtre){
@@ -172,8 +202,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonMenu().getVegan() == filtre.getMonMenu().getVegan()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testMenuSansGlutenFiltre(Table tableTestee, Table filtre){
@@ -181,8 +216,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonMenu().getSansGluten() == filtre.getMonMenu().getSansGluten()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testPrixFiltre(Table tableTestee, Table filtre){
@@ -190,8 +230,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonMenu().getPrixDuMenuParPersonne() <= filtre.getMonMenu().getPrixDuMenuParPersonne()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testThemeFiltre(Table tableTestee, Table filtre){
@@ -199,8 +244,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getTheme() == filtre.getMonEvenement().getTheme()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testFumeurFiltre(Table tableTestee, Table filtre){
@@ -208,8 +258,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getFumeurOk() == filtre.getMonEvenement().getFumeurOk()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testAnimauxFiltre(Table tableTestee, Table filtre){
@@ -217,8 +272,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getAnimalOk() == filtre.getMonEvenement().getAnimalOk()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private Boolean testAlcoolFiltre(Table tableTestee, Table filtre){
@@ -226,8 +286,13 @@ public class RechercherTableStep2 extends AppCompatActivity {
             if(tableTestee.getMonEvenement().getAlcoolOk() == filtre.getMonEvenement().getAlcoolOk()){
                 return true;
             }
+            else{
+                return false;
+            }
         }
-        return false;
+        else{
+            return true;
+        }
     }
 
     private void setUpRecyclerViewFragment(){

@@ -7,7 +7,7 @@
     android:layout_margin="@dimen/mediumSize"
     android:background="@color/yellow">
     <TextView
-        android:id="@+id/nomEntreeTable"
+        android:id="@+id/nomEntreeTableBis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
@@ -17,7 +17,7 @@
         android:text="TABLE PLACEHOLDER ENTREE" />
 
     <TextView
-        android:id="@+id/nomPlatTable"
+        android:id="@+id/nomPlatTableBis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
@@ -27,7 +27,7 @@
         android:text="TABLE PLACEHOLDER PLAT" />
 
     <TextView
-        android:id="@+id/nomDessertTable"
+        android:id="@+id/nomDessertTableBis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
@@ -37,7 +37,7 @@
         android:text="TABLE PLACEHOLDER DESSERT" />
 
     <TextView
-        android:id="@+id/valeurPrix"
+        android:id="@+id/prixTableBis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
@@ -47,17 +47,37 @@
         android:text="TABLE PLACEHOLDER PRIX" />
 
     <TextView
-        android:id="@+id/donneesInformations"
+        android:id="@+id/dateTableBis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
         android:textColor="@color/black"
         android:textSize="@dimen/bigSize"
         android:gravity="center_horizontal"
-        android:text="TABLE PLACEHOLDER INFORMATIONS" />
+        android:text="TABLE PLACEHOLDER DATE" />
 
     <TextView
-        android:id="@+id/nomTheme"
+        android:id="@+id/heureTableBis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER HEURE" />
+
+    <TextView
+        android:id="@+id/adresseTableBis"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER ADRESSE" />
+
+    <TextView
+        android:id="@+id/nomThemeBis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
@@ -65,5 +85,49 @@
         android:textSize="@dimen/bigSize"
         android:gravity="center_horizontal"
         android:text="TABLE PLACEHOLDER THEME" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tableFumeurBis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Fumeur"
+            android:backgroundTint="@color/checkbox_color"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/tableAnimauxBis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Animaux"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/checkbox_color"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/tableAlcoolBis"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/checkbox_color"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Alcool"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 </LinearLayout>

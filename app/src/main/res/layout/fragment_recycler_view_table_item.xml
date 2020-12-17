@@ -37,7 +37,7 @@
         android:text="TABLE PLACEHOLDER DESSERT" />
 
     <TextView
-        android:id="@+id/valeurPrix"
+        android:id="@+id/prixTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
@@ -47,14 +47,34 @@
         android:text="TABLE PLACEHOLDER PRIX" />
 
     <TextView
-        android:id="@+id/donneesInformations"
+        android:id="@+id/dateTable"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
         android:textColor="@color/black"
         android:textSize="@dimen/bigSize"
         android:gravity="center_horizontal"
-        android:text="TABLE PLACEHOLDER INFORMATIONS" />
+        android:text="TABLE PLACEHOLDER DATE" />
+
+    <TextView
+        android:id="@+id/heureTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER HEURE" />
+
+    <TextView
+        android:id="@+id/adresseTable"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/indie_flower"
+        android:textColor="@color/black"
+        android:textSize="@dimen/bigSize"
+        android:gravity="center_horizontal"
+        android:text="TABLE PLACEHOLDER ADRESSE" />
 
     <TextView
         android:id="@+id/nomTheme"
@@ -65,6 +85,50 @@
         android:textSize="@dimen/bigSize"
         android:gravity="center_horizontal"
         android:text="TABLE PLACEHOLDER THEME" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/tableFumeur"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Fumeur"
+            android:backgroundTint="@color/checkbox_color"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/tableAnimaux"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Animaux"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:backgroundTint="@color/checkbox_color"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1" />
+
+        <Button
+            android:id="@+id/tableAlcool"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/checkbox_color"
+            android:textColor="@color/black"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Alcool"
+            android:textSize="@dimen/mediumSize"
+            android:layout_weight="1" />
+    </LinearLayout>
 
 
 </LinearLayout>

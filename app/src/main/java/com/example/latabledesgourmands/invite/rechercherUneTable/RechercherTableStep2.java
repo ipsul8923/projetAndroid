@@ -59,7 +59,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat1 = new Plat("plat1", "listeIngredientsPlat1", "recettePlat1", 2f, 3f, true, false, false, false);
         Dessert dessert1 = new Dessert("dessert1", "listeIngredientsDessert1", "recetteDessert1", 1f, 1f, true, false, false);
         Menu menu1 = new Menu(entree1, plat1, dessert1);
-        Evenement evenement1 = new Evenement("12-12-2020", "Chez Michel", "19:30", 5, 1,  new Theme("pirates"), true, false, true);
+        Evenement evenement1 = new Evenement("12-12-2020", "Chez Michel", "19:30", 5, 1, "pirates", true, false, true);
         Table table1 = new Table(menu1, evenement1);
 
         // Table 2
@@ -67,7 +67,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat2 = new Plat("plat2", "listeIngredientsPlat2", "recettePlat2", 3f, 3f, false, false, false, false);
         Dessert dessert2 = new Dessert("dessert2", "listeIngredientsDessert2", "recetteDessert2", .5f, 1f, false, false, false);
         Menu menu2 = new Menu(entree2, plat2, dessert2);
-        Evenement evenement2 = new Evenement("12-12-2020", "Chez Jacques", "19:30", 5, 1,  new Theme("haloween"), true, true, true);
+        Evenement evenement2 = new Evenement("12-12-2020", "Chez Jacques", "19:30", 5, 1, "haloween", true, true, true);
         Table table2 = new Table(menu2, evenement2);
 
         // Table 3
@@ -75,7 +75,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat3 = new Plat("plat3", "listeIngredientsPlat3", "recettePlat3", 2f, 5f, false, false, false, false);
         Dessert dessert3 = new Dessert("dessert3", "listeIngredientsDessert3", "recetteDessert3", 2f, 1f, false, false, false);
         Menu menu3 = new Menu(entree3, plat3, dessert3);
-        Evenement evenement3 = new Evenement("15-12-2020", "Chez Pierre", "20:30", 4, 2,  new Theme("aucun"), false, true, true);
+        Evenement evenement3 = new Evenement("15-12-2020", "Chez Pierre", "20:30", 4, 2,  "aucun", false, true, true);
         Table table3 = new Table(menu3, evenement3);
 
         //private void loadTableListe(){
@@ -324,9 +324,6 @@ public class RechercherTableStep2 extends AppCompatActivity {
                 });
     }
 
-    public void onClickChoisirTableButton(View view){
-        startRechercherTableStep3Activity();
-    }
 
     private void startRechercherTableStep3Activity(){
         Intent intent = new Intent(this, RechercherTableStep3.class);

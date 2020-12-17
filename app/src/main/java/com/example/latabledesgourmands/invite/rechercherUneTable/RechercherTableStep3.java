@@ -64,7 +64,7 @@ public class RechercherTableStep3 extends AppCompatActivity {
         dateTable.setText(tableSelected.getMonEvenement().getDate());
         heureTable.setText(tableSelected.getMonEvenement().getHeure());
         adresseTable.setText(tableSelected.getMonEvenement().getAdresse());
-        nomTheme.setText(tableSelected.getMonEvenement().getTheme().getNom());
+        nomTheme.setText(tableSelected.getMonEvenement().getTheme());
         fumeurTable.setSelected(tableSelected.getMonEvenement().getFumeurOk());
         animauxTable.setSelected(tableSelected.getMonEvenement().getAnimalOk());
         alcoolTable.setSelected(tableSelected.getMonEvenement().getAlcoolOk());

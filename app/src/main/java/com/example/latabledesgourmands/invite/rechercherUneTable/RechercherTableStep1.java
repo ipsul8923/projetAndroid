@@ -90,7 +90,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
                         new Plat(null, null, null, 0f, 0f, false, false, false, null),
                         new Dessert(null, null, null, 0f, 0f, false, false, false)
                 ),
-                new Evenement(null, null, null, 0, 0, new Theme(null), null, null, null)
+                new Evenement(null, null, null, 0, 0, null, null, null, null)
         );
     }
 
@@ -134,16 +134,16 @@ public class RechercherTableStep1 extends AppCompatActivity {
         }
         if(isThemeInputVisible){
             if(themeToutSelected.isSelected()){
-                monFiltre.getMonEvenement().getTheme().setNom("tout");
+                monFiltre.getMonEvenement().setTheme("tout");
             }
             if(themeAucunSelected.isSelected()){
-                monFiltre.getMonEvenement().getTheme().setNom("aucun");
+                monFiltre.getMonEvenement().setTheme("aucun");
             }
             if(themePiratesSelected.isSelected()){
-                monFiltre.getMonEvenement().getTheme().setNom("pirates");
+                monFiltre.getMonEvenement().setTheme("pirates");
             }
             if(themeHaloweenSelected.isSelected()){
-                monFiltre.getMonEvenement().getTheme().setNom("haloween");
+                monFiltre.getMonEvenement().setTheme("haloween");
             }
         }
         if(fumeur.isChecked()){
@@ -306,7 +306,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
     }
 
     public void onClickButtonThemeTout(View view) {
-        monFiltre.getMonEvenement().getTheme().setNom("tout");
+        monFiltre.getMonEvenement().setTheme("tout");
         view.setSelected(!view.isSelected());
         themePiratesSelected.setSelected(false);
         themeHaloweenSelected.setSelected(false);
@@ -314,7 +314,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
     }
 
     public void onClickButtonThemeAucun(View view) {
-        monFiltre.getMonEvenement().getTheme().setNom("aucun");
+        monFiltre.getMonEvenement().setTheme("aucun");
         view.setSelected(!view.isSelected());
         themePiratesSelected.setSelected(false);
         themeHaloweenSelected.setSelected(false);
@@ -322,7 +322,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
     }
 
     public void onClickButtonThemePirates(View view) {
-        monFiltre.getMonEvenement().getTheme().setNom("pirates");
+        monFiltre.getMonEvenement().setTheme("pirates");
         view.setSelected(!view.isSelected());
         themeToutSelected.setSelected(false);
         themeHaloweenSelected.setSelected(false);
@@ -330,7 +330,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
     }
 
     public void onClickButtonThemeHaloween(View view) {
-        monFiltre.getMonEvenement().getTheme().setNom("haloween");
+        monFiltre.getMonEvenement().setTheme("haloween");
         view.setSelected(!view.isSelected());
         themePiratesSelected.setSelected(false);
         themeToutSelected.setSelected(false);

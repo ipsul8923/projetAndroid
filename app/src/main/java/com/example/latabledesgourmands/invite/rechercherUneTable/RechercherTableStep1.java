@@ -115,8 +115,9 @@ public class RechercherTableStep1 extends AppCompatActivity {
 
     public void printDataFromUser(){
         if(isDateInputVisible){
-            String dateText = dateInput.getDayOfMonth() + "/" + dateInput.getMonth()+1 + "/" + dateInput.getYear();
-            monFiltre.getMonEvenement().setDate(dateInput.toString());
+            int mois = dateInput.getMonth()+1;
+            String dateText = dateInput.getDayOfMonth() + "/" + mois + "/" + dateInput.getYear();
+            monFiltre.getMonEvenement().setDate(dateText);
         }
         if(isAdresseInputVisible){
             monFiltre.getMonEvenement().setAdresse(adresseInput.getText().toString());

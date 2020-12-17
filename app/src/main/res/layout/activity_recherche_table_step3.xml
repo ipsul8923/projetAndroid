@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<ScrollView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -7,7 +7,10 @@
     tools:context=".invite.rechercherUneTable.RechercherTableStep3"
     android:orientation="vertical"
     android:background="@drawable/background">
-
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
     <fragment
         android:id="@+id/fragment"
         android:name="com.example.latabledesgourmands.fragments.bandeauHaut"
@@ -42,5 +45,5 @@
         android:textColor="@color/black"
         android:layout_gravity="center"
         android:onClick="onClickValiderBoutton"/>
-
 </LinearLayout>
+</ScrollView>

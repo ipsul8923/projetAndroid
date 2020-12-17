@@ -90,6 +90,7 @@ public class importMenu extends AppCompatActivity {
             }
         });
     }
+
     private void getDataFromFirebase (MyCallback myCallback) {
         //GetDataFromFirestore
         Task<QuerySnapshot> query = menuHelper.getMenuCollection()

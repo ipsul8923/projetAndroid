@@ -20,10 +20,10 @@ public class platHelper {
 
     public static Task<Void> createPlat(String nom, String listeIngredients, String recette, float prixParPersonne,
                                         float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten,
-                                        Boolean isWineWanted, User user) {
+                                        Boolean isWineWanted, String userId) {
         Plat platToCreate = new Plat(nom, listeIngredients, recette, prixParPersonne,
         difficulte, vegetarien, vegan, sansGluten, isWineWanted);
-        String path = "plat" + nom+user.getUid();
+        String path = "plat" + nom+userId;
         return platHelper.getPlatCollection()
                 .document(path)
                 .set(platToCreate);
@@ -38,9 +38,9 @@ public class platHelper {
     // --- UPDATE ---
 
     public static Task<Void> updatePlat(String nom, String listeIngredients, String recette, float prixParPersonne,
-                                        float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted, User user) {
-        return com.example.latabledesgourmands.utilitaire.API.platHelper.getPlatCollection().document(user.getUid()).update(nom, listeIngredients, recette, prixParPersonne,
-        difficulte, vegetarien, vegan, sansGluten, isWineWanted, user.getUid());
+                                        float difficulte, Boolean vegetarien, Boolean vegan, Boolean sansGluten, Boolean isWineWanted, String userId) {
+        return com.example.latabledesgourmands.utilitaire.API.platHelper.getPlatCollection().document(userId).update(nom, listeIngredients, recette, prixParPersonne,
+        difficulte, vegetarien, vegan, sansGluten, isWineWanted, userId);
     }
 
     // --- DELETE ---

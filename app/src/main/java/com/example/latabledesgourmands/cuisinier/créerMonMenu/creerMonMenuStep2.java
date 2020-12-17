@@ -14,11 +14,14 @@ import android.widget.Toast;
 import com.example.latabledesgourmands.R;
 import com.example.latabledesgourmands.cuisinier.acceuilCuisinier;
 import com.example.latabledesgourmands.cuisinier.creerMaTable.creerMaTableStep2bis;
+import com.example.latabledesgourmands.utilitaire.API.platHelper;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
 
 import com.example.latabledesgourmands.utilitaire.Models.Table;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class creerMonMenuStep2 extends AppCompatActivity {
     Table maTable;
@@ -65,6 +68,10 @@ public class creerMonMenuStep2 extends AppCompatActivity {
         sendDatabyIntent(intent);
         startActivity(intent);
     }
+
+    protected FirebaseUser getCurrentUser(){ return FirebaseAuth.getInstance().getCurrentUser(); }
+
+
     private void getDataFromInput() {
         if((nom.getText().toString().equals(" ")) || (ingrédients.getText().toString().equals(" ")) ||
                 (recette.getText().toString().equals(" ")) || (prix.getText().toString().equals(" "))) {
@@ -74,6 +81,10 @@ public class creerMonMenuStep2 extends AppCompatActivity {
             monPlat = new Plat(nom.getText().toString(), ingrédients.getText().toString(),
                     recette.getText().toString(), Float.parseFloat(prix.getText().toString()),
                     difficulte.getRating(), vegetarien.isChecked(), vegan.isChecked(), sansGluten.isChecked(), isWine.isChecked());
+
+            platHelper.createPlat(nom.getText().toString(), ingrédients.getText().toString(),
+                    recette.getText().toString(), Float.parseFloat(prix.getText().toString()),
+                    difficulte.getRating(), vegetarien.isChecked(), vegan.isChecked(), sansGluten.isChecked(), isWine.isChecked(), getCurrentUser().getUid() );
         }
     }
 

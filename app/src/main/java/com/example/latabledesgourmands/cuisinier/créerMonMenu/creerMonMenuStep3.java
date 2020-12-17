@@ -13,11 +13,14 @@ import android.widget.Toast;
 import com.example.latabledesgourmands.R;
 import com.example.latabledesgourmands.cuisinier.acceuilCuisinier;
 import com.example.latabledesgourmands.cuisinier.creerMaTable.creerMaTableStep2bis;
+import com.example.latabledesgourmands.utilitaire.API.dessertHelper;
 import com.example.latabledesgourmands.utilitaire.Models.Dessert;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 public class creerMonMenuStep3 extends AppCompatActivity {
     Table maTable;
@@ -59,6 +62,10 @@ public class creerMonMenuStep3 extends AppCompatActivity {
         vegan = findViewById(R.id.veganDessertInput);
         sansGluten = findViewById(R.id.sansGlutenDessertInput);
     }
+
+    protected FirebaseUser getCurrentUser(){ return FirebaseAuth.getInstance().getCurrentUser(); }
+
+
     private void getDataFromInput(){
         if((nom.getText().toString().equals(" ")) || (ingrédients.getText().toString().equals(" ")) ||
                 (recette.getText().toString().equals(" ")) || (prix.getText().toString().equals(" "))) {
@@ -68,6 +75,9 @@ public class creerMonMenuStep3 extends AppCompatActivity {
             monDessert = new Dessert(nom.getText().toString(), ingrédients.getText().toString(),
                     recette.getText().toString(), Float.parseFloat(prix.getText().toString()),
                     difficulte.getRating(), vegetarien.isChecked(), vegan.isChecked(), sansGluten.isChecked());
+            dessertHelper.createDessert(nom.getText().toString(), ingrédients.getText().toString(),
+                    recette.getText().toString(), Float.parseFloat(prix.getText().toString()),
+                    difficulte.getRating(), vegetarien.isChecked(), vegan.isChecked(), sansGluten.isChecked(), getCurrentUser().getUid());
 
             //On recupère le dessert, et ensuite on créer le menu
             if (monEntree != null) {
@@ -92,7 +102,6 @@ public class creerMonMenuStep3 extends AppCompatActivity {
     }
     public void onClickCreateThirdStep(View view){
         getDataFromInput();
-        // à terme seulement dans on créer une table, autrement on enregistre le menu dans le cloud à ce moment là
         if(monDessert!=null) {
             startCreerMonMenuFinalStepActivity();
         }

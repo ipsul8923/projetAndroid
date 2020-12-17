@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.TextView;
@@ -19,11 +20,13 @@ import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
 
+import java.util.Calendar;
+
 public class RechercherTableStep1 extends AppCompatActivity {
     Table monFiltre;
-    //test
-    TextView dateInput;
-    TextView heureInput;
+
+    Calendar calendrier;
+    DatePicker dateInput;
     TextView adresseInput;
     TextView convivesInput;
     TextView prixMaxInput;
@@ -63,8 +66,13 @@ public class RechercherTableStep1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recherche_table_step1);
         initFiltreTableProcess();
-        dateInput = findViewById(R.id.editTextDate);
-        heureInput = findViewById(R.id.editTextTime);
+        linkActivityToLayout();
+        calendrier = Calendar.getInstance();
+        initDatePicked();
+    }
+
+    private void linkActivityToLayout(){
+        dateInput = findViewById(R.id.datePickerRechercherTable);
         adresseInput = findViewById(R.id.editTextPostalAddress);
         convivesInput = findViewById(R.id.editTextNumberConvives);
         menuToutSelected = findViewById(R.id.buttonMenuTout);
@@ -82,6 +90,11 @@ public class RechercherTableStep1 extends AppCompatActivity {
         menu = findViewById(R.id.menuLayout);
         theme = findViewById(R.id.themeLayout);
     }
+
+    public void initDatePicked(){
+        dateInput.init(calendrier.YEAR, calendrier.DAY_OF_MONTH, calendrier.DAY_OF_MONTH, DatePicker::updateDate);
+    }
+
 
     private void initFiltreTableProcess(){
         monFiltre = new Table(
@@ -102,10 +115,8 @@ public class RechercherTableStep1 extends AppCompatActivity {
 
     public void printDataFromUser(){
         if(isDateInputVisible){
-            monFiltre.getMonEvenement().setDate(dateInput.getText().toString());
-        }
-        if(isHeureInputVisible){
-            monFiltre.getMonEvenement().setHeure(heureInput.getText().toString());
+            String dateText = dateInput.getDayOfMonth() + "/" + dateInput.getMonth()+1 + "/" + dateInput.getYear();
+            monFiltre.getMonEvenement().setDate(dateInput.toString());
         }
         if(isAdresseInputVisible){
             monFiltre.getMonEvenement().setAdresse(adresseInput.getText().toString());
@@ -174,14 +185,6 @@ public class RechercherTableStep1 extends AppCompatActivity {
         }
     }
 
-    private void updateHeureVisibility(){
-        if(isHeureInputVisible){
-            heureInput.setVisibility(View.VISIBLE);
-        }
-        else{
-            heureInput.setVisibility(View.INVISIBLE);
-        }
-    }
 
     private void updateAdresseVisibility(){
         if(isAdresseInputVisible){
@@ -235,11 +238,6 @@ public class RechercherTableStep1 extends AppCompatActivity {
         updateDateVisibility();
     }
 
-    public void onClickHeureFilter(View view) {
-        isHeureInputVisible = !isHeureInputVisible;
-        view.setSelected(!view.isSelected());
-        updateHeureVisibility();
-    }
 
     public void onClickAdresseFilter(View view) {
         isAdresseInputVisible = !isAdresseInputVisible;

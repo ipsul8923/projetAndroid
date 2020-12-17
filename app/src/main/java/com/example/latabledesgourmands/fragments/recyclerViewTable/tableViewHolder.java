@@ -48,7 +48,7 @@ public class tableViewHolder extends RecyclerView.ViewHolder {
         dateTable.setText(table.getMonEvenement().getDate());
         heureTable.setText(table.getMonEvenement().getHeure());
         adresseTable.setText(table.getMonEvenement().getAdresse());
-        //nomTheme.setText(table.getMonEvenement().getTheme().getNom());
+        nomTheme.setText(table.getMonEvenement().getTheme());
         fumeurTable.setSelected(table.getMonEvenement().getFumeurOk());
         animauxTable.setSelected(table.getMonEvenement().getAnimalOk());
         alcoolTable.setSelected(table.getMonEvenement().getAlcoolOk());

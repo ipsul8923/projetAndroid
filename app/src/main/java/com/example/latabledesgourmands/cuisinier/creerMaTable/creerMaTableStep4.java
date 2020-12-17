@@ -149,8 +149,8 @@ public class creerMaTableStep4 extends AppCompatActivity {
     }
 
     public void onClickCreateATable(View view) {
-        Toast.makeText(getApplicationContext(), "la table est créée", Toast.LENGTH_LONG).show();
-        tableHelper.createTable(maTable.getMonEvenement(), maTable.getMonMenu(), getCurrentUser().getUid());
+            Toast.makeText(getApplicationContext(), "la table est créée", Toast.LENGTH_LONG).show();
+            tableHelper.createTable(maTable.getMonEvenement(), maTable.getMonMenu(), getCurrentUser().getUid());
         startAcceuilCuisinierActivity();
     }
 }

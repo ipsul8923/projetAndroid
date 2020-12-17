@@ -71,7 +71,7 @@ public class creerMaTableStep3 extends AppCompatActivity {
 
     public void getDataFromUserInput() {
         int mois = date.getMonth()+1;
-        String dateText = date.getDayOfMonth() + "/" + mois + "/" + date.getYear();
+        String dateText = date.getDayOfMonth() + "-" + mois + "-" + date.getYear();
         String timeText = heure.getHour() +"h:" + heure.getMinute();
         maTable.getMonEvenement().setDate(dateText);
         maTable.getMonEvenement().setHeure(timeText);

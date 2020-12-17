@@ -6,13 +6,17 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.latabledesgourmands.R;
+import com.example.latabledesgourmands.cuisinier.creerMaTable.importMenu;
 import com.example.latabledesgourmands.fragments.recyclerViewMenu.menuAdapter;
 import com.example.latabledesgourmands.fragments.recyclerViewTable.tableAdapter;
+import com.example.latabledesgourmands.utilitaire.API.menuHelper;
+import com.example.latabledesgourmands.utilitaire.API.tableHelper;
 import com.example.latabledesgourmands.utilitaire.ItemClickSupport;
 import com.example.latabledesgourmands.utilitaire.Models.Dessert;
 import com.example.latabledesgourmands.utilitaire.Models.Entree;
@@ -20,6 +24,10 @@ import com.example.latabledesgourmands.utilitaire.Models.Evenement;
 import com.example.latabledesgourmands.utilitaire.Models.Menu;
 import com.example.latabledesgourmands.utilitaire.Models.Plat;
 import com.example.latabledesgourmands.utilitaire.Models.Table;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.firestore.DocumentSnapshot;
+import com.google.firebase.firestore.QuerySnapshot;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -37,6 +45,9 @@ public class RechercherTableStep2 extends AppCompatActivity {
     String aucun;
     String tout;
 
+    public interface MyCallback {
+        void onCallback(List<Table> tableListLink);
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,13 +64,15 @@ public class RechercherTableStep2 extends AppCompatActivity {
         setUpRecyclerViewFragment();
     }
 
+
+
     private void manualTableCreationDebugAim() {
         // Table 1
         Entree entree1 = new Entree("entrée1", "listeIngredientsEntrée1", "recetteEntrée1", 1.5f, 2f, true, false, false);
         Plat plat1 = new Plat("plat1", "listeIngredientsPlat1", "recettePlat1", 2f, 3f, true, false, false, false);
         Dessert dessert1 = new Dessert("dessert1", "listeIngredientsDessert1", "recetteDessert1", 1f, 1f, true, false, false);
         Menu menu1 = new Menu(entree1, plat1, dessert1);
-        Evenement evenement1 = new Evenement("12/12/2020", "Chez Michel", "19:30", 5, 1, "pirates", true, false, true);
+        Evenement evenement1 = new Evenement("12-12-2020", "Chez Michel", "19:30", 5, 1, "pirates", true, false, true);
         Table table1 = new Table(menu1, evenement1);
 
         // Table 2
@@ -67,7 +80,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat2 = new Plat("plat2", "listeIngredientsPlat2", "recettePlat2", 3f, 3f, false, false, false, false);
         Dessert dessert2 = new Dessert("dessert2", "listeIngredientsDessert2", "recetteDessert2", .5f, 1f, false, false, false);
         Menu menu2 = new Menu(entree2, plat2, dessert2);
-        Evenement evenement2 = new Evenement("12/12/2020", "Chez Jacques", "19:30", 5, 1, "haloween", true, true, true);
+        Evenement evenement2 = new Evenement("12-12-2020", "Chez Jacques", "19:30", 5, 1, "haloween", true, true, true);
         Table table2 = new Table(menu2, evenement2);
 
         // Table 3
@@ -75,16 +88,50 @@ public class RechercherTableStep2 extends AppCompatActivity {
         Plat plat3 = new Plat("plat3", "listeIngredientsPlat3", "recettePlat3", 2f, 5f, false, false, false, false);
         Dessert dessert3 = new Dessert("dessert3", "listeIngredientsDessert3", "recetteDessert3", 2f, 1f, false, false, false);
         Menu menu3 = new Menu(entree3, plat3, dessert3);
-        Evenement evenement3 = new Evenement("15/12/2020", "Chez Pierre", "20:30", 4, 2,  "aucun", false, true, true);
+        Evenement evenement3 = new Evenement("15-12-2020", "Chez Pierre", "20:30", 4, 2,  "aucun", false, true, true);
         Table table3 = new Table(menu3, evenement3);
 
         //private void loadTableListe(){
         tableList.add(table1);
         tableList.add(table2);
         tableList.add(table3);
-        //}
-    }
 
+        getDataFromFirebase(new MyCallback() {
+            @Override
+            public void onCallback(List<Table> tableListLink) {
+                for(int i=0; i<tableListLink.size(); i++){
+                    tableList.add(tableListLink.get(i));
+                }
+            }
+        });
+            }
+
+
+    private void getDataFromFirebase (MyCallback myCallback) {
+        //GetDataFromFirestore
+        Task<QuerySnapshot> query = tableHelper.getTableCollection()
+                .get().addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
+                    @Override
+                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
+                        if (task.isSuccessful()) {
+                            List<Table> tableListWithinOnComplete = new ArrayList<>();
+                            for (DocumentSnapshot document : task.getResult()) {
+                                Table table = document.toObject(Table.class);
+                                tableListWithinOnComplete.add(table);
+                            }
+                            configureRecyclerView();
+                            myCallback.onCallback(tableListWithinOnComplete);
+                            if (task.getResult().size()==0){
+                                Toast.makeText(getApplicationContext(), "Aucune table présente dans la base de donnée", Toast.LENGTH_LONG).show();
+                            }
+                        } else {
+                            Toast.makeText(getApplicationContext(), "Error, check logs", Toast.LENGTH_SHORT).show();
+                        }
+
+                    }
+                });
+
+    }
     private List<Table> getSortedTableList (List<Table> listeComplete, Table filtre){
         List <Table> sortedTableList = new ArrayList<>();
 

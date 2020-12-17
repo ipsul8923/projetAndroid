@@ -59,7 +59,7 @@
                         android:layout_height="150dp"
                         android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                        android:background="@color/white"
+                        android:background="@color/lightYellow"
                         android:calendarViewShown="false"
                         android:datePickerMode="spinner"
                         android:startYear="2020" />
@@ -70,7 +70,7 @@
                     android:layout_height="150dp"
                     android:layout_weight="1"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/white"
+                    android:background="@color/lightYellow"
                     android:timePickerMode="spinner"
                     />
             </LinearLayout>

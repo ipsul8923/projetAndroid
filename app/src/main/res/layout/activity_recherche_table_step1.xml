@@ -53,58 +53,22 @@
                     android:backgroundTint="@color/color_button"
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
+                    android:layout_gravity="center_vertical"
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
                     android:text="Date :"
                     android:onClick="onClickDateFilter"/>
 
-                <EditText
-                    android:id="@+id/editTextDate"
+                <DatePicker
+                    android:id="@+id/datePickerRechercherTable"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
+                    android:layout_height="150dp"
+                    android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:ems="10"
-                    android:layout_margin="5dp"
                     android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize"
-                    android:text="jj-mm-aaaa"
-                    android:visibility="invisible"/>
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal">
-
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:text="Heure :"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize"
-                    android:onClick="onClickHeureFilter"/>
-
-                <EditText
-                    android:id="@+id/editTextTime"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:ems="10"
-                    android:layout_margin="5dp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
-                    android:gravity="center_horizontal"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize"
-                    android:inputType="time"
-                    android:text="hh : mm"
+                    android:calendarViewShown="false"
+                    android:datePickerMode="spinner"
+                    android:startYear="2020"
                     android:visibility="invisible"/>
             </LinearLayout>
 
@@ -385,13 +349,6 @@
                     android:textSize="@dimen/mediumSize"
                     android:text="Fumeur" />
 
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
-
                 <CheckBox
                     android:id="@+id/checkBoxAnimaux"
                     android:layout_width="wrap_content"
@@ -404,12 +361,6 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
                     android:text="Animaux" />
-            </LinearLayout>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="horizontal">
 
                 <CheckBox
                     android:id="@+id/checkBoxAlcool"
@@ -423,8 +374,8 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
                     android:text="Alcool" />
-            </LinearLayout>
 
+            </LinearLayout>
 
         </LinearLayout>
 

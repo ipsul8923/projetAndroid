@@ -69,6 +69,7 @@ public class RechercherTableStep1 extends AppCompatActivity {
         linkActivityToLayout();
         calendrier = Calendar.getInstance();
         initDatePicked();
+
     }
 
     private void linkActivityToLayout(){
@@ -335,4 +336,6 @@ public class RechercherTableStep1 extends AppCompatActivity {
         themeToutSelected.setSelected(false);
         themeAucunSelected.setSelected(false);
     }
+
+
 }

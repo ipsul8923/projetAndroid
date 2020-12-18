@@ -54,6 +54,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
         tableList = new ArrayList<>();
         sortedTableList = new ArrayList<>();
         setContentView(R.layout.activity_recherche_table_step2);
+        recyclerView = findViewById(R.id.tableRecyclerView);
         Intent intent = getIntent();
         if (intent != null) {
             if (intent.hasExtra("monFiltre")) {
@@ -67,35 +68,6 @@ public class RechercherTableStep2 extends AppCompatActivity {
 
 
     private void manualTableCreationDebugAim() {
-        // Table 1
-        Entree entree1 = new Entree("entrée1", "listeIngredientsEntrée1", "recetteEntrée1", 1.5f, 2f, true, false, false);
-        Plat plat1 = new Plat("plat1", "listeIngredientsPlat1", "recettePlat1", 2f, 3f, true, false, false, false);
-        Dessert dessert1 = new Dessert("dessert1", "listeIngredientsDessert1", "recetteDessert1", 1f, 1f, true, false, false);
-        Menu menu1 = new Menu(entree1, plat1, dessert1);
-        Evenement evenement1 = new Evenement("12-12-2020", "Chez Michel", "19:30", 5, 1, "pirates", true, false, true);
-        Table table1 = new Table(menu1, evenement1);
-
-        // Table 2
-        Entree entree2 = new Entree("entrée2", "listeIngredientsEntrée2", "recetteEntrée2", 1.6f, 2.5f, false, false, false);
-        Plat plat2 = new Plat("plat2", "listeIngredientsPlat2", "recettePlat2", 3f, 3f, false, false, false, false);
-        Dessert dessert2 = new Dessert("dessert2", "listeIngredientsDessert2", "recetteDessert2", .5f, 1f, false, false, false);
-        Menu menu2 = new Menu(entree2, plat2, dessert2);
-        Evenement evenement2 = new Evenement("12-12-2020", "Chez Jacques", "19:30", 5, 1, "haloween", true, true, true);
-        Table table2 = new Table(menu2, evenement2);
-
-        // Table 3
-        Entree entree3 = new Entree("entrée3", "listeIngredientsEntrée3", "recetteEntrée3", 3f, 4f, false, false, true);
-        Plat plat3 = new Plat("plat3", "listeIngredientsPlat3", "recettePlat3", 2f, 5f, false, false, false, false);
-        Dessert dessert3 = new Dessert("dessert3", "listeIngredientsDessert3", "recetteDessert3", 2f, 1f, false, false, false);
-        Menu menu3 = new Menu(entree3, plat3, dessert3);
-        Evenement evenement3 = new Evenement("15-12-2020", "Chez Pierre", "20:30", 4, 2,  "aucun", false, true, true);
-        Table table3 = new Table(menu3, evenement3);
-
-        //private void loadTableListe(){
-        tableList.add(table1);
-        tableList.add(table2);
-        tableList.add(table3);
-
         getDataFromFirebase(new MyCallback() {
             @Override
             public void onCallback(List<Table> tableListLink) {
@@ -119,7 +91,7 @@ public class RechercherTableStep2 extends AppCompatActivity {
                                 Table table = document.toObject(Table.class);
                                 tableListWithinOnComplete.add(table);
                             }
-                            configureRecyclerView();
+                            configureRecyclerView(getSortedTableList(tableListWithinOnComplete, monFiltre));
                             myCallback.onCallback(tableListWithinOnComplete);
                             if (task.getResult().size()==0){
                                 Toast.makeText(getApplicationContext(), "Aucune table présente dans la base de donnée", Toast.LENGTH_LONG).show();
@@ -132,8 +104,8 @@ public class RechercherTableStep2 extends AppCompatActivity {
                 });
 
     }
+
     private List<Table> getSortedTableList (List<Table> listeComplete, Table filtre){
-        List <Table> sortedTableList = new ArrayList<>();
 
         for(int i=0; i<listeComplete.size(); i++){
             if(testDateFiltre(listeComplete.get(i), filtre))
@@ -342,16 +314,14 @@ public class RechercherTableStep2 extends AppCompatActivity {
     }
 
     private void setUpRecyclerViewFragment(){
-        configureRecyclerView();
         configureOnClickRecyclerView();
     }
 
-    private void configureRecyclerView() {
-        recyclerView = findViewById(R.id.tableRecyclerView);
-        sortedTableList = getSortedTableList(tableList, monFiltre);
-        if(sortedTableList.size() != 0){
-        adapter = new tableAdapter(sortedTableList);
-            Log.i("TEST", "liste des tables filtrées " + sortedTableList.size() + sortedTableList.get(0));
+    private void configureRecyclerView(List<Table> sortedTableListArgument) {
+        if(sortedTableListArgument.size() != 0){
+
+        adapter = new tableAdapter(sortedTableListArgument);
+            Log.i("TEST", "liste des tables filtrées " + sortedTableListArgument.size() + sortedTableListArgument.get(0));
         recyclerView.setAdapter(adapter);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));}
         else{
@@ -378,4 +348,16 @@ public class RechercherTableStep2 extends AppCompatActivity {
         startActivity(intent);
     }
 
+
+    private void startRechercherTableStep1Activity(){
+        Intent intent = new Intent(this, RechercherTableStep1.class);
+        intent.putExtra("tableSelected", tableSelected);
+        startActivity(intent);
+    }
+
+    @Override
+    public void onBackPressed() {
+       super.onBackPressed();
+       startRechercherTableStep1Activity();
+    }
 }

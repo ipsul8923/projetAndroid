@@ -44,13 +44,13 @@ public class tableViewHolder extends RecyclerView.ViewHolder {
     public tableViewHolder(View itemView) {
         super(itemView);
         //prixTable = itemView.findViewById(R.id.prixTable);
-        dateTable = itemView.findViewById(R.id.dateTable);
-        heureTable = itemView.findViewById(R.id.heureTable);
-        adresseTable = itemView.findViewById(R.id.adresseTable);
-        nomTheme = itemView.findViewById(R.id.nomTheme);
-        fumeurTable = itemView.findViewById(R.id.tableFumeur);
-        animauxTable = itemView.findViewById(R.id.tableAnimaux);
-        alcoolTable = itemView.findViewById(R.id.tableAlcool);
+        dateTable = itemView.findViewById(R.id.dateTableBis);
+        heureTable = itemView.findViewById(R.id.heureTableBis);
+        adresseTable = itemView.findViewById(R.id.adresseTableBis);
+        nomTheme = itemView.findViewById(R.id.nomThemeBis);
+        fumeurTable = itemView.findViewById(R.id.tableFumeurBis);
+        animauxTable = itemView.findViewById(R.id.tableAnimauxBis);
+        alcoolTable = itemView.findViewById(R.id.tableAlcoolBis);
 
         //Lancer tous les findById des éléments défini précédemment sur le itemiew
         nomEntree=itemView.findViewById(R.id.nomEntreeFragment);

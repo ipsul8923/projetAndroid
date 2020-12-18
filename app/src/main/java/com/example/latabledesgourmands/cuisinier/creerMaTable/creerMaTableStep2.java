@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 
 import com.example.latabledesgourmands.R;
 import com.example.latabledesgourmands.cuisinier.acceuilCuisinier;
@@ -14,6 +15,10 @@ import com.example.latabledesgourmands.utilitaire.Models.Table;
 
 public class creerMaTableStep2 extends AppCompatActivity {
     Table maTable;
+    ImageButton firstStep;
+    ImageButton secondStep;
+    ImageButton thridStep;
+    ImageButton fourthStep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,8 +29,17 @@ public class creerMaTableStep2 extends AppCompatActivity {
                 maTable = intent.getParcelableExtra("maTable");
             }
         }
+        setUpBottomFragment();
     }
+    private void setUpBottomFragment()
+    {
+        firstStep = findViewById(R.id.firstStepImage);
+        secondStep = findViewById(R.id.secondStepImage);
+        thridStep = findViewById(R.id.thirdStepImage);
+        fourthStep = findViewById(R.id.fourthStepImage);
 
+
+    }
     private void startCreerMonMenuActivity(){
         Intent intent = new Intent(this, creerMonMenu.class);
         intent.putExtra("maTable",maTable);

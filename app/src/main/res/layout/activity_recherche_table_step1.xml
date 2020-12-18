@@ -31,6 +31,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
+            style="@style/classicButtonGreen"
             />
     </LinearLayout>
 
@@ -53,15 +54,12 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:layout_gravity="center_vertical"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
                     android:text="Date :"
-                    android:onClick="onClickDateFilter"/>
+                    android:onClick="onClickDateFilter"
+                    style="@style/filterButton"/>
 
                 <DatePicker
                     android:id="@+id/datePickerRechercherTable"
@@ -69,11 +67,12 @@
                     android:layout_height="150dp"
                     android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                    android:background="@color/lightYellow"
+                    android:background="@color/lightWhite"
                     android:calendarViewShown="false"
                     android:datePickerMode="spinner"
                     android:startYear="2020"
-                    android:visibility="invisible"/>
+                    android:visibility="invisible"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -84,14 +83,11 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="adresse :"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:onClick="onClickAdresseFilter"/>
+                    android:onClick="onClickAdresseFilter"
+                    style="@style/filterButton"/>
 
                 <EditText
                     android:id="@+id/editTextPostalAddress"
@@ -104,10 +100,12 @@
                     android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/mediumSize"
+                    android:textSize="@dimen/bigMediumSize"
                     android:inputType="textPostalAddress"
                     android:text="41 rue jeanMich, Ville "
-                    android:visibility="invisible"/>
+                    android:visibility="invisible"
+                    style="@style/classicButtonLightWhite"
+                    />
             </LinearLayout>
 
 
@@ -120,14 +118,11 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Nombre de convives :"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:onClick="onClickConvivesFilter"/>
+                    android:onClick="onClickConvivesFilter"
+                    style="@style/filterButton"/>
 
                 <EditText
                     android:id="@+id/editTextNumberConvives"
@@ -143,7 +138,9 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
                     android:inputType="number"
-                    android:visibility="invisible"/>
+                    android:visibility="invisible"
+                    style="@style/classicButtonLightWhite"
+                    />
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -154,14 +151,11 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Menu :"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:onClick="onClickMenuFilter"/>
+                    android:onClick="onClickMenuFilter"
+                    style="@style/filterButton"/>
                 <LinearLayout
                     android:id="@+id/menuLayout"
                     android:layout_width="match_parent"
@@ -174,49 +168,46 @@
                         android:id="@+id/buttonMenuTout"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/color_button"
-                        android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/tout"
-                        android:textColor="@color/black"
+                        android:layout_weight="1"
                         android:textSize="10dp"
-                        android:onClick="onClickButtonMenuTout"/>
+                        android:onClick="onClickButtonMenuTout"
+                        style="@style/filterButton"
+                        />
                     <Button
                         android:id="@+id/buttonMenuVégé"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/color_button"
-                        android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/végé"
-                        android:textColor="@color/black"
                         android:textSize="10dp"
                         android:layout_weight="1"
-                        android:onClick="onClickButtonMenuVege"/>
+                        android:onClick="onClickButtonMenuVege"
+                        style="@style/filterButton"
+                        />
                     <Button
                         android:id="@+id/buttonMenuVegan"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/color_button"
-                        android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/vegan"
-                        android:textColor="@color/black"
                         android:textSize="10dp"
                         android:layout_weight="1"
-                        android:onClick="onClickButtonMenuVegan"/>
+                        android:onClick="onClickButtonMenuVegan"
+                        style="@style/filterButton"
+                        />
                     <Button
                         android:id="@+id/buttonMenuSansGluten"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/color_button"
-                        android:fontFamily="@font/indie_flower"
                         android:gravity="center_horizontal"
                         android:text="@string/sansGluten"
-                        android:textColor="@color/black"
                         android:textSize="10dp"
                         android:layout_weight="1"
-                        android:onClick="onClickButtonMenuSansGluten"/>
+                        android:onClick="onClickButtonMenuSansGluten"
+                        style="@style/filterButton"
+                        />
                 </LinearLayout>
             </LinearLayout>
 
@@ -229,14 +220,11 @@
                 <Button
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Prix max : "
-                    android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:onClick="onClickPrixFilter"/>
+                    android:onClick="onClickPrixFilter"
+                    style="@style/filterButton"/>
 
 
                     <EditText
@@ -253,7 +241,8 @@
                         android:textSize="@dimen/bigSize"
                         android:inputType="numberDecimal"
                         android:text=" 0 "
-                        android:visibility="invisible"/>
+                        android:visibility="invisible"
+                        style="@style/classicButtonLightWhite"/>
 
             </LinearLayout>
 
@@ -267,13 +256,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Thème : "
-                    android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:onClick="onClickThemeFilter"/>
+                    android:onClick="onClickThemeFilter"
+                    style="@style/filterButton"/>
 
                 <LinearLayout
                     android:id="@+id/themeLayout"
@@ -288,50 +275,46 @@
                     android:id="@+id/buttonThemeTout"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/tout"
-                    android:textColor="@color/black"
                     android:textSize="10dp"
                     android:layout_weight="1"
-                    android:onClick="onClickButtonThemeTout"/>
+                    android:onClick="onClickButtonThemeTout"
+                    style="@style/filterButton"
+                    />
                 <Button
                     android:id="@+id/buttonThemeAucun"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/aucunTheme"
-                    android:textColor="@color/black"
                     android:textSize="10dp"
                     android:layout_weight="1"
-                    android:onClick="onClickButtonThemeAucun"/>
+                    android:onClick="onClickButtonThemeAucun"
+                    style="@style/filterButton"
+                    />
                 <Button
                     android:id="@+id/buttonThemePirates"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/pirateTheme"
-                    android:textColor="@color/black"
                     android:textSize="10dp"
                     android:layout_weight="1"
-                    android:onClick="onClickButtonThemePirates"/>
+                    android:onClick="onClickButtonThemePirates"
+                    style="@style/filterButton"
+                    />
                 <Button
                     android:id="@+id/buttonThemeHaloween"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:backgroundTint="@color/color_button"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="@string/haloweenTheme"
-                    android:textColor="@color/black"
                     android:textSize="10dp"
                     android:layout_weight="1"
-                    android:onClick="onClickButtonThemeHaloween"/>
+                    android:onClick="onClickButtonThemeHaloween"
+                    style="@style/filterButton"
+                    />
                 </LinearLayout>
             </LinearLayout>
 
@@ -351,7 +334,8 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:text="Fumeur" />
+                    android:text="Fumeur"
+                    style="@style/classicButtonLightWhite"/>
 
                 <CheckBox
                     android:id="@+id/checkBoxAnimaux"
@@ -364,7 +348,8 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:text="Animaux" />
+                    android:text="Animaux"
+                    style="@style/classicButtonLightWhite"/>
 
                 <CheckBox
                     android:id="@+id/checkBoxAlcool"
@@ -377,7 +362,9 @@
                     android:gravity="center"
                     android:textColor="@color/black"
                     android:textSize="@dimen/mediumSize"
-                    android:text="Alcool" />
+                    android:text="Alcool"
+                    style="@style/classicButtonLightWhite"
+                    />
 
             </LinearLayout>
 
@@ -387,11 +374,10 @@
             android:id="@+id/rechercheTableButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="@string/rechercherTable"
-            android:textColor="@color/black"
-            android:onClick="onClickRechercherTableButton" />
+            android:onClick="onClickRechercherTableButton"
+            style="@style/classicButtonGreen"
+            />
 
     </LinearLayout>
     </RelativeLayout>

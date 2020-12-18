@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -18,6 +19,10 @@ import com.example.latabledesgourmands.utilitaire.Models.Table;
 
 public class creerMaTableStep2bis extends AppCompatActivity {
     Table maTable;
+    ImageButton firstStep;
+    ImageButton secondStep;
+    ImageButton thridStep;
+    ImageButton fourthStep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -28,10 +33,18 @@ public class creerMaTableStep2bis extends AppCompatActivity {
                 maTable=intent.getParcelableExtra("maTable");
             }
         }
-
+        setUpBottomFragment();
         setUpMenuFragment(maTable.getMonMenu());
     }
+    private void setUpBottomFragment()
+    {
+        firstStep = findViewById(R.id.firstStepImage);
+        secondStep = findViewById(R.id.secondStepImage);
+        thridStep = findViewById(R.id.thirdStepImage);
+        fourthStep = findViewById(R.id.fourthStepImage);
 
+
+    }
     private void setUpMenuFragment(Menu menu){
         TextView nomEntree;
         TextView nomPlat;

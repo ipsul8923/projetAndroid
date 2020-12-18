@@ -97,7 +97,7 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:background="@color/lightWhite"
+                    android:background="@color/white"
                     android:gravity="center_horizontal"
                     android:textSize="@dimen/bigSize"
                     android:inputType="textPostalAddress"

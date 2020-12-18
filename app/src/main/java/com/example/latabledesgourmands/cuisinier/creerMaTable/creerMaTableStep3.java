@@ -8,6 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
@@ -29,7 +30,10 @@ public class creerMaTableStep3 extends AppCompatActivity {
     CheckBox fumeur;
     CheckBox alcool;
     CheckBox animaux;
-
+    ImageButton firstStep;
+    ImageButton secondStep;
+    ImageButton thridStep;
+    ImageButton fourthStep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -44,8 +48,16 @@ public class creerMaTableStep3 extends AppCompatActivity {
         }
         initTimePicked();
         initDatePicked();
+        setUpBottomFragment();
     }
+    private void setUpBottomFragment()
+    {
+        firstStep = findViewById(R.id.firstStepImage);
+        secondStep = findViewById(R.id.secondStepImage);
+        thridStep = findViewById(R.id.thirdStepImage);
+        fourthStep = findViewById(R.id.fourthStepImage);
 
+    }
     private void linkActivityToLayout(){
         date=findViewById(R.id.datePicker);
         heure=findViewById(R.id.timePicker);

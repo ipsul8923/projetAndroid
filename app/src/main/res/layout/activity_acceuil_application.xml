@@ -23,15 +23,25 @@
             android:textSize="@dimen/bigSize"
             android:layout_gravity="center"
             android:layout_marginBottom="180dp" />
-
-        <Button
-            android:id="@+id/connexionInscriptionButton"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            style="@style/classicButtonGreen"
-            android:text="@string/connexionInscription"
-            android:onClick="onClickConnexionInscriptionButton"
-            />
-    </LinearLayout>
+            android:orientation="vertical">
+            <Button
+                android:id="@+id/inscriptionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/classicButtonGreen"
+                android:text="@string/inscription"
+                android:onClick="onClickInscriptionButton" />
 
+            <Button
+                android:id="@+id/connectionButton"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/classicButtonGreen"
+                android:text="@string/connexion"
+                android:onClick="onClickConnexionButton" />
+        </LinearLayout>
+    </LinearLayout>
 </RelativeLayout>

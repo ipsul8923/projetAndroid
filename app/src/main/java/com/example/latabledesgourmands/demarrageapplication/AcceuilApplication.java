@@ -23,20 +23,23 @@ public class AcceuilApplication extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_acceuil_application);
+            startChoixCuisinierInviteActivity();
     }
 
-    public void onClickConnexionInscriptionButton(View view){
-        if(this.isCurrentUserLogged()) {
-            this.startChoixCuisinierInviteActivity();
-        }
-        else{
+    public void onClickInscriptionButton(View view){
             this.startSignInActivity();
-        }
+
+    }
+
+    public void onClickConnexionButton(View view){
+            this.startSignInActivity();
     }
 
     private void startChoixCuisinierInviteActivity(){
-        Intent intent = new Intent(this, ChoixCuisinierInvite.class);
-        startActivity(intent);
+        if(this.isCurrentUserLogged()) {
+            Intent intent = new Intent(this, ChoixCuisinierInvite.class);
+            startActivity(intent);
+        }
     }
 
     protected FirebaseUser getCurrentUser(){ return FirebaseAuth.getInstance().getCurrentUser(); }
@@ -62,6 +65,7 @@ public class AcceuilApplication extends AppCompatActivity {
             if (resultCode == RESULT_OK) { // SUCCESS
                 this.createUserInfFirestore();
                 Toast.makeText(getApplicationContext(), "connexion réussie", Toast.LENGTH_LONG).show();
+                startChoixCuisinierInviteActivity();
             } else { // ERRORS
                 if (response == null) {
                     Toast.makeText(getApplicationContext(), "Authentification annulée", Toast.LENGTH_LONG).show();

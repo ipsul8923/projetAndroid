@@ -13,7 +13,8 @@
     <string name="MaTable">Ma table des gourmands</string>
     <string name="ListeDesMenu">Liste des menus</string>
     <string name="rechercherTable">Rechercher une table</string>
-    <string name="connexionInscription">Se connecter / S\'inscrire</string>
+    <string name="inscription">S\'inscrire</string>
+    <string name="connexion">Se connecter</string>
     <string name="tdg">La table des gourmands</string>
     <string name="choixCuisinier">Je suis cuisinier</string>
     <string name="choixInvite">Je suis invité</string>

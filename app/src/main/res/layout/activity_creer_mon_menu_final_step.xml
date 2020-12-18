@@ -30,6 +30,7 @@
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
+            style="@style/classicButtonYellow"
             />
         <fragment
             android:id="@+id/fragment3"
@@ -46,15 +47,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/white"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
         android:textSize="@dimen/bigMediumSize"
-        android:layout_margin="5dp"
         android:gravity="center_horizontal"
         android:text="@string/creer_mon_menu"
         android:onClick="onClickCreateMenuButton"
         android:layout_alignParentBottom="true"
+    style="@style/classicButtonOrange"
         ></Button>
 
 

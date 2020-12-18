@@ -30,11 +30,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:background="@color/white"
-                android:fontFamily="@font/indie_flower"
                 android:text="@string/MaTable"
                 android:textColor="@color/black"
                 android:textSize="@dimen/bigSize"
                 android:gravity="center_horizontal"
+                style="@style/classicButtonLightYellow"
+
                 />
         </LinearLayout>
 
@@ -55,14 +56,13 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_margin="5dp"
                     android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="Cuisinier :"
                     android:layout_weight="1"
-                    android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"></TextView>
+                    android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonLightYellow"
+                    ></TextView>
 
                 <TextView
                     android:id="@+id/cookNumerPrint"
@@ -76,6 +76,7 @@
                     android:text="cook number"
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonLightYellow"
                     ></TextView>
             </LinearLayout>
 
@@ -88,7 +89,9 @@
                 android:gravity="center_horizontal"
                 android:text="Menu :"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize"></TextView>
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightYellow"
+                ></TextView>
             <fragment
                 android:id="@+id/fragment2"
                 android:name="com.example.latabledesgourmands.fragments.menuFragment"
@@ -108,6 +111,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/bigSize"
                 android:layout_weight="1"
+                style="@style/classicButtonLightYellow"
                 ></TextView>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -125,6 +129,7 @@
                     android:text="Date"
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonLightYellow"
                     android:layout_weight="1"
                     ></TextView>
 
@@ -139,6 +144,7 @@
                     android:text="Heure"
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonLightYellow"
                     android:layout_weight="1"
                     ></TextView>
             </LinearLayout>
@@ -159,7 +165,9 @@
                     android:gravity="center_horizontal"
                     android:text="Nombre de convives"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"></TextView>
+                    android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonLightYellow"
+                    ></TextView>
                 <TextView
                     android:id="@+id/nomThemePrint"
                     android:layout_width="match_parent"
@@ -171,6 +179,7 @@
                     android:gravity="center_horizontal"
                     android:text="Thème"
                     android:textColor="@color/black"
+                    style="@style/classicButtonLightYellow"
                     android:textSize="@dimen/bigSize"></TextView>
             </LinearLayout>
             <LinearLayout
@@ -228,14 +237,11 @@
             android:id="@+id/nextStepButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:textSize="@dimen/mediumSize"
-            android:layout_margin="5dp"
+            android:textSize="@dimen/bigMediumSize"
             android:text="@string/creer_ma_table"
             android:onClick="onClickCreateATable"
             android:layout_below="@id/recapContainer"
+            style="@style/classicButtonLightYellow"
             ></Button>
         <fragment
             android:id="@+id/fragmentBas"

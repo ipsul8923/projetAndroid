@@ -7,4 +7,62 @@
         <item name="android:typeface">normal</item>
         <item name="android:background">@color/black</item>
     </style>
+
+    <style name="classicButtonGreen">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/indie_flower</item>
+        <item name="android:shape">rectangle</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="background">@drawable/mybutton</item>
+        <item name="backgroundTint">@color/color_button_green</item>
+        <item name="android:textSize">@dimen/mediumSize</item>
+    </style>
+    <style name="classicButtonRed">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/indie_flower</item>
+        <item name="android:shape">rectangle</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="background">@drawable/mybutton</item>
+        <item name="backgroundTint">@color/color_button_red</item>
+        <item name="android:textSize">@dimen/mediumSize</item>
+
+    </style>
+    <style name="classicButtonYellow">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/indie_flower</item>
+        <item name="android:shape">rectangle</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="background">@drawable/mybutton</item>
+        <item name="backgroundTint">@color/color_button_yellow</item>
+        <item name="android:textSize">@dimen/mediumSize</item>
+
+    </style>
+    <style name="classicButtonLightYellow">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/indie_flower</item>
+        <item name="android:shape">rectangle</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="background">@drawable/mybutton</item>
+        <item name="backgroundTint">@color/color_button_lightyellow</item>
+        <item name="android:textSize">@dimen/mediumSize</item>
+
+    </style>
+    <style name="classicButtonOrange">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/indie_flower</item>
+        <item name="android:shape">rectangle</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="background">@drawable/mybutton</item>
+        <item name="backgroundTint">@color/color_button_orange</item>
+        <item name="android:textSize">@dimen/mediumSize</item>
+    </style>
+    <style name="classicButtonLightWhite">
+        <item name="android:textColor">@color/black</item>
+        <item name="fontFamily">@font/indie_flower</item>
+        <item name="android:shape">rectangle</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="background">@drawable/mybutton</item>
+        <item name="backgroundTint">@color/color_button_light_white</item>
+        <item name="android:textSize">@dimen/mediumSize</item>
+    </style>
 </resources>

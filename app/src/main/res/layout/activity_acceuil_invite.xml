@@ -25,21 +25,19 @@
             android:id="@+id/rechercheTableButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
+            style="@style/classicButtonYellow"
             android:text="@string/rechercherTable"
-            android:textColor="@color/black"
-            android:onClick="onClickRechercherTableButton" />
+            android:onClick="onClickRechercherTableButton"
+            android:textSize="@dimen/bigSize"/>
 
         <Button
             android:id="@+id/gererTableButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="@string/gerer_mes_tables"
-            android:textColor="@color/black"
-            android:onClick="onClickGererMesTablesButton" />
+            android:onClick="onClickGererMesTablesButton"
+            style="@style/classicButtonGreen"
+            android:textSize="@dimen/bigSize"/>
 
     </LinearLayout>
 </RelativeLayout>

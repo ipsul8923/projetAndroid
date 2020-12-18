@@ -24,11 +24,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="Création de mon menu"
-            android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
+            style="@style/classicButtonLightYellow"
             />
     </LinearLayout>
 
@@ -51,7 +50,9 @@
             android:gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:text="Entrée" />
+            android:text="Entrée"
+            style="@style/classicButtonLightWhite"
+            />
 
         <CheckBox
             android:id="@+id/isPlatChecked"
@@ -64,7 +65,9 @@
             android:gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:text="Plat" />
+            android:text="Plat"
+            style="@style/classicButtonLightWhite"
+            />
 
         <CheckBox
             android:id="@+id/isDessertChecked"
@@ -77,19 +80,19 @@
             android:gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:text="Dessert" />
+            android:text="Dessert"
+            style="@style/classicButtonLightWhite"
+            />
 
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:textSize="@dimen/bigSize"
+            android:textSize="@dimen/bigMediumSize"
             android:layout_margin="5dp"
             android:text="Débuter la création de mon Menu"
             android:onClick="onClickBeginCreationMenu"
+            style="@style/classicButtonLightYellow"
             ></Button>
 
 

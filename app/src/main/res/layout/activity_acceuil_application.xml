@@ -28,12 +28,10 @@
             android:id="@+id/connexionInscriptionButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
+            style="@style/classicButtonGreen"
             android:text="@string/connexionInscription"
-            android:textColor="@color/black"
             android:onClick="onClickConnexionInscriptionButton"
-            android:layout_marginBottom="10dp"/>
+            />
     </LinearLayout>
 
 </RelativeLayout>

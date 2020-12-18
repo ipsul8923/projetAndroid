@@ -24,10 +24,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/white"
-        android:fontFamily="@font/indie_flower"
         android:text="@string/creer_ma_table"
-        android:textColor="@color/black"
         android:textSize="@dimen/bigSize"
+        style="@style/classicButtonYellow"
         android:gravity="center_horizontal"
         />
     </LinearLayout>
@@ -44,10 +43,9 @@
         android:layout_height="wrap_content"
         android:text="@string/nombreDeCuisinier"
         android:background="@color/white"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
         android:gravity="center_horizontal"
         android:textSize="@dimen/bigSize"
+        style="@style/classicButtonYellow"
         />
         <LinearLayout
             android:layout_width="match_parent"
@@ -96,12 +94,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:textSize="@dimen/mediumSize"
-            android:layout_margin="5dp"
+            android:textSize="@dimen/bigMediumSize"
             android:text="@string/nextStep"
             android:onClick="onClickNextStepButton"
+            style="@style/classicButtonYellow"
             ></Button>
         <fragment
             android:id="@+id/fragmentBas"

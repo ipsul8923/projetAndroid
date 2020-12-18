@@ -26,11 +26,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="@string/MaTable"
-            android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
+            style="@style/classicButtonGreen"
             />
     </LinearLayout>
 
@@ -59,10 +58,11 @@
                         android:layout_height="150dp"
                         android:layout_gravity="center_horizontal"
                     android:layout_weight="1"
-                        android:background="@color/lightYellow"
+                        android:background="@color/lightWhite"
                         android:calendarViewShown="false"
                         android:datePickerMode="spinner"
-                        android:startYear="2020" />
+                        android:startYear="2020"
+                        />
 
                 <TimePicker
                     android:id="@+id/timePicker"
@@ -70,7 +70,7 @@
                     android:layout_height="150dp"
                     android:layout_weight="1"
                     android:layout_gravity="center_horizontal"
-                    android:background="@color/lightYellow"
+                    android:background="@color/lightWhite"
                     android:timePickerMode="spinner"
                     />
             </LinearLayout>
@@ -85,11 +85,10 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="5dp"
                     android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
                     android:gravity="center_horizontal"
                     android:text="adresse :"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonGreen"
                     ></TextView>
 
                 <EditText
@@ -98,13 +97,12 @@
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
                     android:ems="10"
-                    android:layout_margin="5dp"
-                    android:background="@color/white"
-                    android:fontFamily="@font/indie_flower"
+                    android:background="@color/lightWhite"
                     android:gravity="center_horizontal"
-                    android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
                     android:inputType="textPostalAddress"
+                    style="@style/classicButtonLightWhite"
+
                     />
             </LinearLayout>
 
@@ -122,7 +120,9 @@
                     android:gravity="center_horizontal"
                     android:text="Nombre de convives :"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"></TextView>
+                    android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonGreen"
+                    ></TextView>
 
                 <EditText
                     android:id="@+id/editTextNumber"
@@ -137,7 +137,9 @@
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
                     android:text="5"
-                    android:inputType="number" />
+                    android:inputType="number"
+                    style="@style/classicButtonLightWhite"
+                    />
             </LinearLayout>
 
             <LinearLayout
@@ -154,7 +156,9 @@
                     android:gravity="center_horizontal"
                     android:text="Thème :"
                     android:textColor="@color/black"
-                    android:textSize="@dimen/bigSize"></TextView>
+                    android:textSize="@dimen/bigSize"
+                    style="@style/classicButtonGreen"
+                    ></TextView>
 
                 <EditText
                     android:id="@+id/editThemeText"
@@ -169,7 +173,7 @@
                     android:textSize="@dimen/bigSize"
                     android:inputType="text"
                     android:text="thème"
-
+                    style="@style/classicButtonLightWhite"
                     />
             </LinearLayout>
 
@@ -189,7 +193,9 @@
                     android:gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
-                    android:text="Fumeur" />
+                    android:text="Fumeur"
+                    style="@style/classicButtonLightWhite"
+                    />
                 <CheckBox
                     android:id="@+id/checkBox2"
                     android:layout_width="wrap_content"
@@ -201,7 +207,9 @@
                     android:gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
-                    android:text="Animaux" />
+                    android:text="Animaux"
+                    style="@style/classicButtonLightWhite"
+                    />
                 <CheckBox
                     android:id="@+id/checkBox3"
                     android:layout_width="wrap_content"
@@ -213,7 +221,9 @@
                     android:gravity="center_horizontal"
                     android:textColor="@color/black"
                     android:textSize="@dimen/bigSize"
-                    android:text="Alcool" />
+                    android:text="Alcool"
+                    style="@style/classicButtonLightWhite"
+                    />
             </LinearLayout>
         </LinearLayout>
     </LinearLayout>
@@ -228,13 +238,11 @@
         android:id="@+id/nextStepButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:background="@color/white"
-        android:fontFamily="@font/indie_flower"
         android:onClick="onClickNextStepButton"
         android:text="@string/nextStep"
-        android:textColor="@color/black"
-        android:textSize="@dimen/mediumSize"></Button>
+        android:textSize="@dimen/bigMediumSize"
+            style="@style/classicButtonGreen"
+            ></Button>
 
         <fragment
         android:id="@+id/fragmentBas"

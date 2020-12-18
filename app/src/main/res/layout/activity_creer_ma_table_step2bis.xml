@@ -24,22 +24,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
             android:text="@string/creer_ma_table"
+            style="@style/classicButtonOrange"
             />
         <Button
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:layout_margin="5dp"
             android:text="@string/importMenu"
+            style="@style/classicButtonOrange"
             ></Button>
 
         <fragment
@@ -63,13 +59,10 @@
             android:id="@+id/nextStepButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:textSize="@dimen/mediumSize"
-            android:layout_margin="5dp"
+            android:textSize="@dimen/bigMediumSize"
             android:text="@string/nextStep"
             android:onClick="onClickNextStepButton"
+            style="@style/classicButtonOrange"
             ></Button>
         <fragment
             android:id="@+id/fragmentBas"

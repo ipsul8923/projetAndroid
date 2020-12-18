@@ -25,44 +25,40 @@
             android:id="@+id/button"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="@string/creer_ma_table"
-            android:textColor="@color/black"
+            style="@style/classicButtonYellow"
             android:onClick="onClickCreerMaTableButton"
+            android:textSize="@dimen/bigSize"
             />
 
         <Button
             android:id="@+id/button2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="@string/gerer_mes_tables"
-            android:textColor="@color/black"
+            style="@style/classicButtonGreen"
             android:onClick="onClickGererMesTablesButton"
+            android:textSize="@dimen/bigSize"
             />
 
         <Button
             android:id="@+id/button3"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
+            style="@style/classicButtonLightYellow"
             android:text="@string/creer_mon_menu"
-            android:textColor="@color/black"
             android:onClick="onClickCreerMonMenuButton"
+            android:textSize="@dimen/bigSize"
             />
 
         <Button
             android:id="@+id/button4"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
+            style="@style/classicButtonOrange"
             android:text="@string/gerer_mes_menus"
-            android:textColor="@color/black"
             android:onClick="onClickGererMesMenusButton"
+            android:textSize="@dimen/bigSize"
             />
     </LinearLayout>
 </RelativeLayout>

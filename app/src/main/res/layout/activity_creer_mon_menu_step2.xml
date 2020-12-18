@@ -25,11 +25,10 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="Création de mon Plat"
-            android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
+            style="@style/classicButtonOrange"
             />
     </LinearLayout>
 
@@ -53,7 +52,9 @@
                 android:gravity="center_horizontal"
                 android:text="Nom :"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonOrange"
+                />
             <EditText
                 android:id="@+id/platNameInput"
                 android:layout_width="match_parent"
@@ -66,7 +67,9 @@
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:text=" "
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightWhite"
+                />
 
 
         </LinearLayout>
@@ -86,7 +89,9 @@
                 android:gravity="center_horizontal"
                 android:text="Ingrédients :"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonOrange"
+                />
 
             <EditText
                 android:id="@+id/ingredientPlatInput"
@@ -100,7 +105,9 @@
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:text=" "
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightWhite"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -118,7 +125,9 @@
                 android:gravity="center_horizontal"
                 android:text="Recette :"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonOrange"
+                />
 
             <EditText
                 android:id="@+id/recettePlatInput"
@@ -132,7 +141,9 @@
                 android:inputType="textPersonName"
                 android:textColor="@color/black"
                 android:text=" "
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightWhite"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -150,7 +161,9 @@
                 android:gravity="center_horizontal"
                 android:text="Prix par portion :"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonOrange"
+                />
 
             <EditText
                 android:id="@+id/prixPlatInput"
@@ -164,7 +177,9 @@
                 android:inputType="numberDecimal"
                 android:textColor="@color/black"
                 android:text=" "
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightWhite"
+                />
         </LinearLayout>
 
         <LinearLayout
@@ -183,7 +198,9 @@
                 android:gravity="center_horizontal"
                 android:text="Difficulté :"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize" />
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonOrange"
+                />
 
             <RatingBar
                 android:id="@+id/difficultePlatInput"
@@ -192,7 +209,7 @@
                 android:layout_height="50dp"
                 android:layout_gravity="center_horizontal"
                 android:layout_margin="5dp"
-                android:background="@color/white"
+                android:background="@color/lightWhite"
                 android:fontFamily="@font/indie_flower"
                 android:numStars="5"
                 android:rating="3"
@@ -210,7 +227,9 @@
             android:gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:text="Vegetarien" />
+            android:text="Vegetarien"
+            style="@style/classicButtonLightWhite"
+            />
 
         <CheckBox
             android:id="@+id/veganPlatInput"
@@ -222,7 +241,9 @@
             android:gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:text="Vegan" />
+            android:text="Vegan"
+            style="@style/classicButtonLightWhite"
+            />
 
         <CheckBox
             android:id="@+id/sansGlutenPlatInput"
@@ -234,7 +255,9 @@
             android:gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:text="Sans gluten" />
+            android:text="Sans gluten"
+            style="@style/classicButtonLightWhite"
+            />
         <CheckBox
             android:id="@+id/wineInput"
             android:layout_width="match_parent"
@@ -245,7 +268,9 @@
             android:gravity="center_horizontal"
             android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:text="Vin" />
+            android:text="Vin"
+            style="@style/classicButtonLightWhite"
+            />
 
 
     </LinearLayout>
@@ -253,15 +278,12 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
-        android:background="@color/white"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
         android:textSize="@dimen/bigMediumSize"
-        android:layout_margin="5dp"
         android:gravity="center_horizontal"
         android:text="@string/nextStep"
         android:onClick="onClickCreateSecondStep"
         android:layout_alignParentBottom="true"
+        style="@style/classicButtonOrange"
         ></Button>
 
 </RelativeLayout>

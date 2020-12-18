@@ -18,30 +18,27 @@
             android:id="@+id/cuisinierButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="@string/choixCuisinier"
-            android:textColor="@color/black"
-            android:onClick="onClickCuisinierButton" />
+            android:onClick="onClickCuisinierButton"
+            style="@style/classicButtonOrange"
+            android:textSize="@dimen/bigSize"/>
 
         <Button
             android:id="@+id/inviteButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="@string/choixInvite"
-            android:textColor="@color/black"
-            android:onClick="onClickinviteButton" />
+            android:onClick="onClickinviteButton"
+            style="@style/classicButtonOrange"
+            android:textSize="@dimen/bigSize"/>
         <Button
             android:id="@+id/profilButton"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/white"
-            android:fontFamily="@font/indie_flower"
             android:text="Mon Profil"
-            android:textColor="@color/black"
-            android:onClick="onClickProfilButton" />
+            android:onClick="onClickProfilButton"
+            style="@style/classicButtonOrange"
+            android:textSize="@dimen/bigSize"/>
 
     </LinearLayout>
 

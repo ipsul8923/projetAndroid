@@ -12,7 +12,7 @@
     >
 
     <Button
-        android:id="@+id/button5"
+        android:id="@+id/logo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_weight="1"
@@ -20,6 +20,7 @@
         android:fontFamily="@font/indie_flower"
         android:textColor="@color/black"
         android:text="logo"
+
 
         android:textSize="@dimen/mediumSize" />
 

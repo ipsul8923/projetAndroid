@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import com.example.latabledesgourmands.R;
@@ -22,14 +23,29 @@ public class creerMaTable extends AppCompatActivity {
     Button oneCooker;
     Button twoCooker;
     Button threeCooker;
+    ImageButton firstStep;
+    ImageButton secondStep;
+    ImageButton thridStep;
+    ImageButton fourthStep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_creer_ma_table);
         linkActivityToLayout();
         initCreationTableProcess();
+        setUpBottomFragment();
     }
 
+
+    private void setUpBottomFragment()
+    {
+        firstStep = findViewById(R.id.firstStepImage);
+        secondStep = findViewById(R.id.secondStepImage);
+        thridStep = findViewById(R.id.thirdStepImage);
+        fourthStep = findViewById(R.id.fourthStepImage);
+
+
+    }
 
     private void linkActivityToLayout(){
         oneCooker = findViewById(R.id.buttonOneCookerTable);

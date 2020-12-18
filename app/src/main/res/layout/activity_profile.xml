@@ -46,7 +46,8 @@
             android:textSize="@dimen/bigSize"
             android:gravity="center_horizontal"
             android:text="username"
-            android:layout_margin="5dp"/>
+            android:layout_margin="5dp"
+            style="@style/classicButtonLightWhite"/>
 
         <!-- PROFILE EMAIL CONTAINER -->
         <LinearLayout
@@ -64,6 +65,7 @@
                 android:textColor="@color/black"
                 android:textSize="@dimen/bigSize"
                 android:gravity="center_horizontal"
+                style="@style/classicButtonGreen"
                 />
 
             <!-- PROFILE EMAIL -->
@@ -77,7 +79,8 @@
                 android:textSize="@dimen/bigSize"
                 android:text="exemple@gmail.com"
                 android:gravity="center_horizontal"
-                android:paddingLeft="5dp"/>
+                android:paddingLeft="5dp"
+                style="@style/classicButtonLightWhite"/>
 
         </LinearLayout>
 
@@ -97,12 +100,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="update account"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:background="@color/white"
             android:textSize="@dimen/bigSize"
-            android:layout_margin="5dp"
             android:onClick="onClickUpdateButton"
+            style="@style/classicButtonGreen"
             />
 
         <!-- BUTTON SIGN OUT -->
@@ -112,23 +112,20 @@
             android:layout_height="wrap_content"
             android:text="deconnexion"
             android:onClick="onClickSignOutButton"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
-            android:background="@color/white"
             android:textSize="@dimen/bigSize"
-            android:layout_margin="5dp"/>
+            style="@style/classicButtonGreen"
+            />
 
         <!-- BUTTON DELETE ACCOUNT -->
         <Button
             android:id="@+id/profile_activity_button_delete"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Supprimer le compte"            android:background="@color/white"
+            android:text="Supprimer le compte"
             android:onClick="onClickDeleteButton"
-            android:fontFamily="@font/indie_flower"
-            android:textColor="@color/black"
             android:textSize="@dimen/bigSize"
-            android:layout_margin="5dp"/>
+            style="@style/classicButtonGreen"
+            />
 
     </LinearLayout>
 

@@ -27,6 +27,7 @@
         android:textColor="@color/black"
         android:textSize="@dimen/bigSize"
         android:gravity="center_horizontal"
+        style="@style/classicButtonLightYellow"
         />
     <fragment
         android:id="@+id/fragment2"
@@ -41,9 +42,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/validerTable"
-        android:fontFamily="@font/indie_flower"
-        android:textColor="@color/black"
         android:layout_gravity="center"
-        android:onClick="onClickValiderBoutton"/>
+        android:onClick="onClickValiderBoutton"
+        style="@style/classicButtonLightYellow"/>
 </LinearLayout>
 </ScrollView>

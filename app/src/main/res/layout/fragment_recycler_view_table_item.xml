@@ -28,13 +28,14 @@
                 android:gravity="center_horizontal"
                 android:text="Mon Entree"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize"></TextView>
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightYellow"></TextView>
             <RatingBar
                 android:id="@+id/difficulteEntreeFragment"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/lightYellow"
+                android:background="@color/lightWhite"
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:isIndicator="true"
                 android:layout_gravity="center_horizontal"
@@ -59,13 +60,14 @@
                 android:gravity="center_horizontal"
                 android:text="Mon Plat"
                 android:textColor="@color/black"
-                android:textSize="@dimen/bigSize"></TextView>
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightYellow"></TextView>
             <RatingBar
                 android:id="@+id/difficultePlatFragment"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/lightYellow"
+                android:background="@color/lightWhite"
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:isIndicator="true"
                 android:layout_gravity="center_horizontal"
@@ -89,13 +91,14 @@
                 android:gravity="center_horizontal"
                 android:text="Mon Dessert"
                 android:textColor="@color/black"
+                style="@style/classicButtonLightYellow"
                 android:textSize="@dimen/bigSize"></TextView>
             <RatingBar
                 android:id="@+id/difficulteDessertFragment"
                 android:layout_weight="1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:background="@color/lightYellow"
+                android:background="@color/lightWhite"
                 style="@style/Widget.AppCompat.RatingBar.Indicator"
                 android:isIndicator="true"
                 android:layout_gravity="center_horizontal"
@@ -119,7 +122,8 @@
                 android:textColor="@color/black"
                 android:layout_weight="1"
                 android:layout_margin="5dp"
-                android:textSize="@dimen/bigSize">
+                android:textSize="@dimen/bigSize"
+                style="@style/classicButtonLightYellow">
             </TextView>
             <Button
                 android:id="@+id/wineIndicatorFragment"
@@ -202,7 +206,7 @@
             android:gravity="center_horizontal"
             android:layout_marginTop="12dp"/>
         <TextView
-            android:id="@+id/dateTable"
+            android:id="@+id/dateTableBis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/indie_flower"
@@ -224,7 +228,7 @@
             android:layout_marginTop="12dp"/>
 
         <TextView
-            android:id="@+id/heureTable"
+            android:id="@+id/heureTableBis"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/indie_flower"
@@ -239,7 +243,7 @@
 
 
     <TextView
-        android:id="@+id/adresseTable"
+        android:id="@+id/adresseTableBis"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:fontFamily="@font/indie_flower"
@@ -249,7 +253,8 @@
         android:text="TABLE PLACEHOLDER ADRESSE"
         android:background="@color/white"
         android:layout_marginTop="12dp"
-        android:layout_marginHorizontal="12dp"/>
+        android:layout_marginHorizontal="12dp"
+        style="@style/classicButtonLightYellow"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -267,7 +272,7 @@
             android:layout_gravity="center_vertical"
             android:layout_marginLeft="12dp"/>
         <TextView
-            android:id="@+id/nomTheme"
+            android:id="@+id/nomThemeBis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:fontFamily="@font/indie_flower"
@@ -277,7 +282,8 @@
             android:text="TABLE PLACEHOLDER THEME"
             android:background="@color/white"
             android:layout_marginTop="12dp"
-            android:layout_marginHorizontal="12dp"/>
+            android:layout_marginHorizontal="12dp"
+            style="@style/classicButtonLightYellow"/>
 
     </LinearLayout>
 
@@ -289,7 +295,7 @@
         android:layout_marginHorizontal="12dp">
 
         <Button
-            android:id="@+id/tableFumeur"
+            android:id="@+id/tableFumeurBis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -301,7 +307,7 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/tableAnimaux"
+            android:id="@+id/tableAnimauxBis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:textColor="@color/black"
@@ -315,7 +321,7 @@
             android:layout_weight="1" />
 
         <Button
-            android:id="@+id/tableAlcool"
+            android:id="@+id/tableAlcoolBis"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/checkbox_color"

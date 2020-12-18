@@ -10,6 +10,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.ImageButton;
 import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -38,6 +39,10 @@ public class creerMaTableStep4 extends AppCompatActivity {
     boolean isFumeur;
     boolean isAlcool;
     boolean isAnimaux;
+    ImageButton firstStep;
+    ImageButton secondStep;
+    ImageButton thridStep;
+    ImageButton fourthStep;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -50,6 +55,7 @@ public class creerMaTableStep4 extends AppCompatActivity {
         }
         linkActivityToLayout();
         printDataFromTable(maTable);
+        setUpBottomFragment();
     }
 
 
@@ -86,7 +92,15 @@ public class creerMaTableStep4 extends AppCompatActivity {
 
 
     }
+    private void setUpBottomFragment()
+    {
+        firstStep = findViewById(R.id.firstStepImage);
+        secondStep = findViewById(R.id.secondStepImage);
+        thridStep = findViewById(R.id.thirdStepImage);
+        fourthStep = findViewById(R.id.fourthStepImage);
 
+
+    }
 
     private void setUpMenuFragment(Menu menu){
         TextView nomEntree;

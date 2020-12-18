@@ -29,14 +29,6 @@
             android:text="@string/creer_ma_table"
             style="@style/classicButtonOrange"
             />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:textSize="@dimen/bigSize"
-            android:text="@string/importMenu"
-            style="@style/classicButtonOrange"
-            ></Button>
 
         <fragment
             android:id="@+id/fragment2"

@@ -5,7 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical"
     android:layout_margin="@dimen/mediumSize"
-    android:background="@color/yellow"
+    android:background="@color/lightYellow"
     >
 
     <LinearLayout
@@ -22,13 +22,15 @@
             android:gravity="center_horizontal"
             android:text="Mon Entree"
             android:textColor="@color/black"
-            android:textSize="@dimen/bigSize"></TextView>
+            android:textSize="@dimen/bigSize"
+            style="@style/classicButtonLightYellow"
+            ></TextView>
         <RatingBar
             android:id="@+id/difficulteEntreeFragment"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lightYellow"
+            android:background="@color/lightWhite"
             style="@style/Widget.AppCompat.RatingBar.Indicator"
             android:isIndicator="true"
             android:layout_gravity="center_horizontal"
@@ -53,13 +55,15 @@
             android:gravity="center_horizontal"
             android:text="Mon Plat"
             android:textColor="@color/black"
-            android:textSize="@dimen/bigSize"></TextView>
+            android:textSize="@dimen/bigSize"
+            style="@style/classicButtonLightYellow"
+            ></TextView>
         <RatingBar
             android:id="@+id/difficultePlatFragment"
             android:layout_weight="1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:background="@color/lightYellow"
+            android:background="@color/lightWhite"
             style="@style/Widget.AppCompat.RatingBar.Indicator"
             android:isIndicator="true"
             android:layout_gravity="center_horizontal"
@@ -74,29 +78,31 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-    <TextView
-        android:id="@+id/nomDessertFragment"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/white"
-        android:fontFamily="@font/indie_flower"
-        android:gravity="center_horizontal"
-        android:text="Mon Dessert"
-        android:textColor="@color/black"
-        android:textSize="@dimen/bigSize"></TextView>
-    <RatingBar
-        android:id="@+id/difficulteDessertFragment"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/lightYellow"
-        style="@style/Widget.AppCompat.RatingBar.Indicator"
-        android:isIndicator="true"
-        android:layout_gravity="center_horizontal"
-        android:layout_margin="5dp"
-        android:numStars="5"
-        android:rating="3"
-        />
+        <TextView
+            android:id="@+id/nomDessertFragment"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:fontFamily="@font/indie_flower"
+            android:gravity="center_horizontal"
+            android:text="Mon Dessert"
+            android:textColor="@color/black"
+            android:textSize="@dimen/bigSize"
+            style="@style/classicButtonLightYellow"
+            ></TextView>
+        <RatingBar
+            android:id="@+id/difficulteDessertFragment"
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/lightWhite"
+            style="@style/Widget.AppCompat.RatingBar.Indicator"
+            android:isIndicator="true"
+            android:layout_gravity="center_horizontal"
+            android:layout_margin="5dp"
+            android:numStars="5"
+            android:rating="3"
+            />
     </LinearLayout>
     <LinearLayout
         android:layout_width="match_parent"
@@ -113,7 +119,9 @@
             android:textColor="@color/black"
             android:layout_weight="1"
             android:layout_margin="5dp"
-            android:textSize="@dimen/bigSize">
+            android:textSize="@dimen/bigSize"
+            style="@style/classicButtonLightYellow"
+            >
         </TextView>
         <Button
             android:id="@+id/wineIndicatorFragment"

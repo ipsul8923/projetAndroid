@@ -10,46 +10,50 @@
        android:layout_height="wrap_content"
        android:orientation="horizontal">
 
-       <Button
+       <ImageButton
+           android:id="@+id/firstStepImage"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="75dp"
            android:layout_weight="1"
-           android:background="@color/white"
+           android:background="@drawable/group_not_selected"
            android:fontFamily="@font/indie_flower"
            android:textColor="@color/black"
            android:textSize="@dimen/mediumSize"
            android:layout_margin="5dp"
-           android:text="1Step"></Button>
-       <Button
+           android:text="1Step"></ImageButton>
+       <ImageButton
+           android:id="@+id/secondStepImage"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="75dp"
            android:layout_weight="1"
-           android:background="@color/white"
+           android:background="@drawable/menu_not_selected"
            android:fontFamily="@font/indie_flower"
            android:textColor="@color/black"
            android:textSize="@dimen/mediumSize"
            android:layout_margin="5dp"
-           android:text="2Step"></Button>
-       <Button
+           android:text="2Step"></ImageButton>
+       <ImageButton
+           android:id="@+id/thirdStepImage"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="75dp"
            android:layout_weight="1"
-           android:background="@color/white"
+           android:background="@drawable/event_not_selected"
            android:fontFamily="@font/indie_flower"
            android:textColor="@color/black"
            android:textSize="@dimen/mediumSize"
            android:layout_margin="5dp"
-           android:text="3step"></Button>
-       <Button
+           android:text="3step"></ImageButton>
+       <ImageButton
+           android:id="@+id/fourthStepImage"
            android:layout_width="match_parent"
-           android:layout_height="wrap_content"
+           android:layout_height="75dp"
            android:layout_weight="1"
-           android:background="@color/white"
+           android:background="@drawable/check_not_selected"
            android:fontFamily="@font/indie_flower"
            android:textColor="@color/black"
            android:textSize="@dimen/mediumSize"
            android:layout_margin="5dp"
-           android:text="4Step"></Button>
+           android:text="4Step"></ImageButton>
 
    </LinearLayout>
 </FrameLayout>
